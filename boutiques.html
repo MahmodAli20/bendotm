@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="boutiques.meta.title">Boutiques &amp; client services — Ben.M</title>
+  <meta name="description" content="Visit Ben.M in Erbil, Sulaymaniyah and Duhok, write to client services, or find answers about delivery, sizing and leather care." data-i18n-attr="content:boutiques.meta.description">
+  <meta name="robots" content="noindex, nofollow"><!-- DEMO: keep the preview out of search engines; remove at launch -->
+  <meta name="theme-color" content="#0C1D17">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/brand/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <meta property="og:title" content="Boutiques &amp; client services — Ben.M"><meta property="og:description" content="Visit Ben.M in Erbil, Sulaymaniyah and Duhok, or write to client services.">
+  <meta property="og:image" content="assets/brand/og-image.jpg"><meta property="og:type" content="website">
+  <script>/* boot flags — identical on every page */
+  (function(h){h.classList.add('js');try{var l=localStorage.getItem('benm:lang');if(l==='ckb'){h.lang='ckb';h.dir='rtl';}
+  if(!sessionStorage.getItem('benm:visited')){h.classList.add('is-preloading');}
+  else if(sessionStorage.getItem('benm:transition')){h.classList.add('is-transitioning');}}catch(e){}})(document.documentElement);
+  </script>
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/pages/boutiques.css">
+</head>
+<body data-page="boutiques" data-header="light">
+  <main id="main" class="page page--boutiques">
+
+    <!-- =====================================================================
+         HERO — "Visit the House": headline, city index, panorama that opens
+         like a pair of doors (boutiques.js), parallax
+         ================================================================== -->
+    <section class="btq-hero theme-light" aria-labelledby="btq-title">
+      <div class="u-container">
+        <div class="btq-hero__top" data-reveal="fade">
+          <nav class="c-breadcrumbs" aria-label="Breadcrumb" data-i18n-attr="aria-label:a11y.breadcrumb">
+            <ol>
+              <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+              <li><span aria-current="page" data-i18n="nav.boutiques">Boutiques</span></li>
+            </ol>
+          </nav>
+          <p class="btq-hero__tagline"><span lang="en">Genuine leather</span><span class="c-diamond" aria-hidden="true"></span><span lang="ckb">چەرمی ڕەسەن</span></p>
+        </div>
+
+        <div class="btq-hero__head">
+          <div class="btq-hero__titles">
+            <p class="c-eyebrow c-eyebrow--line" data-reveal="fade" data-i18n="boutiques.hero.eyebrow">Boutiques &amp; client services</p>
+            <h1 class="btq-hero__title" id="btq-title" data-reveal="lines" data-i18n-html="boutiques.hero.title">Visit the <em>House</em></h1>
+          </div>
+          <p class="btq-hero__lead" data-reveal="up" data-reveal-delay=".15" data-i18n="boutiques.hero.lead">Three boutiques in Kurdistan, each a quiet room of leather and lamplight. Come to try, to choose slowly, or simply to talk about leather.</p>
+        </div>
+      </div>
+
+      <figure class="btq-hero__figure">
+        <div class="btq-hero__media u-media" data-btq-doors>
+          <div class="btq-hero__zoom">
+            <img class="btq-hero__img" src="assets/img/stores/interior-wide.jpg" width="2400" height="1350" decoding="async" fetchpriority="high"
+                 alt="A row of polished leather shoes on a boutique display" data-i18n-attr="alt:boutiques.img.interior" data-parallax="0.14">
+          </div>
+          <span class="btq-hero__edge btq-hero__edge--a" aria-hidden="true"></span>
+          <span class="btq-hero__edge btq-hero__edge--b" aria-hidden="true"></span>
+        </div>
+        <figcaption class="u-container btq-hero__caption">
+          <span class="c-caption" data-reveal="fade" data-reveal-delay=".4"><span class="c-caption__num">N°01</span><span data-i18n="boutiques.hero.caption">Inside the House</span></span>
+        </figcaption>
+      </figure>
+
+      <div class="u-container btq-hero__foot">
+        <div class="btq-hero__foot-start" data-reveal="fade">
+          <p class="btq-hero__foot-note" data-i18n="boutiques.hero.find">Find a boutique</p>
+          <a class="c-link c-link--quiet btq-hero__jump" href="#contact"><span data-i18n="boutiques.hero.contact">Client services</span><span class="btq-down" data-btq-icon="arrow"></span></a>
+        </div>
+        <nav class="btq-index" aria-label="Our boutiques" data-i18n-attr="aria-label:boutiques.hero.index">
+          <ol class="btq-index__list" role="list" data-btq-index data-reveal="up" data-reveal-stagger=".08"></ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         01 · THE BOUTIQUES — stylised dotted map (real lat/lng, no borders)
+         + three boutique cards; markers and cards highlight each other
+         ================================================================== -->
+    <section class="btq-boutiques theme-dark" id="boutiques" aria-labelledby="btq-boutiques-title">
+      <div class="c-marquee c-marquee--sm btq-marquee" data-marquee data-marquee-speed=".8" aria-hidden="true">
+        <div class="c-marquee__track">
+          <span class="c-marquee__item"><span lang="en">Erbil</span><span class="c-marquee__sep">✦</span></span>
+          <span class="c-marquee__item c-marquee__item--outline"><span lang="ckb">هەولێر</span><span class="c-marquee__sep">✦</span></span>
+          <span class="c-marquee__item"><span lang="en">Sulaymaniyah</span><span class="c-marquee__sep">✦</span></span>
+          <span class="c-marquee__item c-marquee__item--outline"><span lang="ckb">سلێمانی</span><span class="c-marquee__sep">✦</span></span>
+          <span class="c-marquee__item"><span lang="en">Duhok</span><span class="c-marquee__sep">✦</span></span>
+          <span class="c-marquee__item c-marquee__item--outline"><span lang="ckb">دهۆک</span><span class="c-marquee__sep">✦</span></span>
+        </div>
+      </div>
+
+      <div class="u-container btq-boutiques__inner">
+        <header class="btq-head">
+          <div class="btq-head__main">
+            <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span class="c-eyebrow__num" aria-hidden="true">01</span><span data-i18n="boutiques.list.eyebrow">The boutiques</span></p>
+            <h2 class="btq-head__title" id="btq-boutiques-title" data-reveal="lines" data-i18n-html="boutiques.list.title">Three houses, <em>one welcome.</em></h2>
+          </div>
+          <p class="btq-head__text" data-reveal="up" data-reveal-delay=".1" data-i18n="boutiques.list.text">In Erbil, Sulaymaniyah and Duhok, every boutique keeps the same pace: fittings that take their time, honest advice, and leather you can hold in your hands.</p>
+        </header>
+
+        <div class="btq-locator" data-btq-locator>
+          <div class="btq-locator__map">
+            <div class="btq-map" data-btq-map role="group" aria-label="Map of the Ben.M boutiques" data-i18n-attr="aria-label:boutiques.map.label">
+              <svg class="btq-map__svg" data-btq-svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"></svg>
+              <svg class="btq-map__svg" data-btq-svg-top aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"></svg>
+              <span class="btq-map__veil" data-btq-veil aria-hidden="true"></span>
+              <div class="btq-map__markers" data-btq-markers></div>
+              <span class="btq-map__north" aria-hidden="true"><span class="btq-map__north-line"></span>N</span>
+              <p class="btq-map__readout" aria-hidden="true" data-btq-readout></p>
+            </div>
+            <p class="btq-map__note" data-i18n="boutiques.map.note">A stylised map — each boutique sits at its city’s true latitude and longitude.</p>
+          </div>
+          <ol class="btq-stores" role="list" data-btq-stores></ol>
+        </div>
+
+        <div class="btq-services">
+          <div class="btq-services__head">
+            <h3 class="c-eyebrow c-eyebrow--line btq-services__title" data-reveal="fade" data-i18n="boutiques.services.title">In every boutique</h3>
+            <a class="c-link" href="atelier.html#appointment" data-reveal="fade"><span data-i18n="nav.appointment">Book an appointment</span><span data-btq-icon="arrow"></span></a>
+          </div>
+          <ul class="btq-services__list" role="list" data-reveal="up" data-reveal-stagger=".08">
+            <li class="btq-service">
+              <span class="btq-service__icon" data-btq-icon="ruler"></span>
+              <h4 class="btq-service__title" data-i18n="boutiques.services.fit">Fittings, unhurried</h4>
+              <p class="btq-service__text" data-i18n="boutiques.services.fit.text">Try every size and colour. We will help you find the pair that truly fits.</p>
+            </li>
+            <li class="btq-service">
+              <span class="btq-service__icon" data-btq-icon="needle"></span>
+              <h4 class="btq-service__title" data-i18n="boutiques.services.care">Care &amp; repair</h4>
+              <p class="btq-service__text" data-i18n="boutiques.services.care.text">Polishing, small repairs and advice for a long life.</p>
+            </li>
+            <li class="btq-service">
+              <span class="btq-service__icon" data-btq-icon="sparkle"></span>
+              <h4 class="btq-service__title" data-i18n="boutiques.services.perso">Personalisation</h4>
+              <p class="btq-service__text" data-i18n="boutiques.services.perso.text">Initials pressed by hand in gold, silver or blind foil.</p>
+            </li>
+            <li class="btq-service">
+              <span class="btq-service__icon" data-btq-icon="gift"></span>
+              <h4 class="btq-service__title" data-i18n="boutiques.services.gift">Gift wrapping</h4>
+              <p class="btq-service__text" data-i18n="boutiques.services.gift.text">Wrapped by hand, ready to give.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         02 · CLIENT SERVICES (#contact) — contact methods + validated form
+         ================================================================== -->
+    <section class="btq-contact theme-light u-section" id="contact" aria-labelledby="btq-contact-title">
+      <div class="u-container btq-contact__grid">
+        <div class="btq-contact__intro">
+          <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span class="c-eyebrow__num" aria-hidden="true">02</span><span data-i18n="boutiques.contact.eyebrow">Client services</span></p>
+          <h2 class="btq-contact__title" id="btq-contact-title" data-reveal="lines" data-i18n-html="boutiques.contact.title">Write to <em>us.</em></h2>
+          <p class="btq-contact__lead" data-reveal="up" data-reveal-delay=".1" data-i18n="boutiques.contact.lead">A question about a size, an order or the care of a favourite pair? Write, call or send a message on WhatsApp — we reply personally.</p>
+
+          <ul class="btq-methods" role="list" aria-label="Ways to reach us" data-i18n-attr="aria-label:boutiques.contact.methods" data-reveal="up" data-reveal-stagger=".08" data-reveal-delay=".15">
+            <li>
+              <a class="btq-method" href="#" target="_blank" rel="noopener" data-btq-wa>
+                <span class="btq-method__icon" data-btq-icon="whatsapp"></span>
+                <span class="btq-method__body">
+                  <span class="btq-method__label" data-i18n="nav.whatsapp">WhatsApp</span>
+                  <span class="btq-method__value"><span dir="ltr" data-btq-config="whatsapp"></span></span>
+                  <span class="btq-method__note" data-i18n="boutiques.contact.wa.note">The quickest way to reach us.</span>
+                </span>
+                <span class="btq-method__go" data-btq-icon="arrow-up-right"></span>
+                <span class="u-visually-hidden" data-i18n="a11y.newTab">(opens in a new tab)</span>
+              </a>
+            </li>
+            <li>
+              <a class="btq-method" href="#" data-btq-tel>
+                <span class="btq-method__icon" data-btq-icon="phone"></span>
+                <span class="btq-method__body">
+                  <span class="btq-method__label" data-i18n="boutiques.store.phone">Telephone</span>
+                  <span class="btq-method__value"><span dir="ltr" data-btq-config="phone"></span></span>
+                  <span class="btq-method__note" data-i18n="boutiques.contact.phone.note">Speak to us during opening hours.</span>
+                </span>
+                <span class="btq-method__go" data-btq-icon="arrow"></span>
+              </a>
+            </li>
+            <li>
+              <a class="btq-method" href="#" data-btq-mail>
+                <span class="btq-method__icon" data-btq-icon="mail"></span>
+                <span class="btq-method__body">
+                  <span class="btq-method__label" data-i18n="boutiques.contact.email.label">Email</span>
+                  <span class="btq-method__value"><span dir="ltr" data-btq-config="email"></span></span>
+                  <span class="btq-method__note" data-i18n="boutiques.contact.email.note">For longer questions, photographs and details.</span>
+                </span>
+                <span class="btq-method__go" data-btq-icon="arrow"></span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="btq-hours" data-reveal="up" data-reveal-delay=".2">
+            <span class="btq-hours__icon" data-btq-icon="clock"></span>
+            <div class="btq-hours__body">
+              <p class="btq-hours__title" data-i18n="boutiques.store.hours">Opening hours</p>
+              <p class="btq-hours__value" data-btq-hours>Sat–Thu 10:00–22:00 · Fri 14:00–22:00</p>
+              <p class="btq-hours__note" data-i18n="boutiques.contact.hours.note">Messages that arrive after hours are answered the next day.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="btq-letter theme-paper" data-reveal="up" data-reveal-delay=".1">
+          <span class="c-corners btq-letter__corners" aria-hidden="true"></span>
+          <div class="btq-letter__head">
+            <h3 class="btq-letter__title" id="btq-form-title" data-i18n="boutiques.form.title">Send a message</h3>
+          </div>
+          <form class="c-form btq-form" data-validate novalidate aria-labelledby="btq-form-title" data-btq-form>
+            <div class="c-form__row c-form__row--2">
+              <div class="c-field">
+                <input class="c-field__input" id="btq-name" name="name" type="text" autocomplete="name" required minlength="2" placeholder=" ">
+                <label class="c-field__label" for="btq-name" data-i18n="form.name">Full name</label>
+                <span class="c-field__line" aria-hidden="true"></span>
+                <p class="c-field__msg" aria-live="polite"></p>
+              </div>
+              <div class="c-field">
+                <input class="c-field__input" id="btq-email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder=" ">
+                <label class="c-field__label" for="btq-email" data-i18n="form.email">Email address</label>
+                <span class="c-field__line" aria-hidden="true"></span>
+                <p class="c-field__msg" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="c-form__row c-form__row--2">
+              <div class="c-field btq-field-phone">
+                <input class="c-field__input" id="btq-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder=" " dir="ltr" data-btq-phone>
+                <label class="c-field__label" for="btq-phone"><span data-i18n="form.phone">Phone number</span> <span class="btq-optional" data-btq-optional>· <span data-i18n="form.optional">Optional</span></span></label>
+                <span class="c-field__line" aria-hidden="true"></span>
+                <p class="c-field__msg" aria-live="polite"></p>
+              </div>
+              <div class="c-field c-field--select">
+                <select class="c-field__input" id="btq-topic" name="topic" required data-btq-topic>
+                  <option value="" data-i18n="form.select">Please choose</option>
+                  <option value="order" data-i18n="boutiques.form.topic.order">An order or a delivery</option>
+                  <option value="returns" data-i18n="boutiques.form.topic.returns">Returns &amp; exchanges</option>
+                  <option value="sizing" data-i18n="boutiques.form.topic.sizing">Sizing &amp; fit</option>
+                  <option value="care" data-i18n="boutiques.form.topic.care">Care &amp; repair</option>
+                  <option value="personalisation" data-i18n="boutiques.form.topic.perso">Personalisation</option>
+                  <option value="visit" data-i18n="boutiques.form.topic.visit">Visiting a boutique</option>
+                  <option value="other" data-i18n="boutiques.form.topic.other">Something else</option>
+                </select>
+                <label class="c-field__label" for="btq-topic" data-i18n="form.subject">Subject</label>
+                <span class="c-field__line" aria-hidden="true"></span>
+                <p class="c-field__msg" aria-live="polite"></p>
+              </div>
+            </div>
+            <fieldset class="btq-reply">
+              <legend class="btq-reply__legend" data-i18n="boutiques.form.reply">How should we reply?</legend>
+              <div class="btq-reply__options">
+                <label class="c-check"><input type="radio" name="reply" value="email" checked data-btq-reply><span data-i18n="boutiques.form.reply.email">By email</span></label>
+                <label class="c-check"><input type="radio" name="reply" value="phone" data-btq-reply><span data-i18n="boutiques.form.reply.phone">By phone</span></label>
+                <label class="c-check"><input type="radio" name="reply" value="whatsapp" data-btq-reply><span data-i18n="boutiques.form.reply.whatsapp">On WhatsApp</span></label>
+              </div>
+            </fieldset>
+            <div class="c-field">
+              <textarea class="c-field__input" id="btq-message" name="message" rows="5" required minlength="10" placeholder=" "></textarea>
+              <label class="c-field__label" for="btq-message" data-i18n="form.message">Message</label>
+              <span class="c-field__line" aria-hidden="true"></span>
+              <p class="c-field__msg" aria-live="polite"></p>
+            </div>
+            <div class="btq-form__foot">
+              <button class="c-btn c-btn--primary" type="submit" data-magnetic=".2">
+                <span class="c-btn__label"><span data-i18n="boutiques.form.send">Send message</span></span><span class="c-btn__arrow"></span>
+              </button>
+              <p class="btq-form__fine" data-i18n="boutiques.form.fine">We reply personally, usually within a day.</p>
+            </div>
+          </form>
+          <div class="c-form-success btq-success" data-form-success hidden tabindex="-1" role="status">
+            <span class="btq-success__seal" data-btq-icon="check"></span>
+            <p class="c-form-success__title btq-success__title"><span data-btq-success-title data-i18n="form.success.title">Thank you</span></p>
+            <p data-i18n="form.success.text">Your message has reached us. We will reply personally, usually within a day.</p>
+            <div class="btq-success__actions">
+              <a class="c-link" href="#" target="_blank" rel="noopener" data-btq-wa><span data-i18n="boutiques.form.success.wa">Prefer to talk now? Message us on WhatsApp</span><span data-btq-icon="arrow-up-right"></span><span class="u-visually-hidden" data-i18n="a11y.newTab">(opens in a new tab)</span></a>
+              <button class="c-btn c-btn--ghost c-btn--sm" type="button" data-btq-again><span class="c-btn__label"><span data-i18n="boutiques.form.again">Write another message</span></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         03 · QUESTIONS (#faq) — accordion; config values only (threshold, fee)
+         ================================================================== -->
+    <section class="btq-faq theme-paper u-section" id="faq" aria-labelledby="btq-faq-title">
+      <div class="u-container btq-faq__grid">
+        <div class="btq-faq__intro">
+          <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span class="c-eyebrow__num" aria-hidden="true">03</span><span data-i18n="boutiques.faq.eyebrow">Questions</span></p>
+          <h2 class="btq-faq__title" id="btq-faq-title" data-reveal="lines" data-i18n-html="boutiques.faq.title">Questions, <em>answered.</em></h2>
+          <p class="btq-faq__text" data-reveal="up" data-reveal-delay=".1" data-i18n="boutiques.faq.text">The questions we hear most often, from delivery to the care of your leather. Anything else — simply ask us.</p>
+          <div class="btq-faq__links" data-reveal="up" data-reveal-delay=".2">
+            <a class="c-link" href="#contact"><span data-i18n="boutiques.faq.write">Write to us</span><span data-btq-icon="arrow"></span></a>
+            <a class="c-link" href="#" target="_blank" rel="noopener" data-btq-wa><span data-i18n="boutiques.faq.wa">Ask on WhatsApp</span><span data-btq-icon="arrow-up-right"></span><span class="u-visually-hidden" data-i18n="a11y.newTab">(opens in a new tab)</span></a>
+          </div>
+        </div>
+
+        <div class="c-accordion btq-faq__list" data-accordion="single" data-reveal="up" data-reveal-delay=".1">
+          <div class="c-accordion__item is-open" id="faq-shipping">
+            <h3 class="c-accordion__heading"><button class="c-accordion__trigger" type="button">
+              <span><span class="c-accordion__num">01</span><span data-i18n="boutiques.faq.q1">How does delivery work?</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h3>
+            <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content">
+              <p class="btq-faq__topic" data-i18n="boutiques.faq.t1">Shipping</p>
+              <p data-i18n-html="boutiques.faq.a1">Every order is confirmed with you personally on WhatsApp, where we agree on delivery to your door and how long it will take. Delivery is complimentary on orders over <span class="c-price" data-price="200">$200</span>.</p>
+            </div></div></div>
+          </div>
+          <div class="c-accordion__item" id="faq-returns">
+            <h3 class="c-accordion__heading"><button class="c-accordion__trigger" type="button">
+              <span><span class="c-accordion__num">02</span><span data-i18n="boutiques.faq.q2">Can I return or exchange a piece?</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h3>
+            <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content">
+              <p class="btq-faq__topic" data-i18n="boutiques.faq.t2">Returns &amp; exchanges</p>
+              <p data-i18n-html="boutiques.faq.a2">Yes. If a piece is not quite right, write to us and we will arrange an exchange or a return together. Keep it unworn and in its original packaging, so that it can travel back just as it came.</p>
+            </div></div></div>
+          </div>
+          <div class="c-accordion__item" id="faq-sizing">
+            <h3 class="c-accordion__heading"><button class="c-accordion__trigger" type="button">
+              <span><span class="c-accordion__num">03</span><span data-i18n="boutiques.faq.q3">How do I find my size?</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h3>
+            <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content">
+              <p class="btq-faq__topic" data-i18n="boutiques.faq.t3">Sizing</p>
+              <p data-i18n-html="boutiques.faq.a3">Our shoes are made in EU sizes. Every product page has a size guide with conversions and a simple way to measure your foot. Between two sizes? Choose the larger one, or ask us — in a boutique we will fit you in person.</p>
+            </div></div></div>
+          </div>
+          <div class="c-accordion__item" id="faq-payment">
+            <h3 class="c-accordion__heading"><button class="c-accordion__trigger" type="button">
+              <span><span class="c-accordion__num">04</span><span data-i18n="boutiques.faq.q4">How can I pay?</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h3>
+            <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content">
+              <p class="btq-faq__topic" data-i18n="boutiques.faq.t4">Payment</p>
+              <p data-i18n-html="boutiques.faq.a4">Payment is agreed with you personally when we confirm your order on WhatsApp, or at the counter in our boutiques. Prices can be shown in US dollars or Iraqi dinars; dinar prices are converted from dollars and rounded, as a guide.</p>
+              <div class="btq-faq__currency">
+                <span class="btq-faq__currency-label" data-i18n="a11y.currency">Currency</span>
+                <div class="c-switch" role="group" aria-label="Currency" data-i18n-attr="aria-label:a11y.currency">
+                  <button class="c-switch__btn" type="button" data-set-currency="USD" aria-pressed="true" data-i18n="currency.usd">USD</button>
+                  <span class="c-switch__sep" aria-hidden="true"></span>
+                  <button class="c-switch__btn" type="button" data-set-currency="IQD" aria-pressed="false" data-i18n="currency.iqd">IQD</button>
+                </div>
+                <span class="btq-faq__currency-sample"><span data-i18n="boutiques.faq.sample">For example</span> <span class="c-price" data-price="320">$320</span></span>
+              </div>
+            </div></div></div>
+          </div>
+          <div class="c-accordion__item" id="faq-care">
+            <h3 class="c-accordion__heading"><button class="c-accordion__trigger" type="button">
+              <span><span class="c-accordion__num">05</span><span data-i18n="boutiques.faq.q5">How should I care for my leather — and can you repair it?</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h3>
+            <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content">
+              <p class="btq-faq__topic" data-i18n="boutiques.faq.t5">Care &amp; repair</p>
+              <p data-i18n-html="boutiques.faq.a5">Let it rest for a day between wears, keep it away from direct heat, and give it a little cream or balm whenever it looks thirsty. The <a class="c-text-link" href="maison.html#care">leather care guide</a> in the Maison has the details. For polishing and small repairs, bring your piece to any of our boutiques and we will advise you.</p>
+            </div></div></div>
+          </div>
+          <div class="c-accordion__item" id="faq-personalisation">
+            <h3 class="c-accordion__heading"><button class="c-accordion__trigger" type="button">
+              <span><span class="c-accordion__num">06</span><span data-i18n="boutiques.faq.q6">Can I have my initials added?</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h3>
+            <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content">
+              <p class="btq-faq__topic" data-i18n="boutiques.faq.t6">Personalisation</p>
+              <p data-i18n-html="boutiques.faq.a6">Yes — bags and small leather goods can carry up to three initials, pressed by hand in gold, silver or blind foil. Personalisation adds <span class="c-price" data-price="25">$25</span>. Try it live in the <a class="c-text-link" href="atelier.html#configurator">Atelier</a>; because each piece is made for you, please check the letters carefully before you confirm.</p>
+            </div></div></div>
+          </div>
+          <div class="c-accordion__item" id="faq-appointments">
+            <h3 class="c-accordion__heading"><button class="c-accordion__trigger" type="button">
+              <span><span class="c-accordion__num">07</span><span data-i18n="boutiques.faq.q7">Can I book a private appointment?</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h3>
+            <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content">
+              <p class="btq-faq__topic" data-i18n="boutiques.faq.t7">Appointments</p>
+              <p data-i18n-html="boutiques.faq.a7">Of course. <a class="c-text-link" href="atelier.html#appointment">Request an appointment</a> in the Atelier for a fitting, a made-to-order piece or personalisation, and we will confirm a time with you.</p>
+            </div></div></div>
+          </div>
+          <div class="c-accordion__item" id="faq-gifts">
+            <h3 class="c-accordion__heading"><button class="c-accordion__trigger" type="button">
+              <span><span class="c-accordion__num">08</span><span data-i18n="boutiques.faq.q8">Do you gift-wrap?</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h3>
+            <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content">
+              <p class="btq-faq__topic" data-i18n="boutiques.faq.t8">Gift wrapping</p>
+              <p data-i18n-html="boutiques.faq.a8">Every piece can be wrapped by hand, ready to give. Simply mention it when we confirm your order, or ask in the boutique.</p>
+            </div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/js/brand.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/pages/boutiques.js"></script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+{
+ "editorial/hero-1": {
+  "file": "assets/img/editorial/hero-1.jpg",
+  "unsplash_id": "NJ2zvp2Z1c0",
+  "photographer": "SHAKEEL AHAMMED",
+  "photographer_url": "https://unsplash.com/@shakeelaller",
+  "source": "https://unsplash.com/photos/a-pair-of-brown-shoes-sitting-on-top-of-a-wooden-floor-NJ2zvp2Z1c0",
+  "alt": "A pair of brown leather dress shoes in a pool of warm light",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.55,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "editorial/hero-2": {
+  "file": "assets/img/editorial/hero-2.jpg",
+  "unsplash_id": "_doTxp9AS4w",
+  "photographer": "Zulfugar Karimov",
+  "photographer_url": "https://unsplash.com/@zulfugarkarimov",
+  "source": "https://unsplash.com/photos/a-brown-leather-handbag-rests-on-a-wooden-surface-_doTxp9AS4w",
+  "alt": "A dark brown leather handbag on a dark wooden surface",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "editorial/hero-3": {
+  "file": "assets/img/editorial/hero-3.jpg",
+  "unsplash_id": "GPdWubhjq-Q",
+  "photographer": "Cohen Berg",
+  "photographer_url": "https://unsplash.com/@cohenberg",
+  "source": "https://unsplash.com/photos/person-tracing-leather-pattern-with-pen-GPdWubhjq-Q",
+  "alt": "An artisan's hands marking a pattern onto a hide before cutting",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "editorial/campaign-1": {
+  "file": "assets/img/editorial/campaign-1.jpg",
+  "unsplash_id": "03mI51AMHoE",
+  "photographer": "Troy Spoelma",
+  "photographer_url": "https://unsplash.com/@spoelee4",
+  "source": "https://unsplash.com/photos/man-in-black-suit-sitting-on-brown-wooden-bench-03mI51AMHoE",
+  "alt": "A man in a dark tailored suit seated in a moody interior",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "editorial/campaign-2": {
+  "file": "assets/img/editorial/campaign-2.jpg",
+  "unsplash_id": "XOhllqKs_I4",
+  "photographer": "Ansis Kančs",
+  "photographer_url": "https://unsplash.com/@ansisansis",
+  "source": "https://unsplash.com/photos/a-person-holds-a-stylish-black-leather-handbag-XOhllqKs_I4",
+  "alt": "A black leather envelope bag carried against a grey wool coat in autumn light",
+  "crop": {
+   "fx": 0.45,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "editorial/campaign-3": {
+  "file": "assets/img/editorial/campaign-3.jpg",
+  "unsplash_id": "y6i8VFRx8yw",
+  "photographer": "Ocult Store",
+  "photographer_url": "https://unsplash.com/@ocultstore",
+  "source": "https://unsplash.com/photos/a-wallet-and-a-pair-of-scissors-on-a-table-y6i8VFRx8yw",
+  "alt": "A cognac leather wallet and key fob on a walnut table",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "editorial/maison-hero": {
+  "file": "assets/img/editorial/maison-hero.jpg",
+  "unsplash_id": "vXO0CCRcsGM",
+  "photographer": "Bernd 📷 Dittrich",
+  "photographer_url": "https://unsplash.com/@hdbernd",
+  "source": "https://unsplash.com/photos/two-pieces-of-leather-laid-out-on-a-surface-vXO0CCRcsGM",
+  "alt": "Raw leather hides laid out on dark cobblestones",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "editorial/care": {
+  "file": "assets/img/editorial/care.jpg",
+  "unsplash_id": "b_NOL8Ejr9o",
+  "photographer": "Lina Verovaya",
+  "photographer_url": "https://unsplash.com/@linaverovaya",
+  "source": "https://unsplash.com/photos/brown-and-black-brush-b_NOL8Ejr9o",
+  "alt": "A wooden shoe-care box with brushes and polish tins",
+  "crop": {
+   "fx": 0.45,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "editorial/notfound": {
+  "file": "assets/img/editorial/notfound.jpg",
+  "unsplash_id": "29ocaFY0GGQ",
+  "photographer": "rupixen",
+  "photographer_url": "https://unsplash.com/@rupixen",
+  "source": "https://unsplash.com/photos/brown-leather-shoe-29ocaFY0GGQ",
+  "alt": "A single brown leather shoe in warm light against darkness",
+  "crop": {
+   "fx": 0.72,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "editorial/atelier": {
+  "file": "assets/img/editorial/atelier.jpg",
+  "unsplash_id": "KOwn5ibC4ZI",
+  "photographer": "Amo Journey",
+  "photographer_url": "https://unsplash.com/@amojourney",
+  "source": "https://unsplash.com/photos/a-person-is-working-on-a-piece-of-art-KOwn5ibC4ZI",
+  "alt": "A craftsman stamping a design into leather with a mallet",
+  "crop": {
+   "fx": 0.42,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "categories/men": {
+  "file": "assets/img/categories/men.jpg",
+  "unsplash_id": "jdTtkmr1axk",
+  "photographer": "Andrea Natali",
+  "photographer_url": "https://unsplash.com/@andrea_natali",
+  "source": "https://unsplash.com/photos/man-in-blue-suit-standing-on-street-side-while-holding-bag-during-daytime-jdTtkmr1axk",
+  "alt": "A man in a navy suit carrying a black leather briefcase",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.6,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "categories/women": {
+  "file": "assets/img/categories/women.jpg",
+  "unsplash_id": "WLQ7VgyLRmk",
+  "photographer": "Taylor Heery",
+  "photographer_url": "https://unsplash.com/@taylorheeryphoto",
+  "source": "https://unsplash.com/photos/woman-in-brown-coat-holding-brown-leather-handbag-WLQ7VgyLRmk",
+  "alt": "A woman in a check trench coat holding a cognac leather bag",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "categories/bags": {
+  "file": "assets/img/categories/bags.jpg",
+  "unsplash_id": "Fb-EW6vkOn0",
+  "photographer": "Ivan Kazlouskij",
+  "photographer_url": "https://unsplash.com/@ivankazlouskij",
+  "source": "https://unsplash.com/photos/a-brown-purse-sitting-on-top-of-a-table-next-to-an-open-book-Fb-EW6vkOn0",
+  "alt": "A dark brown leather tote resting on a side table",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "categories/accessories": {
+  "file": "assets/img/categories/accessories.jpg",
+  "unsplash_id": "nUKN8Zat5dA",
+  "photographer": "Gabrielle Henderson",
+  "photographer_url": "https://unsplash.com/@gabriellefaithhenderson",
+  "source": "https://unsplash.com/photos/a-hand-holding-a-baby-nUKN8Zat5dA",
+  "alt": "A brown leather belt worn with light denim and a knit sweater",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.45,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "lookbook/look-1": {
+  "file": "assets/img/lookbook/look-1.jpg",
+  "unsplash_id": "M0g1sV4SEdo",
+  "photographer": "Jan de Keijzer",
+  "photographer_url": "https://unsplash.com/@woeiman",
+  "source": "https://unsplash.com/photos/man-holding-bag-near-grass-M0g1sV4SEdo",
+  "alt": "A man carrying a cognac leather weekender through a garden",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.55,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "lookbook/look-2": {
+  "file": "assets/img/lookbook/look-2.jpg",
+  "unsplash_id": "PNvTKa_nqa4",
+  "photographer": "kevin laminto",
+  "photographer_url": "https://unsplash.com/@kxvn_lx",
+  "source": "https://unsplash.com/photos/woman-carrying-leather-handbag-while-standing-near-wall-PNvTKa_nqa4",
+  "alt": "A woman in a dark suit holding a small cognac handbag",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.6,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "lookbook/look-3": {
+  "file": "assets/img/lookbook/look-3.jpg",
+  "unsplash_id": "mEJjq-pAeQw",
+  "photographer": "lutfi nur fauzi",
+  "photographer_url": "https://unsplash.com/@lfauzi",
+  "source": "https://unsplash.com/photos/person-carrying-brown-handbag-mEJjq-pAeQw",
+  "alt": "A man in a denim shirt holding a brown leather clutch",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "lookbook/look-4": {
+  "file": "assets/img/lookbook/look-4.jpg",
+  "unsplash_id": "qxcQG21m_qE",
+  "photographer": "Nathan Dumlao",
+  "photographer_url": "https://unsplash.com/@nate_dumlao",
+  "source": "https://unsplash.com/photos/photography-of-person-lacing-hisher-boots-qxcQG21m_qE",
+  "alt": "Hands lacing brown leather boots",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "lookbook/look-5": {
+  "file": "assets/img/lookbook/look-5.jpg",
+  "unsplash_id": "p-cRl01b7PY",
+  "photographer": "Apostolos Vamvouras",
+  "photographer_url": "https://unsplash.com/@apostolosv",
+  "source": "https://unsplash.com/photos/shallow-focus-photo-of-person-in-black-booties-p-cRl01b7PY",
+  "alt": "Black leather ankle boots in a forest clearing",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.6,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "lookbook/look-6": {
+  "file": "assets/img/lookbook/look-6.jpg",
+  "unsplash_id": "Lkq1MECMkSs",
+  "photographer": "lutfi nur fauzi",
+  "photographer_url": "https://unsplash.com/@lfauzi",
+  "source": "https://unsplash.com/photos/person-holding-brown-leather-bag-Lkq1MECMkSs",
+  "alt": "A man wearing a tan leather crossbody bag over a denim jacket",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "lookbook/look-7": {
+  "file": "assets/img/lookbook/look-7.jpg",
+  "unsplash_id": "lFvkXTEYS4s",
+  "photographer": "Christopher Ivanov",
+  "photographer_url": "https://unsplash.com/@christopher_ivanov",
+  "source": "https://unsplash.com/photos/person-holding-brown-leather-handbag-lFvkXTEYS4s",
+  "alt": "A hand carrying a black leather duffel bag",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "lookbook/look-8": {
+  "file": "assets/img/lookbook/look-8.jpg",
+  "unsplash_id": "nk8nBcFZEeE",
+  "photographer": "Apostolos Vamvouras",
+  "photographer_url": "https://unsplash.com/@apostolosv",
+  "source": "https://unsplash.com/photos/woman-in-black-boots-nk8nBcFZEeE",
+  "alt": "A woman in a black dress balancing on one leg in black leather ankle boots",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.45,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ }
+}

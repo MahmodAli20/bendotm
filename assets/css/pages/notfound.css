@@ -1,0 +1,156 @@
+/* =============================================================================
+   Ben.M — Page not found                        assets/css/pages/notfound.css
+   -----------------------------------------------------------------------------
+   1. Stage — "4 · oval window · 4" (foil outlines, photo of a lonely shoe)
+   2. Copy + ways back
+   3. While you are here
+   ========================================================================== */
+
+/* =============================================================================
+   1. Stage
+   ========================================================================== */
+.nf-hero {
+  position: relative;
+  display: grid;
+  align-content: center;
+  min-block-size: 100svh;
+  padding-block: calc(var(--header-h) + clamp(28px, 4vw, 64px)) clamp(36px, 4.4vw, 64px);
+  overflow: clip;
+}
+/* a soft pool of light behind the numerals */
+.nf-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 46% 58% at 30% 52%, color-mix(in srgb, var(--c-green-700) 46%, transparent), transparent 72%);
+  pointer-events: none;
+}
+[dir="rtl"] .nf-hero::before { background: radial-gradient(ellipse 46% 58% at 70% 52%, color-mix(in srgb, var(--c-green-700) 46%, transparent), transparent 72%); }
+@media (max-width: 999.98px) {
+  .nf-hero::before, [dir="rtl"] .nf-hero::before { background: radial-gradient(ellipse 80% 34% at 50% 28%, color-mix(in srgb, var(--c-green-700) 46%, transparent), transparent 72%); }
+}
+.nf-hero__grid { position: relative; display: grid; gap: clamp(40px, 6vw, 72px); align-items: center; }
+@media (min-width: 1000px) {
+  .nf-hero__grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: clamp(40px, 5vw, 110px); }
+}
+
+.nf-defs { position: absolute; inline-size: 0; block-size: 0; overflow: hidden; }
+.nf-stage {
+  --h: clamp(150px, 46vw, 320px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  direction: ltr;                             /* "404" reads the same in both languages */
+}
+@media (min-width: 1000px) { .nf-stage { --h: clamp(280px, min(48vh, 27vw), 480px); } }
+.nf-digit {
+  position: relative;
+  z-index: 2;
+  flex: none;
+  block-size: var(--h);
+  inline-size: calc(var(--h) * 100 / 124);
+  overflow: visible;
+}
+.nf-digit text {
+  font-family: var(--f-serif-latin);
+  font-weight: 300;
+  font-size: 150px;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
+  fill: none;
+  stroke: url(#nf-foil);
+  stroke-width: 1.15;
+  vector-effect: non-scaling-stroke;
+}
+.nf-zero {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  block-size: calc(var(--h) * .8);
+  aspect-ratio: .64;
+  margin-inline: calc(var(--h) * -.075);
+}
+.nf-zero__media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: var(--c-green-900);
+}
+.nf-zero__media img { inline-size: 100%; block-size: 100%; object-fit: cover; object-position: 60% 46%; transform: scale(1.08); }
+.nf-zero__ring {
+  position: absolute;
+  inset: calc(var(--h) * -.034);
+  border: 1px solid var(--accent-soft);
+  border-radius: 50%;
+  opacity: .6;
+  pointer-events: none;
+}
+/* start state (notfound.js plays it out); never stuck if the script fails */
+@media (prefers-reduced-motion: no-preference) {
+  html.js .nf-stage:not(.is-drawn) .nf-digit text { stroke-dasharray: 1100; stroke-dashoffset: 1100; }
+  html.js .nf-stage:not(.is-drawn) .nf-zero__media { clip-path: inset(50% 0% 50% 0% round 50%); }
+  html.js .nf-stage:not(.is-drawn) .nf-zero__ring { opacity: 0; }
+  html.js .nf-stage:not(.is-drawn) :is(.nf-digit text, .nf-zero__media, .nf-zero__ring) { animation: nf-failsafe .8s ease 9s forwards; }
+}
+@keyframes nf-failsafe { to { stroke-dashoffset: 0; clip-path: inset(0% 0% 0% 0% round 50%); opacity: .6; } }
+
+/* =============================================================================
+   2. Copy + ways back
+   ========================================================================== */
+.nf-copy { display: grid; justify-items: start; }
+.nf-title { margin-block-start: 22px; max-inline-size: 11em; font-size: clamp(2.5rem, 4.4vw, 5rem); line-height: var(--lh-h2); }
+:root[lang="ckb"] .nf-title { font-size: clamp(2.1rem, 3.8vw, 4.3rem); }
+.nf-text {
+  margin-block: clamp(18px, 2vw, 26px) clamp(26px, 3vw, 38px);
+  max-inline-size: 28em;
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+  color: var(--fg);
+  text-wrap: pretty;
+}
+.nf-links { inline-size: 100%; margin-block-start: clamp(30px, 3.6vw, 48px); }
+.nf-links__list { border-block-start: 1px solid var(--line); }
+.nf-link {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.2em minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  inline-size: 100%;
+  padding-block: clamp(14px, 1.4vw, 18px);
+  border-block-end: 1px solid var(--line);
+  color: var(--fg-strong);
+  text-align: start;
+  text-decoration: none;
+  font-family: var(--f-display);
+  font-weight: var(--fw-display);
+  font-size: clamp(1.3rem, 1.6vw, 1.6rem);
+  line-height: 1.25;
+}
+.nf-link::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: -1px;
+  block-size: 1px;
+  background: var(--accent-soft);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .9s var(--ease-out);
+}
+[dir="rtl"] .nf-link::after { transform-origin: right center; }
+.nf-link:hover::after, .nf-link:focus-visible::after { transform: scaleX(1); }
+.nf-link__num { font-family: var(--f-serif-latin); font-style: italic; font-size: .72em; color: var(--accent); }
+.nf-link__label { transition: translate .7s var(--ease-out), color .4s; }
+.nf-link:hover .nf-link__label { translate: 8px 0; color: var(--accent-soft); }
+[dir="rtl"] .nf-link:hover .nf-link__label { translate: -8px 0; }
+.nf-link__icon { display: inline-flex; color: var(--accent); }
+.nf-link__icon .c-icon { --icon-size: 18px; }
+.nf-visual { display: grid; justify-items: center; gap: clamp(22px, 3vw, 40px); }
+.nf-caption { position: relative; }
+
+/* =============================================================================
+   3. While you are here
+   ========================================================================== */
+.nf-picks__title { margin-block-start: 20px; font-size: var(--fs-h2); line-height: var(--lh-h2); }

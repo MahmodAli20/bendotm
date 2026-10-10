@@ -1,0 +1,673 @@
+{
+ "products/amedi-wingtip-brogue-1": {
+  "file": "assets/img/products/amedi-wingtip-brogue-1.jpg",
+  "unsplash_id": "2jQ6YwDbiGI",
+  "photographer": "Husien Bisky",
+  "photographer_url": "https://unsplash.com/@husien_bisky1",
+  "source": "https://unsplash.com/photos/brown-leather-wingtip-oxford-shoes-on-wooden-surface-2jQ6YwDbiGI",
+  "alt": "Brown leather wingtip brogues suspended above a wooden block",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.62,
+   "zoom": 1.0,
+   "flip": false,
+   "retouch": "third-party maker mark removed"
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/amedi-wingtip-brogue-2": {
+  "file": "assets/img/products/amedi-wingtip-brogue-2.jpg",
+  "unsplash_id": "HPxmOOy4cVA",
+  "photographer": "Chris Hardy",
+  "photographer_url": "https://unsplash.com/@chrishardyphotography",
+  "source": "https://unsplash.com/photos/brown-leather-lace-up-shoe-HPxmOOy4cVA",
+  "alt": "Brown wingtip brogue beside a navy pocket square in low, moody light",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.55,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/azmar-oxford-1": {
+  "file": "assets/img/products/azmar-oxford-1.jpg",
+  "unsplash_id": "RnPqv7KkKBU",
+  "photographer": "Jordan Whitfield",
+  "photographer_url": "https://unsplash.com/@whitfieldjordan",
+  "source": "https://unsplash.com/photos/pair-of-black-leather-lace-up-dress-shoes-on-brown-wooden-surface-RnPqv7KkKBU",
+  "alt": "Pair of black leather cap-toe oxfords on dark red-brown wood, seen from above",
+  "crop": {
+   "fx": 0.46,
+   "fy": 0.48,
+   "zoom": 1.0,
+   "flip": false,
+   "rotate": "cw"
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/azmar-oxford-2": {
+  "file": "assets/img/products/azmar-oxford-2.jpg",
+  "unsplash_id": "HB4FCMjTjtg",
+  "photographer": "Wafer WAN",
+  "photographer_url": "https://unsplash.com/@waferwan",
+  "source": "https://unsplash.com/photos/a-pair-of-black-shoes-on-a-carpet-HB4FCMjTjtg",
+  "alt": "Black cap-toe oxfords worn with charcoal trousers on a soft rug",
+  "crop": {
+   "fx": 0.55,
+   "fy": 0.6,
+   "zoom": 1.2,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/bekhal-backpack-1": {
+  "file": "assets/img/products/bekhal-backpack-1.jpg",
+  "unsplash_id": "MuAhf9ZX-vs",
+  "photographer": "Saja Beraam",
+  "photographer_url": "https://unsplash.com/@sajaberaam",
+  "source": "https://unsplash.com/photos/brown-leather-backpack-MuAhf9ZX-vs",
+  "alt": "Cognac leather rucksack with buckled flap pockets on white linen",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false,
+   "dechroma": "prism colour cast neutralised"
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/bekhal-backpack-2": {
+  "file": "assets/img/products/bekhal-backpack-2.jpg",
+  "unsplash_id": "-szT8eMwzbQ",
+  "photographer": "Jenn Buxton",
+  "photographer_url": "https://unsplash.com/@jennbuxton",
+  "source": "https://unsplash.com/photos/a-woman-wearing-a-brown-backpack-walking-through-a-forest--szT8eMwzbQ",
+  "alt": "Woman walking a forest trail wearing a cognac leather backpack",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.35,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/dijla-belt-1": {
+  "file": "assets/img/products/dijla-belt-1.jpg",
+  "unsplash_id": "eNEa7Gsfzzs",
+  "photographer": "seeetz",
+  "photographer_url": "https://unsplash.com/@seeetz",
+  "source": "https://unsplash.com/photos/a-leather-belt-on-a-black-surface-eNEa7Gsfzzs",
+  "alt": "Coiled brown leather belt with a silver buckle in dark, moody light",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/dijla-belt-2": {
+  "file": "assets/img/products/dijla-belt-2.jpg",
+  "unsplash_id": "X1UubnJ5fSw",
+  "photographer": "Caroline Eymond Laritaz",
+  "photographer_url": "https://unsplash.com/@aelwenn42",
+  "source": "https://unsplash.com/photos/a-close-up-of-a-brown-leather-belt-X1UubnJ5fSw",
+  "alt": "Brown leather belt with a double-prong buckle, worn over a wool coat",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.45,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/dukan-weekender-1": {
+  "file": "assets/img/products/dukan-weekender-1.jpg",
+  "unsplash_id": "PpzBE1hWeGI",
+  "photographer": "Jed Owen",
+  "photographer_url": "https://unsplash.com/@jediahowen",
+  "source": "https://unsplash.com/photos/brown-leather-duffel-bag-in-middle-on-gray-asphalt-road-PpzBE1hWeGI",
+  "alt": "Dark brown leather weekender bag resting on an open road at golden hour",
+  "crop": {
+   "fx": 0.49,
+   "cwf": 0.665,
+   "extended_px": [
+    307,
+    0
+   ],
+   "fill": "haze",
+   "note": "defocused background extended to 4:5"
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/dukan-weekender-2": {
+  "file": "assets/img/products/dukan-weekender-2.jpg",
+  "unsplash_id": "PpzBE1hWeGI",
+  "photographer": "Jed Owen",
+  "photographer_url": "https://unsplash.com/@jediahowen",
+  "source": "https://unsplash.com/photos/brown-leather-duffel-bag-in-middle-on-gray-asphalt-road-PpzBE1hWeGI",
+  "alt": "Close-up of a dark brown leather weekender's handles and stitched panels",
+  "crop": {
+   "fx": 0.49,
+   "fy": 0.55,
+   "zoom": 1.85,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/goizha-derby-1": {
+  "file": "assets/img/products/goizha-derby-1.jpg",
+  "unsplash_id": "SwkJJoHJDiQ",
+  "photographer": "Clay Banks",
+  "photographer_url": "https://unsplash.com/@claybanks",
+  "source": "https://unsplash.com/photos/a-pair-of-shoes-on-a-wood-floor-SwkJJoHJDiQ",
+  "alt": "Tan leather derby shoes on a sunlit wooden floor",
+  "crop": {
+   "fx": 0.53,
+   "fy": 0.8,
+   "zoom": 2.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/goizha-derby-2": {
+  "file": "assets/img/products/goizha-derby-2.jpg",
+  "unsplash_id": "O4d5zVbvP4I",
+  "photographer": "Romain Dancre",
+  "photographer_url": "https://unsplash.com/@romaindancre",
+  "source": "https://unsplash.com/photos/brown-leather-lace-up-shoes-O4d5zVbvP4I",
+  "alt": "Close-up of a tan leather derby showing the open lacing and polished toe",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.55,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/hawler-briefcase-1": {
+  "file": "assets/img/products/hawler-briefcase-1.jpg",
+  "unsplash_id": "BnG4KWAzt9c",
+  "photographer": "Alexandr Sadkov",
+  "photographer_url": "https://unsplash.com/@sadkov26",
+  "source": "https://unsplash.com/photos/black-leather-sling-bag-on-brown-wooden-round-table-BnG4KWAzt9c",
+  "alt": "Dark brown leather briefcase with buckled straps on a wooden stool",
+  "crop": {
+   "fx": 0.45,
+   "fy": 0.45,
+   "zoom": 1.15,
+   "flip": false,
+   "retouch": "third-party maker mark removed"
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/hawler-briefcase-2": {
+  "file": "assets/img/products/hawler-briefcase-2.jpg",
+  "unsplash_id": "BnG4KWAzt9c",
+  "photographer": "Alexandr Sadkov",
+  "photographer_url": "https://unsplash.com/@sadkov26",
+  "source": "https://unsplash.com/photos/black-leather-sling-bag-on-brown-wooden-round-table-BnG4KWAzt9c",
+  "alt": "Detail of a dark brown leather briefcase's strap, buckle and edge stitching",
+  "crop": {
+   "fx": 0.52,
+   "fy": 0.6,
+   "zoom": 2.0,
+   "flip": false,
+   "retouch": "third-party maker mark removed"
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/hiva-ankle-boot-1": {
+  "file": "assets/img/products/hiva-ankle-boot-1.jpg",
+  "unsplash_id": "q4ExhrHaSLY",
+  "photographer": "Verity Sanders",
+  "photographer_url": "https://unsplash.com/@veritysanders",
+  "source": "https://unsplash.com/photos/person-wearing-pair-of-brown-leather-dress-shoes-q4ExhrHaSLY",
+  "alt": "Cognac leather block-heel ankle boots worn with slim black trousers",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/hiva-ankle-boot-2": {
+  "file": "assets/img/products/hiva-ankle-boot-2.jpg",
+  "unsplash_id": "q4ExhrHaSLY",
+  "photographer": "Verity Sanders",
+  "photographer_url": "https://unsplash.com/@veritysanders",
+  "source": "https://unsplash.com/photos/person-wearing-pair-of-brown-leather-dress-shoes-q4ExhrHaSLY",
+  "alt": "Close-up of a cognac leather ankle boot showing the side zip and block heel",
+  "crop": {
+   "fx": 0.74,
+   "fy": 0.8,
+   "zoom": 1.6,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/korek-double-monk-1": {
+  "file": "assets/img/products/korek-double-monk-1.jpg",
+  "unsplash_id": "erHlzWCN6zQ",
+  "photographer": "Jia Ye",
+  "photographer_url": "https://unsplash.com/@jimmy2018",
+  "source": "https://unsplash.com/photos/pair-of-mens-brown-leather-loafers-erHlzWCN6zQ",
+  "alt": "Brown leather double monk strap shoes in low, warm light",
+  "crop": {
+   "fx": 0.54,
+   "fy": 0.62,
+   "zoom": 1.13,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/korek-double-monk-2": {
+  "file": "assets/img/products/korek-double-monk-2.jpg",
+  "unsplash_id": "bAlL_nY6owY",
+  "photographer": "Moughit Fawzi",
+  "photographer_url": "https://unsplash.com/@moughitfawzi",
+  "source": "https://unsplash.com/photos/a-man-is-tying-his-shoes-on-a-bench-bAlL_nY6owY",
+  "alt": "Man fastening the buckles of a brown double monk strap shoe",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.6,
+   "zoom": 1.2,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/nali-ballet-flat-1": {
+  "file": "assets/img/products/nali-ballet-flat-1.jpg",
+  "unsplash_id": "SdwnNz-9SMo",
+  "photographer": "Sandra Seitamaa",
+  "photographer_url": "https://unsplash.com/@seitamaaphotography",
+  "source": "https://unsplash.com/photos/pair-of-shoes-beside-flowers-SdwnNz-9SMo",
+  "alt": "Pale grey suede pointed flats beside a bouquet of dried flowers",
+  "crop": {
+   "fx": 0.4,
+   "fy": 0.5,
+   "zoom": 1.15,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/nali-ballet-flat-2": {
+  "file": "assets/img/products/nali-ballet-flat-2.jpg",
+  "unsplash_id": "SdwnNz-9SMo",
+  "photographer": "Sandra Seitamaa",
+  "photographer_url": "https://unsplash.com/@seitamaaphotography",
+  "source": "https://unsplash.com/photos/pair-of-shoes-beside-flowers-SdwnNz-9SMo",
+  "alt": "Close-up of pale grey suede pointed flats on weathered wood",
+  "crop": {
+   "fx": 0.3,
+   "fy": 0.62,
+   "zoom": 2.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/nawroz-tote-1": {
+  "file": "assets/img/products/nawroz-tote-1.jpg",
+  "unsplash_id": "XwjrPFW7xw0",
+  "photographer": "Ugluk Potroshitel",
+  "photographer_url": "https://unsplash.com/@uglug",
+  "source": "https://unsplash.com/photos/brown-leather-handbag-on-white-table-XwjrPFW7xw0",
+  "alt": "Cognac leather tote bag hanging against a pale door",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.55,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/nawroz-tote-2": {
+  "file": "assets/img/products/nawroz-tote-2.jpg",
+  "unsplash_id": "KM4O12CDWso",
+  "photographer": "LOGAN WEAVER | @LGNWVR",
+  "photographer_url": "https://unsplash.com/@lgnwvr",
+  "source": "https://unsplash.com/photos/a-woman-with-a-brown-bag-buying-flowers-KM4O12CDWso",
+  "alt": "Woman carrying a cognac leather tote at a flower market",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.55,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/nergiz-pump-1": {
+  "file": "assets/img/products/nergiz-pump-1.jpg",
+  "unsplash_id": "BI9NjChWn6s",
+  "photographer": "Jonathan Borba",
+  "photographer_url": "https://unsplash.com/@jonathanborba",
+  "source": "https://unsplash.com/photos/white-leather-pointed-toe-stiletto-BI9NjChWn6s",
+  "alt": "Ivory leather pointed-toe pump on a dark wooden floor",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.62,
+   "zoom": 1.1,
+   "flip": false,
+   "retouch": "third-party maker mark removed"
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/nergiz-pump-2": {
+  "file": "assets/img/products/nergiz-pump-2.jpg",
+  "unsplash_id": "ReJme10OZdg",
+  "photographer": "Klara Kulikova",
+  "photographer_url": "https://unsplash.com/@kkalerry",
+  "source": "https://unsplash.com/photos/person-wearing-beige-stilettos-ReJme10OZdg",
+  "alt": "Nude patent leather stiletto pump worn in low evening light",
+  "crop": {
+   "fx": 0.6,
+   "fy": 0.55,
+   "zoom": 1.1,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/penjwen-passport-cover-1": {
+  "file": "assets/img/products/penjwen-passport-cover-1.jpg",
+  "unsplash_id": "jWL2OdlHHMk",
+  "photographer": "Konstantin Evdokimov",
+  "photographer_url": "https://unsplash.com/@constantinevdokimov",
+  "source": "https://unsplash.com/photos/black-leather-bifold-wallet-on-brown-textile-jWL2OdlHHMk",
+  "alt": "Open black leather passport wallet with red stitching on tan canvas, seen from above",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.505,
+   "zoom": 1.0,
+   "flip": false,
+   "rotate": "cw"
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/penjwen-passport-cover-2": {
+  "file": "assets/img/products/penjwen-passport-cover-2.jpg",
+  "unsplash_id": "IBGaPtv1-rM",
+  "photographer": "Konstantin Evdokimov",
+  "photographer_url": "https://unsplash.com/@constantinevdokimov",
+  "source": "https://unsplash.com/photos/black-leather-bifold-wallet-on-brown-textile-IBGaPtv1-rM",
+  "alt": "Black pebbled leather passport cover with red edge stitching on tan canvas",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/qalat-crossbody-1": {
+  "file": "assets/img/products/qalat-crossbody-1.jpg",
+  "unsplash_id": "FYWNzQnXgsk",
+  "photographer": "Volodymyr Kozhevnikov",
+  "photographer_url": "https://unsplash.com/@vkozhevnikov",
+  "source": "https://unsplash.com/photos/beige-leather-bag-with-coral-FYWNzQnXgsk",
+  "alt": "Sand-coloured leather crossbody bag on a wooden block",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/qalat-crossbody-2": {
+  "file": "assets/img/products/qalat-crossbody-2.jpg",
+  "unsplash_id": "SNPDQAE4EHY",
+  "photographer": "Latico Leathers",
+  "photographer_url": "https://unsplash.com/@laticoleathers",
+  "source": "https://unsplash.com/photos/woman-wearing-a-cream-colored-crossbody-bag-SNPDQAE4EHY",
+  "alt": "Cream leather crossbody bag worn over a woman's shoulder",
+  "crop": {
+   "fx": 0.55,
+   "fy": 0.6,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/rawanduz-lace-boot-1": {
+  "file": "assets/img/products/rawanduz-lace-boot-1.jpg",
+  "unsplash_id": "WV5kz6g5sFs",
+  "photographer": "Zac Wolff",
+  "photographer_url": "https://unsplash.com/@zacwolff",
+  "source": "https://unsplash.com/photos/black-leather-lace-up-boots-WV5kz6g5sFs",
+  "alt": "Dark brown leather cap-toe lace-up boots on a white plinth",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.55,
+   "zoom": 1.25,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/rawanduz-lace-boot-2": {
+  "file": "assets/img/products/rawanduz-lace-boot-2.jpg",
+  "unsplash_id": "818_HSWlayI",
+  "photographer": "Zac Wolff",
+  "photographer_url": "https://unsplash.com/@zacwolff",
+  "source": "https://unsplash.com/photos/brown-leather-lace-up-boots-818_HSWlayI",
+  "alt": "Dark brown leather lace-up boots on a slate surface",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.2,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/safeen-penny-loafer-1": {
+  "file": "assets/img/products/safeen-penny-loafer-1.jpg",
+  "unsplash_id": "xPpfEQe0ZiY",
+  "photographer": "Husien Bisky",
+  "photographer_url": "https://unsplash.com/@husien_bisky1",
+  "source": "https://unsplash.com/photos/a-pair-of-brown-leather-loafers-on-a-stool-xPpfEQe0ZiY",
+  "alt": "Brown leather penny loafers on a black stool against a grey backdrop",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.42,
+   "zoom": 1.15,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/safeen-penny-loafer-2": {
+  "file": "assets/img/products/safeen-penny-loafer-2.jpg",
+  "unsplash_id": "NZ2l24C9IK8",
+  "photographer": "Moughit Fawzi",
+  "photographer_url": "https://unsplash.com/@moughitfawzi",
+  "source": "https://unsplash.com/photos/a-pair-of-mens-shoes-sitting-on-a-wooden-floor-NZ2l24C9IK8",
+  "alt": "Brown penny loafers worn with tailored trousers on a wooden floor",
+  "crop": {
+   "fx": 0.55,
+   "fy": 0.62,
+   "zoom": 1.25,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/shaqlawa-tassel-loafer-1": {
+  "file": "assets/img/products/shaqlawa-tassel-loafer-1.jpg",
+  "unsplash_id": "Y5XbA-BhKi8",
+  "photographer": "Benjamin R.",
+  "photographer_url": "https://unsplash.com/@dapperprofessional",
+  "source": "https://unsplash.com/photos/woman-in-blue-and-white-floral-pants-and-brown-leather-shoes-standing-on-gray-concrete-floor-Y5XbA-BhKi8",
+  "alt": "Burgundy leather tassel loafers worn with light summer trousers",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.8,
+   "zoom": 1.35,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/shaqlawa-tassel-loafer-2": {
+  "file": "assets/img/products/shaqlawa-tassel-loafer-2.jpg",
+  "unsplash_id": "Y5XbA-BhKi8",
+  "photographer": "Benjamin R.",
+  "photographer_url": "https://unsplash.com/@dapperprofessional",
+  "source": "https://unsplash.com/photos/woman-in-blue-and-white-floral-pants-and-brown-leather-shoes-standing-on-gray-concrete-floor-Y5XbA-BhKi8",
+  "alt": "Detail of a burgundy tassel loafer's apron toe and leather tassel",
+  "crop": {
+   "fx": 0.65,
+   "fy": 0.9,
+   "zoom": 2.2,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/shilan-loafer-1": {
+  "file": "assets/img/products/shilan-loafer-1.jpg",
+  "unsplash_id": "Xr50mSw7MEU",
+  "photographer": "Kateryna Hliznitsova",
+  "photographer_url": "https://unsplash.com/@kate_gliz",
+  "source": "https://unsplash.com/photos/a-woman-sitting-on-steps-wearing-a-watch-Xr50mSw7MEU",
+  "alt": "Woman in cropped jeans wearing black leather loafers on stone steps",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.72,
+   "zoom": 1.5,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/shilan-loafer-2": {
+  "file": "assets/img/products/shilan-loafer-2.jpg",
+  "unsplash_id": "Xr50mSw7MEU",
+  "photographer": "Kateryna Hliznitsova",
+  "photographer_url": "https://unsplash.com/@kate_gliz",
+  "source": "https://unsplash.com/photos/a-woman-sitting-on-steps-wearing-a-watch-Xr50mSw7MEU",
+  "alt": "Close-up of a black leather loafer with a cream sole on a stone step",
+  "crop": {
+   "fx": 0.36,
+   "fy": 0.74,
+   "zoom": 2.1,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/sirwan-clutch-1": {
+  "file": "assets/img/products/sirwan-clutch-1.jpg",
+  "unsplash_id": "TEr0EM_mFXk",
+  "photographer": "Arash Shirmohammadi",
+  "photographer_url": "https://unsplash.com/@artworkarash",
+  "source": "https://unsplash.com/photos/a-womans-hand-holding-a-green-purse-TEr0EM_mFXk",
+  "alt": "Forest-green croc-embossed leather mini bag floating above open hands",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.45,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/sirwan-clutch-2": {
+  "file": "assets/img/products/sirwan-clutch-2.jpg",
+  "unsplash_id": "TEr0EM_mFXk",
+  "photographer": "Arash Shirmohammadi",
+  "photographer_url": "https://unsplash.com/@artworkarash",
+  "source": "https://unsplash.com/photos/a-womans-hand-holding-a-green-purse-TEr0EM_mFXk",
+  "alt": "Close-up of a forest-green croc-embossed leather mini bag and its handles",
+  "crop": {
+   "fx": 0.55,
+   "fy": 0.35,
+   "zoom": 1.9,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/slemani-bifold-1": {
+  "file": "assets/img/products/slemani-bifold-1.jpg",
+  "unsplash_id": "oIlix2slmsI",
+  "photographer": "Ethan Rougon",
+  "photographer_url": "https://unsplash.com/@ethanethan",
+  "source": "https://unsplash.com/photos/brown-wooden-box-on-white-surface-oIlix2slmsI",
+  "alt": "Brown leather bifold wallet suspended against a deep green backdrop",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.45,
+   "zoom": 1.15,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/slemani-bifold-2": {
+  "file": "assets/img/products/slemani-bifold-2.jpg",
+  "unsplash_id": "oIlix2slmsI",
+  "photographer": "Ethan Rougon",
+  "photographer_url": "https://unsplash.com/@ethanethan",
+  "source": "https://unsplash.com/photos/brown-wooden-box-on-white-surface-oIlix2slmsI",
+  "alt": "Close-up of the crackled grain and edge stitching of a brown leather bifold wallet",
+  "crop": {
+   "fx": 0.58,
+   "fy": 0.46,
+   "zoom": 2.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/zab-card-holder-1": {
+  "file": "assets/img/products/zab-card-holder-1.jpg",
+  "unsplash_id": "sBeIx7LdEc8",
+  "photographer": "charlesdeluvio",
+  "photographer_url": "https://unsplash.com/@charlesdeluvio",
+  "source": "https://unsplash.com/photos/closed-brown-leather-wallet-on-concrete-sBeIx7LdEc8",
+  "alt": "Hand-stitched oxblood leather card holder on pale marble",
+  "crop": {
+   "fx": 0.52,
+   "fy": 0.48,
+   "zoom": 1.5,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/zab-card-holder-2": {
+  "file": "assets/img/products/zab-card-holder-2.jpg",
+  "unsplash_id": "sBeIx7LdEc8",
+  "photographer": "charlesdeluvio",
+  "photographer_url": "https://unsplash.com/@charlesdeluvio",
+  "source": "https://unsplash.com/photos/closed-brown-leather-wallet-on-concrete-sBeIx7LdEc8",
+  "alt": "Close-up of saddle stitching along the edge of an oxblood leather card holder",
+  "crop": {
+   "fx": 0.45,
+   "fy": 0.42,
+   "zoom": 2.3,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/zagros-chelsea-boot-1": {
+  "file": "assets/img/products/zagros-chelsea-boot-1.jpg",
+  "unsplash_id": "AwhukWqsfSs",
+  "photographer": "Husien Bisky",
+  "photographer_url": "https://unsplash.com/@husien_bisky1",
+  "source": "https://unsplash.com/photos/a-pair-of-polished-brown-leather-chelsea-boots-AwhukWqsfSs",
+  "alt": "Polished brown leather chelsea boots suspended against a grey backdrop",
+  "crop": {
+   "fx": 0.55,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "products/zagros-chelsea-boot-2": {
+  "file": "assets/img/products/zagros-chelsea-boot-2.jpg",
+  "unsplash_id": "ju-B5nlGXzE",
+  "photographer": "Husien Bisky",
+  "photographer_url": "https://unsplash.com/@husien_bisky1",
+  "source": "https://unsplash.com/photos/a-pair-of-brown-leather-chelsea-boots-on-wood-ju-B5nlGXzE",
+  "alt": "Brown leather chelsea boots resting on a slab of raw wood",
+  "crop": {
+   "fx": 0.55,
+   "fy": 0.45,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ }
+}

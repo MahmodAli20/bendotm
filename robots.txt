@@ -1,0 +1,3 @@
+# Demo preview: keep it out of search engines. Replace with "Allow: /" (plus a Sitemap line) at launch.
+User-agent: *
+Disallow: /

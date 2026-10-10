@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Genuine leather — Ben.M</title>
+  <meta name="description" content="Handcrafted genuine leather by Ben.M — shoes, bags, belts and wallets, made to last.">
+  <meta name="robots" content="noindex, nofollow"><!-- DEMO: keep the preview out of search engines; remove at launch -->
+  <meta name="theme-color" content="#0C1D17">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/brand/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <meta property="og:title" content="Genuine leather — Ben.M"><meta property="og:description" content="Handcrafted genuine leather by Ben.M — shoes, bags, belts and wallets, made to last.">
+  <meta property="og:image" content="assets/brand/og-image.jpg"><meta property="og:type" content="website">
+  <script>/* boot flags — identical on every page */
+  (function(h){h.classList.add('js');try{var l=localStorage.getItem('benm:lang');if(l==='ckb'){h.lang='ckb';h.dir='rtl';}
+  if(!sessionStorage.getItem('benm:visited')){h.classList.add('is-preloading');}
+  else if(sessionStorage.getItem('benm:transition')){h.classList.add('is-transitioning');}}catch(e){}})(document.documentElement);
+  </script>
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/pages/product.css">
+</head>
+<body data-page="product" data-header="light">
+  <main id="main" class="page page--product">
+    <!-- One template for every product: product.html?id=<id> (missing / unknown id → the first product).
+         Product-specific content is rendered by assets/js/pages/product.js; [data-pfield] texts follow the language. -->
+    <article class="pdp" id="pdp">
+
+      <!-- =====================================================================
+           1. Gallery + purchase column
+           ================================================================== -->
+      <section class="pdp-hero theme-light" id="pdp-hero" data-product-id="" aria-labelledby="pdp-name">
+        <div class="u-container pdp-hero__grid">
+
+          <div class="pdp-gallery" id="pdp-gallery">
+            <div class="pdp-rail" id="pdp-rail" role="group" aria-label="Product images" data-i18n-attr="aria-label:product.gallery.label"></div>
+            <div class="pdp-frames" id="pdp-frames" role="group" aria-label="Product images" data-i18n-attr="aria-label:product.gallery.label"></div>
+            <div class="pdp-hud" id="pdp-hud">
+              <p class="pdp-hud__count" aria-hidden="true"><span id="pdp-hud-n">01</span><span class="pdp-hud__sep"></span><span id="pdp-hud-total">04</span></p>
+              <span class="pdp-hud__bar" aria-hidden="true"><span class="pdp-hud__fill" id="pdp-hud-fill"></span></span>
+              <button class="c-icon-btn pdp-hud__zoom" type="button" id="pdp-hud-zoom" aria-label="View in full screen" data-i18n-attr="aria-label:product.gallery.zoom"><svg class="c-icon c-icon--zoom" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.3"/><path d="M15.4 15.4 20 20M10.8 8.3v5M8.3 10.8h5"/></svg></button>
+            </div>
+          </div>
+
+          <div class="pdp-info" id="pdp-info">
+            <nav class="c-breadcrumbs pdp-crumbs" aria-label="Breadcrumb" data-i18n-attr="aria-label:a11y.breadcrumb" data-reveal="fade">
+              <ol>
+                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="shop.html" id="pdp-crumb-cat">The collection</a></li>
+                <li><span aria-current="page" data-pfield="name"></span></li>
+              </ol>
+            </nav>
+
+            <p class="pdp-eyebrow" data-reveal="fade">
+              <span class="pdp-eyebrow__num" id="pdp-num" aria-hidden="true"></span>
+              <span data-pfield="typeName"></span>
+              <span class="c-diamond" aria-hidden="true"></span>
+              <span id="pdp-cat"></span>
+              <span class="pdp-eyebrow__badge" id="pdp-badge"></span>
+            </p>
+
+            <h1 class="pdp-name" id="pdp-name" data-pfield="name" data-reveal="lines"></h1>
+            <p class="pdp-altname" id="pdp-altname" data-reveal="fade" data-reveal-delay=".25"></p>
+            <p class="pdp-short" data-pfield="short" data-reveal="up"></p>
+
+            <div class="pdp-price-row" data-reveal="up">
+              <p class="pdp-price c-price" id="pdp-price" data-price="0"></p>
+              <p class="pdp-made"><svg class="c-icon c-icon--needle" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.5 19.5 16.4 7.6"/><path d="M15.6 5.2a1.8 1.8 0 0 1 3.2 1.9l-1.4 1.3-1.9-1.9z"/><path d="M18.4 8c1.5 2.5.2 5-2.5 6.1s-6 2-6.3 5.4"/></svg><span data-i18n="product.handcrafted">Handcrafted</span></p>
+            </div>
+
+            <div class="pdp-buy" id="pdp-buy" data-reveal="up">
+              <!-- Colour -->
+              <div class="pdp-field" id="pdp-color-field">
+                <div class="pdp-field__head">
+                  <p class="pdp-label" id="pdp-color-label"><span data-i18n="product.color">Colour</span><b id="pdp-color-name"></b></p>
+                  <p class="pdp-pictured" id="pdp-pictured" hidden></p>
+                </div>
+                <div class="c-swatches pdp-swatches" id="pdp-swatches" role="radiogroup" aria-labelledby="pdp-color-label"></div>
+              </div>
+
+              <!-- Size (EU) — or one size -->
+              <div class="pdp-field" id="pdp-size-field">
+                <div class="pdp-field__head">
+                  <p class="pdp-label" id="pdp-size-label"><span data-i18n="product.sizeEU">Size · EU</span><b id="pdp-size-name"></b></p>
+                  <button class="pdp-guide-btn" type="button" id="pdp-guide-btn" aria-haspopup="dialog"><svg class="c-icon c-icon--ruler" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m3.5 15.5 12-12 5 5-12 12z"/><path d="m7 12 1.6 1.6M9.5 9.5l2.3 2.3M12 7l1.6 1.6M14.5 4.5l2.3 2.3"/></svg><span data-i18n="product.sizeGuide">Size guide</span></button>
+                </div>
+                <div class="c-sizes pdp-sizes" id="pdp-sizes" role="radiogroup" aria-labelledby="pdp-size-label"></div>
+              </div>
+              <div class="pdp-field pdp-field--one" id="pdp-one-size" hidden>
+                <p class="pdp-label"><span data-i18n="product.size">Size</span><b data-i18n="product.oneSize">One size</b></p>
+              </div>
+
+              <p class="pdp-msg" id="pdp-msg" role="alert"></p>
+
+              <div class="pdp-actions" id="pdp-actions">
+                <button class="c-btn c-btn--primary c-btn--lg pdp-add" type="button" id="pdp-add">
+                  <span class="c-btn__label"><span id="pdp-add-label" data-i18n="product.addToBag">Add to bag</span></span>
+                  <span class="pdp-add__price c-price" id="pdp-add-price" data-price="0"></span>
+                </button>
+                <button class="c-icon-btn c-icon-btn--framed pdp-wish" type="button" id="pdp-wish" aria-pressed="false"><svg class="c-icon c-icon--heart" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19.6c-4.6-3-7.6-6-7.6-9.4A4.1 4.1 0 0 1 8.5 6c1.5 0 2.8.7 3.5 1.9.7-1.2 2-1.9 3.5-1.9a4.1 4.1 0 0 1 4.1 4.2c0 3.4-3 6.4-7.6 9.4z"/></svg><svg class="c-icon c-icon--heart-fill" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="is-fill" d="M12 19.6c-4.6-3-7.6-6-7.6-9.4A4.1 4.1 0 0 1 8.5 6c1.5 0 2.8.7 3.5 1.9.7-1.2 2-1.9 3.5-1.9a4.1 4.1 0 0 1 4.1 4.2c0 3.4-3 6.4-7.6 9.4z"/><path d="M12 19.6c-4.6-3-7.6-6-7.6-9.4A4.1 4.1 0 0 1 8.5 6c1.5 0 2.8.7 3.5 1.9.7-1.2 2-1.9 3.5-1.9a4.1 4.1 0 0 1 4.1 4.2c0 3.4-3 6.4-7.6 9.4z"/></svg></button>
+              </div>
+
+              <a class="c-btn c-btn--ghost c-btn--block pdp-wa" id="pdp-wa" href="https://wa.me/" target="_blank" rel="noopener">
+                <svg class="c-icon c-icon--whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m4.2 19.8 1.2-3.9A8.1 8.1 0 1 1 8.4 19z"/><path d="M9.3 8.3c.3-.3.7-.3.9-.1l.9 1.9c.1.3 0 .5-.2.7l-.6.6c.6 1.3 1.6 2.3 2.9 2.9l.6-.6c.2-.2.5-.3.7-.2l1.9.9c.3.1.3.6 0 .9l-.7.8c-.4.4-1 .6-1.6.4-2.4-.7-4.3-2.6-5-5-.2-.6 0-1.2.4-1.6z"/></svg>
+                <span class="c-btn__label"><span data-i18n="product.orderWhatsapp">Order via WhatsApp</span></span>
+                <span class="u-visually-hidden" data-i18n="a11y.newTab">(opens in a new tab)</span>
+              </a>
+            </div>
+
+            <ul class="pdp-assure" id="pdp-assure" role="list" data-reveal="up"></ul>
+
+            <div class="c-accordion pdp-acc" data-accordion="single" data-reveal="up">
+              <div class="c-accordion__item is-open">
+                <h2 class="c-accordion__heading"><button class="c-accordion__trigger" type="button"><span><span class="c-accordion__num">01</span><span data-i18n="product.acc.description">Description</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h2>
+                <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content">
+                  <p data-pfield="description"></p>
+                </div></div></div>
+              </div>
+              <div class="c-accordion__item">
+                <h2 class="c-accordion__heading"><button class="c-accordion__trigger" type="button"><span><span class="c-accordion__num">02</span><span data-i18n="product.acc.details">Details &amp; materials</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h2>
+                <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content">
+                  <ul class="pdp-details" id="pdp-details" role="list"></ul>
+                </div></div></div>
+              </div>
+              <div class="c-accordion__item">
+                <h2 class="c-accordion__heading"><button class="c-accordion__trigger" type="button"><span><span class="c-accordion__num">03</span><span data-i18n="product.acc.care">Care</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h2>
+                <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content">
+                  <p data-pfield="care"></p>
+                  <a class="c-link" href="maison.html#care"><span data-i18n="product.acc.careLink">The leather care guide</span><svg class="c-icon c-icon--arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 12h17M14.5 6l6 6-6 6"/></svg></a>
+                </div></div></div>
+              </div>
+              <div class="c-accordion__item">
+                <h2 class="c-accordion__heading"><button class="c-accordion__trigger" type="button"><span><span class="c-accordion__num">04</span><span data-i18n="nav.shipping">Shipping &amp; returns</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h2>
+                <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content">
+                  <div class="pdp-ship" id="pdp-ship"></div>
+                  <a class="c-link" href="boutiques.html#faq"><span data-i18n="nav.faq">FAQ</span><svg class="c-icon c-icon--arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 12h17M14.5 6l6 6-6 6"/></svg></a>
+                </div></div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           2. The leather — the product's colours as procedural leather samples
+           ================================================================== -->
+      <section class="pdp-leathers theme-dark u-section" aria-labelledby="pdp-leathers-title">
+        <div class="u-container">
+          <div class="pdp-leathers__head">
+            <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span class="c-eyebrow__num" aria-hidden="true">02</span><span data-i18n="product.leathers.eyebrow">The leather</span></p>
+            <h2 class="pdp-leathers__title" id="pdp-leathers-title" data-reveal="lines" data-i18n-html="product.leathers.title">Cut from the hide <em>you choose.</em></h2>
+            <div class="pdp-leathers__aside" data-reveal="up">
+              <p data-i18n="product.leathers.text">Each colour is a whole hide, chosen by hand for its grain and depth. Choose yours, and your piece is cut from it.</p>
+              <a class="c-link" href="maison.html#materials"><span data-i18n="nav.materials">Leathers &amp; materials</span><svg class="c-icon c-icon--arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 12h17M14.5 6l6 6-6 6"/></svg></a>
+            </div>
+          </div>
+          <div class="pdp-hides" id="pdp-hides" data-reveal="up" data-reveal-stagger=".1"></div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           3. Atelier — personalisation (bags & accessories only)
+           ================================================================== -->
+      <section class="pdp-atelier theme-forest u-section" id="pdp-atelier" aria-labelledby="pdp-atelier-title" hidden>
+        <div class="u-container pdp-atelier__grid">
+          <div class="pdp-atelier__visual">
+            <figure class="pdp-atelier__photo c-frame">
+              <div class="u-media u-ratio-4x5" data-reveal="clip-up">
+                <img src="assets/img/editorial/atelier.jpg" alt="A craftsman stamping a design into leather with a mallet" width="1600" height="2000" loading="lazy" decoding="async" data-parallax="0.1" data-i18n-attr="alt:product.atelier.photoAlt">
+              </div>
+            </figure>
+            <div class="pdp-atelier__tag-wrap" data-reveal="scale" data-reveal-delay=".35">
+              <div class="pdp-atelier__tag" id="pdp-atelier-tag"><span class="pdp-atelier__tag-mark" aria-hidden="true">KH</span></div>
+            </div>
+          </div>
+          <div class="pdp-atelier__copy">
+            <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span class="c-eyebrow__num" aria-hidden="true">03</span><span data-i18n="nav.personalisation">Personalisation</span></p>
+            <h2 class="pdp-atelier__title" id="pdp-atelier-title" data-reveal="lines" data-i18n-html="product.atelier.title">Make it <em>yours.</em></h2>
+            <p class="pdp-atelier__text" id="pdp-atelier-text" data-reveal="up"></p>
+            <ol class="pdp-atelier__steps" role="list" data-reveal="up" data-reveal-stagger=".08">
+              <li><span class="pdp-atelier__step-n" aria-hidden="true">01</span><span data-i18n="product.atelier.s1">Gold, silver or blind foil</span></li>
+              <li><span class="pdp-atelier__step-n" aria-hidden="true">02</span><span data-i18n="product.atelier.s2">Up to three initials</span></li>
+              <li><span class="pdp-atelier__step-n" aria-hidden="true">03</span><span data-i18n="product.atelier.s3">Pressed by hand in the atelier</span></li>
+            </ol>
+            <p class="pdp-atelier__fee" id="pdp-atelier-fee" data-reveal="fade"></p>
+            <div data-reveal="up">
+              <a class="c-btn c-btn--foil" id="pdp-atelier-link" href="atelier.html" data-magnetic>
+                <span class="c-btn__label"><span data-i18n="product.personalise">Personalise it</span></span><span class="c-btn__arrow"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           4. Complete the look
+           ================================================================== -->
+      <section class="pdp-related theme-light u-section" aria-labelledby="pdp-related-title">
+        <div class="u-container">
+          <div class="c-section-head c-section-head--split">
+            <div class="pdp-related__heading">
+              <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span data-i18n="product.related.eyebrow">Styled together</span></p>
+              <h2 class="c-section-head__title pdp-related__title" id="pdp-related-title" tabindex="-1" data-reveal="lines" data-i18n-html="product.related.title">Complete <em>the look.</em></h2>
+            </div>
+            <a class="c-link" id="pdp-related-link" href="shop.html" data-reveal="fade"><span id="pdp-related-link-text">Shop all</span><svg class="c-icon c-icon--arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 12h17M14.5 6l6 6-6 6"/></svg></a>
+          </div>
+          <div class="u-products u-products--4" id="pdp-related" data-reveal="up" data-reveal-stagger=".08"></div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           5. Recently viewed (localStorage 'benm:recent', hidden when empty)
+           ================================================================== -->
+      <section class="pdp-recent theme-paper u-section u-section--tight" id="pdp-recent" aria-labelledby="pdp-recent-title" hidden>
+        <div class="u-container">
+          <div class="pdp-recent__head">
+            <h2 class="pdp-recent__title" id="pdp-recent-title" data-i18n="product.recent.title">Recently viewed</h2>
+            <button class="c-link c-link--quiet pdp-recent__clear" type="button" id="pdp-recent-clear"><span data-i18n="product.recent.clear">Clear</span></button>
+          </div>
+          <div class="pdp-recent__track" id="pdp-recent-track"></div>
+        </div>
+      </section>
+    </article>
+
+    <!-- =======================================================================
+         Sticky add-to-bag bar (slides in once the main button has scrolled away)
+         ==================================================================== -->
+    <aside class="pdp-bar theme-light" id="pdp-bar" data-product-id="" aria-label="Quick purchase" data-i18n-attr="aria-label:product.bar.label">
+      <div class="u-container pdp-bar__inner">
+        <div class="pdp-bar__product">
+          <span class="pdp-bar__thumb" id="pdp-bar-thumb"></span>
+          <span class="pdp-bar__text">
+            <span class="pdp-bar__name" data-pfield="name"></span>
+            <span class="pdp-bar__meta"><span class="pdp-bar__color" id="pdp-bar-color"></span><span class="c-diamond" aria-hidden="true"></span><span class="c-price" id="pdp-bar-price" data-price="0"></span></span>
+          </span>
+        </div>
+        <div class="pdp-bar__actions">
+          <p class="pdp-bar__msg" id="pdp-bar-msg" role="alert"></p>
+          <span class="pdp-bar__select" id="pdp-bar-select-wrap">
+            <label class="u-visually-hidden" for="pdp-bar-size" data-i18n="product.size">Size</label>
+            <select id="pdp-bar-size"></select>
+            <svg class="c-icon pdp-bar__chev" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9.5 6 6 6-6"/></svg>
+          </span>
+          <button class="c-btn c-btn--primary pdp-bar__add" type="button" id="pdp-bar-add">
+            <span class="c-btn__label"><span class="pdp-bar__add-long" data-i18n="product.addToBag">Add to bag</span><span class="pdp-bar__add-short" data-i18n="product.bar.add">Add</span></span>
+          </button>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/js/brand.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/leather.js"></script>
+  <script src="assets/js/pages/product.js"></script>
+</body>
+</html>

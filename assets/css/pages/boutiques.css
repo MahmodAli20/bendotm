@@ -1,0 +1,611 @@
+/* =============================================================================
+   Ben.M — Boutiques & client services          assets/css/pages/boutiques.css
+   -----------------------------------------------------------------------------
+   1. Hero · 2. City band · 3. Section head · 4. Locator · 5. Map · 6. Markers
+   7. Boutique cards · 8. Services · 9. Client services · 10. Form card · 11. FAQ
+   Logical properties throughout; the map is the one physical exception
+   (geography keeps its orientation in RTL, like the logo and the photographs).
+   ========================================================================== */
+
+/* In-page targets: native fragment scrolls and boutiques.js jumps both land on this line */
+.btq-boutiques, .btq-contact, .btq-faq, .btq-faq__list > .c-accordion__item { scroll-margin-block-start: var(--header-h); }
+
+/* =============================================================================
+   1. Hero
+   ========================================================================== */
+.btq-hero {
+  padding-block-start: calc(var(--header-h) + clamp(14px, 2vw, 30px));
+  padding-block-end: clamp(56px, 7vw, 120px);
+  overflow: clip;
+}
+.btq-hero__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 24px;
+  padding-block-end: clamp(14px, 1.6vw, 22px);
+  border-block-end: 1px solid var(--line);
+}
+.btq-hero__tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  letter-spacing: var(--ls-micro);
+  text-transform: var(--tt-ui);
+  color: var(--fg-muted);
+}
+/* title + lead side by side when there is room; the lead wraps below otherwise */
+.btq-hero__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(22px, 3vw, 40px) clamp(32px, 5vw, 96px);
+  margin-block-start: clamp(30px, 4vw, 64px);
+}
+.btq-hero__titles { flex: 0 1 auto; min-inline-size: 0; }
+.btq-hero__title {
+  margin-block-start: clamp(10px, 1.4vw, 22px);
+  font-size: clamp(3.75rem, 10.6vw, 12rem);
+  line-height: var(--lh-mega);
+  letter-spacing: var(--ls-mega);
+}
+:root[lang="ckb"] .btq-hero__title { font-size: clamp(3rem, 7.4vw, 8.6rem); }
+.btq-hero__title em { color: var(--em); }
+.btq-keep, .btq-nowrap { white-space: nowrap; }
+@media (max-width: 559.98px) {
+  /* two deliberate lines (ckb markup, boutiques.js) — the split reveal and the final text wrap alike */
+  :root[lang="ckb"] .btq-hero__title { font-size: clamp(3rem, 13vw, 3.6rem); }
+  .btq-hero__w1 { display: block; }
+}
+.btq-hero__lead {
+  flex: 1 1 18em;
+  max-inline-size: 25em;
+  padding-block-end: .5em;
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+  color: var(--fg);
+  text-wrap: pretty;
+}
+
+/* foot: caption + city index under the panorama */
+.btq-hero__foot {
+  display: grid;
+  gap: clamp(22px, 3vw, 36px);
+  margin-block-start: clamp(40px, 5vw, 80px);
+}
+@media (min-width: 900px) {
+  .btq-hero__foot { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: var(--grid-gap); align-items: start; }
+}
+.btq-hero__foot-start { display: grid; justify-items: start; gap: 12px; }
+.btq-hero__foot-note {
+  font-family: var(--f-display);
+  font-weight: var(--fw-display);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+  color: var(--fg-strong);
+}
+
+/* City index — in-page links to the boutique cards */
+.btq-index__list { border-block-start: 1px solid var(--line); }
+.btq-index__link {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.4em minmax(0, 1fr) auto auto;
+  align-items: baseline;
+  column-gap: clamp(12px, 1.6vw, 24px);
+  padding-block: clamp(12px, 1.3vw, 18px);
+  border-block-end: 1px solid var(--line);
+  color: var(--fg-strong);
+  text-decoration: none;
+}
+.btq-index__link::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: -1px;
+  block-size: 1px;
+  background: var(--accent-soft);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .9s var(--ease-out);
+}
+[dir="rtl"] .btq-index__link::after { transform-origin: right center; }
+.btq-index__link:hover::after, .btq-index__link:focus-visible::after { transform: scaleX(1); }
+.btq-index__num { font-family: var(--f-serif-latin); font-style: italic; font-size: 1.05rem; color: var(--accent); }
+.btq-index__city {
+  font-family: var(--f-display);
+  font-weight: var(--fw-display);
+  font-size: clamp(1.55rem, 2.2vw, 2.3rem);
+  line-height: 1.15;
+  transition: translate .7s var(--ease-out), color .4s;
+}
+.btq-index__link:hover .btq-index__city { translate: 10px 0; color: var(--accent); }
+[dir="rtl"] .btq-index__link:hover .btq-index__city { translate: -10px 0; }
+.btq-index__coord {
+  font-family: var(--f-sans-latin);
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  letter-spacing: .14em;
+  white-space: nowrap;
+  color: var(--fg-muted);
+}
+.btq-index__go { color: var(--accent); }
+@media (max-width: 559.98px) {
+  .btq-index__link { grid-template-columns: 2em minmax(0, 1fr) auto; grid-template-areas: "num city go" ". coord ."; row-gap: 2px; }
+  .btq-index__num { grid-area: num; }
+  .btq-index__city { grid-area: city; }
+  .btq-index__coord { grid-area: coord; }
+  .btq-index__go { grid-area: go; }
+}
+
+/* Down arrow for in-page jumps (the shared arrow already flips in RTL, so rotate the other way there) */
+.btq-down { display: inline-flex; }
+.btq-down .c-icon { --icon-size: 16px; rotate: 90deg; transition: translate .6s var(--ease-out); }
+[dir="rtl"] .btq-down .c-icon { rotate: -90deg; }
+[dir] .btq-index__link:hover .btq-down .c-icon,
+[dir] .btq-hero__jump:hover .btq-down .c-icon { translate: 0 3px; }
+
+/* Panorama — opens from a central seam (boutiques.js); parallax on the img */
+.btq-hero__figure { margin-block-start: clamp(30px, 3.6vw, 60px); }
+.btq-hero__media {
+  position: relative;
+  block-size: clamp(320px, 44vw, 780px);
+  max-block-size: 80svh;
+}
+.btq-hero__zoom { position: absolute; inset: 0; }
+.btq-hero__img { inline-size: 100%; block-size: 100%; object-fit: cover; object-position: 50% 62%; }
+@media (max-width: 699.98px) {
+  .btq-hero__media { block-size: auto; aspect-ratio: 4 / 5; max-block-size: 76svh; }
+  .btq-hero__img { object-position: 34% 50%; }
+}
+/* physical left on purpose: the seam is the centre line, symmetric in both directions */
+.btq-hero__edge {
+  position: absolute;
+  inset-block: 0;
+  left: 50%;
+  inline-size: 1px;
+  margin-left: -.5px;
+  background: linear-gradient(to bottom, transparent, var(--c-gold-400) 18%, var(--c-gold-300) 50%, var(--c-gold-400) 82%, transparent);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html.js .btq-hero__media:not(.is-open) {
+    clip-path: inset(0% 50% 0% 50%);
+    animation: btq-failsafe .9s var(--ease-out) 9s forwards;   /* never stays shut if the page script fails */
+  }
+}
+@keyframes btq-failsafe { to { clip-path: inset(0% 0% 0% 0%); } }
+.btq-hero__caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 24px;
+  padding-block-start: 16px;
+}
+
+/* =============================================================================
+   2. City band (marquee)
+   ========================================================================== */
+.btq-marquee { padding-block: clamp(22px, 3vw, 44px); border-block-end: 1px solid var(--line); }
+
+/* =============================================================================
+   3. Section head
+   ========================================================================== */
+.btq-boutiques { padding-block-end: var(--space-section); }
+.btq-boutiques__inner { padding-block-start: clamp(72px, 9vw, 150px); }
+.btq-head { display: grid; gap: 22px; margin-block-end: clamp(44px, 6vw, 100px); }
+@media (min-width: 1000px) {
+  .btq-head { grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); column-gap: var(--grid-gap); align-items: end; }
+}
+.btq-head__title { margin-block-start: 22px; font-size: var(--fs-h2); line-height: var(--lh-h2); max-inline-size: 12em; }
+.btq-head__text { max-inline-size: 30em; color: var(--fg); text-wrap: pretty; }
+
+/* =============================================================================
+   4. Locator — sticky map beside the cards (desktop), stacked below 1100 px
+   ========================================================================== */
+.btq-locator { display: grid; gap: clamp(48px, 6vw, 80px); }
+@media (min-width: 1100px) {
+  .btq-locator { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: clamp(48px, 5.4vw, 104px); align-items: start; }
+  .btq-locator__map { position: sticky; inset-block-start: calc(var(--header-h) + 24px); }
+}
+
+/* =============================================================================
+   5. Map — a night panel; dots, graticule and route are generated SVG
+   ========================================================================== */
+.btq-map {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(ellipse 72% 62% at 50% 46%, color-mix(in srgb, var(--c-green-700) 40%, transparent), transparent 74%),
+    var(--c-green-950);
+}
+@media (min-width: 560px) { .btq-map { aspect-ratio: 16 / 11; } }
+@media (min-width: 1100px) {
+  .btq-map { aspect-ratio: auto; block-size: clamp(520px, calc(100svh - var(--header-h) - 150px), 820px); }
+}
+.btq-map__svg { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; }
+/* reveal veil — an iris (--vr px) opening from --vx/--vy; only shown while the reveal is pending/playing */
+.btq-map__veil {
+  position: absolute;
+  inset: 0;
+  display: none;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--vx, 50%) var(--vy, 50%), transparent calc(var(--vr, 0) * 1px), var(--c-green-950) calc(var(--vr, 0) * 1px + 160px));
+}
+.btq-map__veil.is-on { display: block; }
+.btq-map__field path { fill: var(--c-sage-300); }
+.btq-map__glow path { fill: var(--c-gold-400); }
+.btq-map__glow { opacity: .38; transition: opacity .8s var(--ease-out); }
+.btq-map__glow.is-active { opacity: 1; }
+.btq-map__grid line { stroke: var(--c-gold-500); stroke-opacity: .17; stroke-width: 1; stroke-dasharray: 2 6; }
+.btq-map__grid text {
+  fill: var(--c-sage-300);
+  fill-opacity: .6;
+  font-family: var(--f-sans-latin);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .18em;
+}
+.btq-map__route path { fill: none; stroke: var(--c-gold-500); stroke-opacity: .6; stroke-width: 1; }
+.btq-map__rings { opacity: 0; transition: opacity .7s var(--ease-out), transform 1.1s var(--ease-out); }
+.btq-map__rings.is-on { opacity: 1; }
+.btq-map__rings circle { fill: none; stroke: var(--c-gold-400); stroke-opacity: .32; stroke-width: 1; stroke-dasharray: 1 5; }
+.btq-map__rings circle + circle { stroke-opacity: .18; }
+
+/* compass + readout (physical corners: they belong to the map, which is never mirrored) */
+.btq-map__north {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  font-family: var(--f-serif-latin);
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--accent);
+  pointer-events: none;
+}
+.btq-map__north-line { inline-size: 1px; block-size: 28px; background: linear-gradient(to top, transparent, var(--c-gold-500)); }
+.btq-map__readout {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  right: 64px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 14px;
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  letter-spacing: var(--ls-micro);
+  text-transform: var(--tt-ui);
+  color: var(--fg-muted);
+  pointer-events: none;
+}
+.btq-map__readout-num { font-family: var(--f-serif-latin); font-style: italic; font-size: 1.45em; letter-spacing: 0; text-transform: none; color: var(--accent); }
+.btq-map__readout-coord { font-family: var(--f-sans-latin); letter-spacing: .14em; }
+.btq-map__note { margin-block-start: 14px; font-size: var(--fs-small); color: var(--fg-muted); }
+
+/* =============================================================================
+   6. Markers — HTML links over the SVG (left/top set inline from lat/lng)
+   ========================================================================== */
+.btq-map__markers { position: absolute; inset: 0; }
+.btq-marker {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  direction: ltr;                              /* label side is geographic, not reading direction */
+  transform: translate(-13px, -50%);
+  color: var(--fg-strong);
+  text-decoration: none;
+  transition: opacity .5s var(--ease-out);
+}
+.btq-marker[data-side="left"] { flex-direction: row-reverse; transform: translate(calc(-100% + 13px), -50%); }
+.btq-marker__pin { position: relative; flex: none; display: grid; place-items: center; inline-size: 26px; block-size: 26px; }
+.btq-marker__dot {
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  background: var(--g-foil);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--c-green-950) 70%, transparent), 0 0 18px color-mix(in srgb, var(--c-gold-500) 55%, transparent);
+  transition: transform .6s var(--ease-out);
+}
+.btq-marker__ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--c-gold-400);
+  border-radius: 50%;
+  opacity: .45;
+  transform: scale(.8);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btq-marker__ring { animation: btq-pulse 3.2s var(--ease-out) infinite; }
+  .btq-marker__ring--late { animation-delay: 1.6s; }
+}
+@keyframes btq-pulse {
+  0% { transform: scale(.35); opacity: .95; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+.btq-marker__label {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 4px 12px 6px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--c-green-950) 74%, transparent);
+  white-space: nowrap;
+  transition: border-color .45s, background-color .45s, color .45s;
+}
+.btq-marker__num { font-family: var(--f-serif-latin); font-style: italic; font-size: .92rem; color: var(--accent); }
+.btq-marker__city { font-family: var(--f-display); font-size: 1.2rem; line-height: 1.15; unicode-bidi: isolate; }
+:root[lang="ckb"] .btq-marker__city { font-size: 1.02rem; line-height: 1.55; }
+.btq-marker:hover .btq-marker__label,
+.btq-marker.is-active .btq-marker__label { border-color: var(--accent-soft); background: color-mix(in srgb, var(--c-green-900) 92%, transparent); }
+.btq-marker.is-active .btq-marker__dot { transform: scale(1.55); }
+.btq-marker.is-active .btq-marker__ring { border-color: var(--c-gold-300); }
+.btq-locator.has-active .btq-marker:not(.is-active) { opacity: .55; }
+.btq-marker:focus-visible { outline: none; }
+.btq-marker:focus-visible .btq-marker__label { outline: 2px solid var(--focus); outline-offset: 3px; }
+@media (max-width: 559.98px) {
+  .btq-marker__label { padding: 3px 9px 4px; gap: 6px; }
+  .btq-marker__city { font-size: 1.05rem; }
+}
+
+/* =============================================================================
+   7. Boutique cards
+   ========================================================================== */
+.btq-stores { display: grid; gap: clamp(64px, 8vw, 130px); }
+.btq-store {
+  position: relative;
+  display: grid;
+  gap: clamp(22px, 2.4vw, 32px);
+  scroll-margin-block-start: calc(var(--header-h) + 24px);
+  outline-offset: 12px;
+}
+@media (min-width: 700px) and (max-width: 1099.98px) {
+  .btq-store { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: clamp(32px, 5vw, 64px); align-items: start; }
+}
+.btq-store__media {
+  aspect-ratio: 4 / 3;
+  outline: 1px solid transparent;
+  outline-offset: 18px;
+  transition: outline-color .7s var(--ease-out), outline-offset .9s var(--ease-out), opacity .6s var(--ease-out);
+}
+.btq-store__media img { transition: transform 1.6s var(--ease-out); }
+.btq-store.is-active .btq-store__media { outline-color: color-mix(in srgb, var(--c-gold-500) 70%, transparent); outline-offset: 10px; }
+.btq-store.is-active .btq-store__media img { transform: scale(1.045); }
+.btq-locator.has-intent .btq-store:not(.is-active) .btq-store__media { opacity: .45; }
+.btq-store__caption { margin-block-start: 16px; }
+.btq-store__body { display: grid; align-content: start; }
+.btq-store__coord { font-family: var(--f-sans-latin); font-size: var(--fs-micro); font-weight: 500; letter-spacing: .16em; color: var(--fg-muted); }
+.btq-store__city {
+  margin-block-start: 10px;
+  font-size: clamp(2.5rem, 3.6vw, 3.9rem);
+  line-height: 1;
+  letter-spacing: var(--ls-display);
+  transition: color .5s var(--ease-out);
+}
+:root[lang="ckb"] .btq-store__city { line-height: 1.35; }
+.btq-store.is-active .btq-store__city { color: var(--c-gold-300); }
+.btq-store__alt { margin-block-start: 8px; font-family: var(--f-display); font-size: 1.35rem; line-height: 1.3; color: var(--accent); }
+.btq-store__alt:lang(en) { font-style: italic; }
+.btq-store__desc {
+  margin-block: 18px 24px;
+  max-inline-size: 24em;
+  font-family: var(--f-display);
+  font-style: var(--fst-em);
+  font-size: var(--fs-h4);
+  line-height: var(--lh-h4);
+  color: var(--fg);
+}
+.btq-store__facts { border-block-start: 1px solid var(--line); }
+.btq-fact {
+  display: grid;
+  grid-template-columns: minmax(7.5em, 32%) minmax(0, 1fr);
+  gap: 16px;
+  padding-block: 13px;
+  border-block-end: 1px solid var(--line);
+}
+.btq-fact dt {
+  padding-block-start: .3em;
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  letter-spacing: var(--ls-micro);
+  text-transform: var(--tt-ui);
+  color: var(--accent);
+}
+.btq-fact dd { font-size: var(--fs-small); line-height: 1.65; color: var(--fg); }
+.btq-fact dd a { color: var(--fg-strong); }
+.btq-store__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 30px; margin-block-start: 26px; }
+
+/* =============================================================================
+   8. Services in every boutique
+   ========================================================================== */
+.btq-services { margin-block-start: clamp(96px, 12vw, 200px); }
+.btq-services__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 32px;
+  padding-block-end: clamp(22px, 2.6vw, 36px);
+  border-block-end: 1px solid var(--line);
+}
+.btq-services__list { display: grid; grid-template-columns: minmax(0, 1fr); }
+.btq-service { padding-block: clamp(28px, 3vw, 44px); border-block-end: 1px solid var(--line); }
+@media (min-width: 560px) {
+  .btq-services__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .btq-service { padding-inline: clamp(18px, 2.4vw, 36px); }
+  .btq-service:nth-child(2n + 1) { padding-inline-start: 0; }
+  .btq-service:nth-child(2n) { border-inline-start: 1px solid var(--line); }
+}
+@media (min-width: 1000px) {
+  .btq-services__list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .btq-service { border-block-end: 0; padding-block-end: 0; }
+  .btq-service:nth-child(2n + 1) { padding-inline-start: clamp(18px, 2.4vw, 36px); }
+  .btq-service:first-child { padding-inline-start: 0; }
+  .btq-service + .btq-service { border-inline-start: 1px solid var(--line); }
+}
+.btq-service__icon .c-icon { --icon-size: 30px; color: var(--accent); }
+.btq-service__title {
+  margin-block: 26px 10px;
+  font-family: var(--f-display);
+  font-weight: calc(var(--fw-display) + 100);
+  font-size: var(--fs-h4);
+  line-height: var(--lh-h4);
+  color: var(--fg-strong);
+}
+.btq-service__text { max-inline-size: 22em; font-size: var(--fs-small); line-height: 1.7; color: var(--fg-muted); }
+
+/* =============================================================================
+   9. Client services (#contact)
+   ========================================================================== */
+.btq-contact__grid { display: grid; gap: clamp(56px, 7vw, 110px); }
+@media (min-width: 1100px) {
+  .btq-contact__grid { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); column-gap: clamp(56px, 6vw, 128px); align-items: start; }
+}
+.btq-contact__title { margin-block-start: 22px; font-size: var(--fs-h1); line-height: var(--lh-h1); }
+.btq-contact__lead {
+  margin-block: clamp(20px, 2.4vw, 30px) clamp(36px, 4.4vw, 60px);
+  max-inline-size: 30em;
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+  color: var(--fg);
+  text-wrap: pretty;
+}
+.btq-methods { border-block-start: 1px solid var(--line); }
+.btq-method {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(16px, 2vw, 26px);
+  padding-block: clamp(18px, 2vw, 26px);
+  border-block-end: 1px solid var(--line);
+  color: var(--fg);
+  text-decoration: none;
+}
+.btq-method::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: -1px;
+  block-size: 1px;
+  background: var(--accent-soft);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .9s var(--ease-out);
+}
+[dir="rtl"] .btq-method::after { transform-origin: right center; }
+.btq-method:hover::after, .btq-method:focus-visible::after { transform: scaleX(1); }
+.btq-method__icon {
+  display: grid;
+  place-items: center;
+  inline-size: 54px;
+  block-size: 54px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--fg-strong);
+  transition: background-color .5s var(--ease-out), border-color .5s, color .5s;
+}
+.btq-method__icon .c-icon { --icon-size: 22px; }
+.btq-method:hover .btq-method__icon,
+.btq-method:focus-visible .btq-method__icon { background-color: var(--c-green-700); border-color: var(--c-green-700); color: var(--c-ivory); }
+.btq-method__body { display: grid; gap: 3px; min-inline-size: 0; }
+.btq-method__label { font-family: var(--f-display); font-size: clamp(1.5rem, 2vw, 2rem); line-height: 1.15; color: var(--fg-strong); }
+.btq-method__value { font-size: var(--fs-small); font-weight: 400; letter-spacing: .03em; color: var(--fg-strong); overflow-wrap: anywhere; }
+.btq-method__note { font-size: var(--fs-small); color: var(--fg-muted); }
+.btq-method__go { color: var(--accent); transition: translate .6s var(--ease-out); }
+.btq-method:hover .btq-method__go { translate: 0 -3px; }
+
+.btq-hours {
+  display: flex;
+  gap: 18px;
+  margin-block-start: clamp(28px, 3vw, 40px);
+  padding: 22px clamp(20px, 2.4vw, 30px);
+  background: var(--surface);
+}
+.btq-hours__icon { padding-block-start: 2px; }
+.btq-hours__icon .c-icon { --icon-size: 22px; color: var(--accent); }
+.btq-hours__title { font-size: var(--fs-micro); font-weight: 500; letter-spacing: var(--ls-micro); text-transform: var(--tt-ui); color: var(--accent); }
+.btq-hours__value { margin-block-start: 6px; font-family: var(--f-display); font-size: var(--fs-h4); line-height: 1.35; color: var(--fg-strong); }
+.btq-hours__note { margin-block-start: 6px; font-size: var(--fs-small); color: var(--fg-muted); }
+
+/* =============================================================================
+   10. Form card — a sheet of paper with corner brackets
+   ========================================================================== */
+.btq-letter { position: relative; padding: clamp(30px, 4.4vw, 72px) clamp(22px, 4vw, 68px); }
+.btq-letter__corners { --corners-inset: 12px; }
+.btq-letter__head { margin-block-end: clamp(10px, 1.6vw, 22px); }
+.btq-letter__title { font-family: var(--f-display); font-size: var(--fs-h3); line-height: var(--lh-h3); color: var(--fg-strong); }
+.btq-optional { color: var(--fg-muted); }
+.btq-reply { display: grid; }
+.btq-reply__legend {
+  margin-block-end: 14px;
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  letter-spacing: var(--ls-micro);
+  text-transform: var(--tt-ui);
+  color: var(--fg-muted);
+}
+.btq-reply__options { display: flex; flex-wrap: wrap; gap: 12px 30px; }
+.btq-form__foot { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-block-start: 6px; }
+.btq-form__fine { font-size: var(--fs-small); color: var(--fg-muted); }
+/* success: the letter card already frames it — no second box */
+.btq-success { gap: 14px; padding: clamp(6px, 1.4vw, 18px) 0 0; border: 0; background: none; }
+.btq-success__seal {
+  display: grid;
+  place-items: center;
+  inline-size: 58px;
+  block-size: 58px;
+  margin-block-end: 6px;
+  border: 1px solid var(--accent-soft);
+  border-radius: 50%;
+  color: var(--accent);
+}
+.btq-success__seal .c-icon { --icon-size: 24px; }
+/* p.… — main.css `.c-form-success p` (0,1,1) otherwise shrinks the title to small muted text */
+.btq-success p.btq-success__title { font-size: var(--fs-h3); line-height: var(--lh-h3); color: var(--fg-strong); }
+.btq-success p:not(.btq-success__title) { max-inline-size: 32em; font-size: var(--fs-body); }
+.btq-success__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-block-start: 14px; }
+
+/* =============================================================================
+   11. FAQ (#faq)
+   ========================================================================== */
+.btq-faq__grid { display: grid; gap: clamp(44px, 6vw, 88px); }
+@media (min-width: 1000px) {
+  .btq-faq__grid { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); column-gap: clamp(56px, 7vw, 140px); align-items: start; }
+  .btq-faq__intro { position: sticky; inset-block-start: calc(var(--header-h) + 36px); }
+}
+.btq-faq__title { margin-block-start: 22px; font-size: var(--fs-h2); line-height: var(--lh-h2); }
+.btq-faq__text { margin-block: 22px 30px; max-inline-size: 26em; color: var(--fg); text-wrap: pretty; }
+.btq-faq__links { display: flex; flex-wrap: wrap; gap: 14px 30px; }
+.btq-faq__topic { font-size: var(--fs-micro); font-weight: 500; letter-spacing: var(--ls-micro); text-transform: var(--tt-ui); color: var(--accent); }
+.btq-faq__list .c-accordion__content p:not(.btq-faq__topic) { line-height: var(--lh-body); }
+.btq-faq__currency {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 22px;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  padding: 14px 20px;
+  border: 1px solid var(--line);
+}
+.btq-faq__currency-label { font-size: var(--fs-micro); font-weight: 500; letter-spacing: var(--ls-micro); text-transform: var(--tt-ui); color: var(--fg-muted); }
+.btq-faq__currency-sample { font-size: var(--fs-small); color: var(--fg-muted); }
+.btq-faq__currency-sample .c-price { color: var(--fg-strong); font-weight: 500; }

@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="sg.meta.title">House style — Ben.M</title>
+  <meta name="description" content="The Ben.M design system: colour, type, components and motion." data-i18n-attr="content:sg.meta.description">
+  <meta name="theme-color" content="#0C1D17">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/brand/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <meta property="og:title" content="House style — Ben.M"><meta property="og:description" content="The Ben.M design system.">
+  <meta property="og:image" content="assets/brand/og-image.jpg"><meta property="og:type" content="website">
+  <script>/* boot flags — identical on every page */
+  (function(h){h.classList.add('js');try{var l=localStorage.getItem('benm:lang');if(l==='ckb'){h.lang='ckb';h.dir='rtl';}
+  if(!sessionStorage.getItem('benm:visited')){h.classList.add('is-preloading');}
+  else if(sessionStorage.getItem('benm:transition')){h.classList.add('is-transitioning');}}catch(e){}})(document.documentElement);
+  </script>
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/pages/styleguide.css">
+</head>
+<body data-page="styleguide" data-header="dark">
+  <main id="main" class="page page--styleguide">
+
+    <!-- ====================================================================
+         Hero
+         ================================================================== -->
+    <section class="sg-hero theme-night" aria-labelledby="sg-title">
+      <div class="c-corners sg-hero__frame" aria-hidden="true"></div>
+      <div class="u-container sg-hero__inner">
+        <div class="sg-hero__top">
+          <p class="c-eyebrow c-eyebrow--line" data-reveal="fade" data-i18n="sg.hero.eyebrow">Ben.M — Design system</p>
+          <p class="c-eyebrow sg-hero__ver" data-reveal="fade" data-reveal-delay=".2"><span data-i18n="sg.hero.version">Foundation</span> <span class="c-eyebrow__num">1.0</span></p>
+        </div>
+        <div class="sg-hero__head">
+          <h1 class="t-mega sg-hero__title" id="sg-title" data-reveal="lines" data-i18n-html="sg.hero.title">The house <em>style</em></h1>
+          <figure class="sg-hero__media c-frame">
+            <div class="u-media u-ratio-4x5" data-reveal="clip-up" data-reveal-delay=".35"><img src="assets/img/editorial/atelier.jpg" alt="" width="1600" height="2000" decoding="async" data-parallax="0.12"></div>
+            <figcaption class="c-caption"><span class="c-caption__num">N°00</span><span data-i18n="nav.atelier">Atelier</span></figcaption>
+          </figure>
+        </div>
+        <div class="sg-hero__grid">
+          <div class="sg-hero__lead">
+            <p class="t-lead" data-reveal="up" data-reveal-delay=".25" data-i18n="sg.hero.lead">Every colour, letter and gesture of Ben.M in one place — the shared foundation every page is built from.</p>
+            <div class="sg-hero__tags" data-reveal="fade" data-reveal-delay=".45" id="sg-taglines"></div>
+          </div>
+          <nav class="sg-index" aria-label="Contents" data-i18n-attr="aria-label:sg.index" data-reveal="up" data-reveal-stagger=".06" data-reveal-delay=".35">
+            <a class="sg-index__link" href="#colour"><span class="sg-index__n">01</span><span data-i18n="sg.nav.colour">Colour</span></a>
+            <a class="sg-index__link" href="#type"><span class="sg-index__n">02</span><span data-i18n="sg.nav.type">Typography</span></a>
+            <a class="sg-index__link" href="#buttons"><span class="sg-index__n">03</span><span data-i18n="sg.nav.buttons">Buttons &amp; links</span></a>
+            <a class="sg-index__link" href="#forms"><span class="sg-index__n">04</span><span data-i18n="sg.nav.forms">Forms</span></a>
+            <a class="sg-index__link" href="#controls"><span class="sg-index__n">05</span><span data-i18n="sg.nav.controls">Controls</span></a>
+            <a class="sg-index__link" href="#cards"><span class="sg-index__n">06</span><span data-i18n="sg.nav.cards">Product cards</span></a>
+            <a class="sg-index__link" href="#overlays"><span class="sg-index__n">07</span><span data-i18n="sg.nav.overlays">Overlays</span></a>
+            <a class="sg-index__link" href="#motion"><span class="sg-index__n">08</span><span data-i18n="sg.nav.motion">Motion</span></a>
+            <a class="sg-index__link" href="#themes"><span class="sg-index__n">09</span><span data-i18n="sg.nav.themes">Themes</span></a>
+          </nav>
+        </div>
+      </div>
+      <div class="c-marquee sg-hero__marquee" data-marquee data-marquee-speed="1" aria-hidden="true">
+        <div class="c-marquee__track">
+          <span class="c-marquee__item"><span lang="en">Genuine leather</span><span class="c-marquee__sep">✦</span></span>
+          <span class="c-marquee__item c-marquee__item--outline"><span lang="ckb">چەرمی ڕەسەن</span><span class="c-marquee__sep">✦</span></span>
+          <span class="c-marquee__item"><em data-i18n="product.handcrafted">Handcrafted</em><span class="c-marquee__sep">✦</span></span>
+          <span class="c-marquee__item c-marquee__item--outline"><span lang="en">Ben.M</span><span class="c-marquee__sep">✦</span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         01 Colour
+         ================================================================== -->
+    <section class="u-section theme-light" id="colour" aria-labelledby="sg-colour-title">
+      <div class="u-container">
+        <header class="c-section-head c-section-head--split">
+          <div>
+            <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span class="c-eyebrow__num">01</span><span data-i18n="sg.nav.colour">Colour</span></p>
+            <h2 class="sg-h2" id="sg-colour-title" data-reveal="lines" data-i18n-html="sg.colour.title">Emerald <em>&amp;</em> Gilt</h2>
+          </div>
+          <p class="t-body t-muted sg-head-text" data-reveal="up" data-i18n="sg.colour.text">Green is the stage, ivory is the paper, gold is the jewellery — used like foil: hairlines, numerals, small caps and the logo.</p>
+        </header>
+        <div class="sg-ramps" id="sg-ramps"></div>
+        <div class="sg-foil" data-reveal="clip">
+          <span class="sg-foil__word u-foil u-foil--sheen is-loop" lang="en">Gilt</span>
+          <span class="c-eyebrow sg-foil__note" data-i18n="sg.colour.foil">Gold foil — hairlines, numerals, sheens</span>
+        </div>
+        <div class="sg-lines">
+          <div class="sg-lines__item"><span class="c-rule" data-reveal="draw"></span><code>--line-light</code></div>
+          <div class="sg-lines__item"><span class="c-rule c-rule--gold" data-reveal="draw" data-reveal-delay=".1"></span><code>--g-hairline</code></div>
+          <div class="sg-lines__item"><span class="c-rule c-rule--accent" data-reveal="draw" data-reveal-delay=".2"></span><code>--accent-soft</code></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         02 Typography
+         ================================================================== -->
+    <section class="u-section theme-dark" id="type" aria-labelledby="sg-type-title">
+      <div class="u-container">
+        <header class="c-section-head c-section-head--split">
+          <div>
+            <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span class="c-eyebrow__num">02</span><span data-i18n="sg.nav.type">Typography</span></p>
+            <h2 class="sg-h2" id="sg-type-title" data-reveal="lines" data-i18n-html="sg.type.title">Type in <em>two scripts</em></h2>
+          </div>
+          <p class="t-body t-muted sg-head-text" data-reveal="up" data-i18n="sg.type.text">Cormorant Garamond and Poppins for English; Noto Naskh Arabic and Noto Sans Arabic for Kurdish — never tracked, never slanted.</p>
+        </header>
+
+        <div class="sg-scale">
+          <div class="sg-scale__row" data-reveal="up"><code>.t-mega · --fs-mega</code><p class="t-mega sg-scale__mega" data-i18n-html="sg.type.sample">Made to <em>last</em></p></div>
+          <div class="sg-scale__row" data-reveal="up"><code>h1 · --fs-h1</code><p class="t-h1" data-i18n-html="sg.type.sample">Made to <em>last</em></p></div>
+          <div class="sg-scale__row" data-reveal="up"><code>h2 · --fs-h2</code><p class="t-h2" data-i18n-html="sg.type.sample">Made to <em>last</em></p></div>
+          <div class="sg-scale__row" data-reveal="up"><code>h3 · --fs-h3</code><p class="t-h3" data-i18n-html="sg.type.sample">Made to <em>last</em></p></div>
+          <div class="sg-scale__row" data-reveal="up"><code>.t-h4</code><p class="t-h4" data-i18n="sg.type.h4">The Azmar Oxford, cap-toe</p></div>
+          <div class="sg-scale__row" data-reveal="up"><code>.t-quote</code><p class="t-quote" data-i18n="sg.type.quote">“Leather chosen by hand. Stitched with patience.”</p></div>
+          <div class="sg-scale__row" data-reveal="up"><code>.t-lead · --fs-lead</code><p class="t-lead" data-i18n="sg.type.body">Leather chosen by hand. Stitched with patience. Finished slowly, so that it can be worn for years.</p></div>
+          <div class="sg-scale__row" data-reveal="up"><code>.t-body · --fs-body</code><p class="t-body" data-i18n="sg.type.body">Leather chosen by hand. Stitched with patience. Finished slowly, so that it can be worn for years.</p></div>
+          <div class="sg-scale__row" data-reveal="up"><code>.c-eyebrow · .c-caption</code>
+            <div class="u-stack" style="--stack-gap:14px">
+              <p class="c-eyebrow c-eyebrow--line" data-i18n="sg.type.eyebrow">The craft · Stitching</p>
+              <p class="c-caption"><span class="c-caption__num">N°01</span><span data-i18n="sg.type.caption">The Azmar Oxford</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sg-scripts">
+          <article class="sg-script" lang="en" dir="ltr" data-reveal="up">
+            <p class="c-eyebrow">Cormorant Garamond · Poppins</p>
+            <p class="sg-script__display">Genuine leather, <em>made to last.</em></p>
+            <p class="sg-script__body" id="sg-en-body"></p>
+          </article>
+          <article class="sg-script" lang="ckb" dir="rtl" data-reveal="up" data-reveal-delay=".12">
+            <p class="c-eyebrow">نۆتۆ نەسخی عەرەبی · نۆتۆ سانس</p>
+            <p class="sg-script__display">چەرمی ڕەسەن، <em>بۆ هەمیشە.</em></p>
+            <p class="sg-script__body" id="sg-ku-body"></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         03 Buttons & links
+         ================================================================== -->
+    <section class="u-section theme-light" id="buttons" aria-labelledby="sg-btn-title">
+      <div class="u-container">
+        <header class="c-section-head c-section-head--split">
+          <div>
+            <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span class="c-eyebrow__num">03</span><span data-i18n="sg.nav.buttons">Buttons &amp; links</span></p>
+            <h2 class="sg-h2" id="sg-btn-title" data-reveal="lines" data-i18n-html="sg.btn.title">Buttons <em>&amp; links</em></h2>
+          </div>
+          <p class="t-body t-muted sg-head-text" data-reveal="up" data-i18n="sg.btn.text">Square corners, small caps, a foil sheen on hover. The label rolls, the arrow stretches, magnetic where it matters.</p>
+        </header>
+        <div class="sg-demo-grid">
+          <div class="sg-demo" data-reveal="up">
+            <p class="sg-demo__label" data-i18n="sg.btn.light">On ivory</p>
+            <div class="u-cluster" style="--cluster-gap:14px 18px">
+              <a class="c-btn c-btn--primary" href="#cards" data-magnetic><span class="c-btn__label"><span data-i18n="sg.btn.primary">Shop the collection</span></span><span class="c-btn__arrow"></span></a>
+              <a class="c-btn c-btn--ghost" href="#type"><span class="c-btn__label"><span data-i18n="sg.btn.ghost">Discover the craft</span></span></a>
+              <button class="c-btn c-btn--foil" type="button" data-magnetic data-sg-toast><span class="c-btn__label"><span data-i18n="nav.appointment">Book an appointment</span></span></button>
+            </div>
+            <div class="u-cluster" style="--cluster-gap:14px 26px;margin-top:26px">
+              <button class="c-btn c-btn--primary c-btn--sm" type="button" data-sg-toast><span class="c-btn__label"><span data-i18n="product.addToBag">Add to bag</span></span></button>
+              <button class="c-btn c-btn--primary c-btn--sm" type="button" disabled><span class="c-btn__label"><span data-i18n="card.soldOut">Sold out</span></span></button>
+              <a class="c-link" href="#cards"><span data-i18n="common.viewAll">View all</span><svg class="c-icon c-icon--arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 12h17M14.5 6l6 6-6 6"/></svg></a>
+              <a class="c-link c-link--quiet" href="#forms" data-i18n="common.learnMore">Learn more</a>
+            </div>
+          </div>
+          <div class="sg-demo theme-dark" data-reveal="up" data-reveal-delay=".1">
+            <p class="sg-demo__label" data-i18n="sg.btn.dark">On green</p>
+            <div class="u-cluster" style="--cluster-gap:14px 18px">
+              <a class="c-btn c-btn--primary" href="#cards" data-magnetic><span class="c-btn__label"><span data-i18n="sg.btn.primary">Shop the collection</span></span><span class="c-btn__arrow"></span></a>
+              <a class="c-btn c-btn--ghost" href="#type"><span class="c-btn__label"><span data-i18n="sg.btn.ghost">Discover the craft</span></span></a>
+            </div>
+            <div class="u-cluster" style="--cluster-gap:14px 26px;margin-top:26px">
+              <button class="c-btn c-btn--foil c-btn--sm" type="button" data-sg-toast><span class="c-btn__label"><span data-i18n="product.orderWhatsapp">Order via WhatsApp</span></span></button>
+              <a class="c-link" href="#cards"><span data-i18n="common.discover">Discover</span><svg class="c-icon c-icon--arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 12h17M14.5 6l6 6-6 6"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         04 Forms
+         ================================================================== -->
+    <section class="u-section theme-paper" id="forms" aria-labelledby="sg-forms-title">
+      <div class="u-container">
+        <div class="u-grid">
+          <header class="u-span-5@lg">
+            <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span class="c-eyebrow__num">04</span><span data-i18n="sg.nav.forms">Forms</span></p>
+            <h2 class="sg-h2" id="sg-forms-title" data-reveal="lines" data-i18n-html="sg.forms.title">Forms, <em>quietly</em></h2>
+            <p class="t-body t-muted" style="margin-top:22px" data-reveal="up" data-i18n="sg.forms.text">Underlined fields with floating labels; errors in plain words, in both languages. Submit the empty form to see them.</p>
+          </header>
+          <div class="u-span-6@lg u-start-7@lg" data-reveal="up">
+            <form class="c-form" data-validate novalidate>
+              <div class="c-form__row c-form__row--2">
+                <div class="c-field">
+                  <input class="c-field__input" id="sg-name" name="name" type="text" autocomplete="name" required placeholder=" ">
+                  <label class="c-field__label" for="sg-name" data-i18n="form.name">Full name</label>
+                  <span class="c-field__line" aria-hidden="true"></span>
+                  <p class="c-field__msg"></p>
+                </div>
+                <div class="c-field">
+                  <input class="c-field__input" id="sg-phone" name="phone" type="tel" autocomplete="tel" required placeholder=" ">
+                  <label class="c-field__label" for="sg-phone" data-i18n="form.phone">Phone number</label>
+                  <span class="c-field__line" aria-hidden="true"></span>
+                  <p class="c-field__msg"></p>
+                </div>
+              </div>
+              <div class="c-form__row c-form__row--2">
+                <div class="c-field">
+                  <input class="c-field__input" id="sg-email" name="email" type="email" autocomplete="email" required placeholder=" ">
+                  <label class="c-field__label" for="sg-email" data-i18n="form.email">Email address</label>
+                  <span class="c-field__line" aria-hidden="true"></span>
+                  <p class="c-field__msg"></p>
+                </div>
+                <div class="c-field c-field--select">
+                  <select class="c-field__input" id="sg-subject" name="subject" required>
+                    <option value="" data-i18n="form.select">Please choose</option>
+                    <option value="personalisation" data-i18n="nav.personalisation">Personalisation</option>
+                    <option value="care" data-i18n="sg.forms.care">Care &amp; repair</option>
+                    <option value="order" data-i18n="sg.forms.order">An order</option>
+                  </select>
+                  <label class="c-field__label" for="sg-subject" data-i18n="form.subject">Subject</label>
+                  <span class="c-field__line" aria-hidden="true"></span>
+                  <p class="c-field__msg"></p>
+                </div>
+              </div>
+              <div class="c-field">
+                <textarea class="c-field__input" id="sg-message" name="message" minlength="10" required placeholder=" "></textarea>
+                <label class="c-field__label" for="sg-message" data-i18n="form.message">Message</label>
+                <span class="c-field__line" aria-hidden="true"></span>
+                <p class="c-field__msg"></p>
+              </div>
+              <div>
+                <label class="c-check"><input type="checkbox" name="consent" required><span data-i18n="form.consent">I would like to receive letters from Ben.M. You can leave at any time.</span></label>
+                <p class="c-field__msg"></p>
+              </div>
+              <div><button class="c-btn c-btn--primary" type="submit"><span class="c-btn__label"><span data-i18n="form.send">Send</span></span><span class="c-btn__arrow"></span></button></div>
+            </form>
+            <div class="c-form-success" data-form-success hidden>
+              <p class="c-form-success__title"><svg class="c-icon c-icon--check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12.5 4.3 4.3L19 7.2"/></svg><span data-i18n="form.success.title">Thank you</span></p>
+              <p data-i18n="form.success.text">Your message has reached us. We will reply personally, usually within a day.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         05 Controls
+         ================================================================== -->
+    <section class="u-section theme-light" id="controls" aria-labelledby="sg-ctrl-title">
+      <div class="u-container">
+        <header class="c-section-head c-section-head--split">
+          <div>
+            <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span class="c-eyebrow__num">05</span><span data-i18n="sg.nav.controls">Controls</span></p>
+            <h2 class="sg-h2" id="sg-ctrl-title" data-reveal="lines" data-i18n-html="sg.ctrl.title">Chips, swatches <em>&amp; sizes</em></h2>
+          </div>
+          <p class="t-body t-muted sg-head-text" data-reveal="up" data-i18n="sg.ctrl.text">Small controls with generous touch targets — every one of them at least 44 pixels.</p>
+        </header>
+        <div class="sg-controls">
+          <div class="sg-demo" data-reveal="up">
+            <p class="sg-demo__label" data-i18n="sg.ctrl.chips">Chips</p>
+            <div class="u-cluster" data-select="single" style="--cluster-gap:10px">
+              <button class="c-chip" type="button" aria-pressed="true" data-value="men" data-i18n="nav.men">Men</button>
+              <button class="c-chip" type="button" aria-pressed="false" data-value="women" data-i18n="nav.women">Women</button>
+              <button class="c-chip" type="button" aria-pressed="false" data-value="bags" data-i18n="nav.bags">Bags</button>
+              <button class="c-chip" type="button" aria-pressed="false" data-value="accessories" data-i18n="nav.accessories">Accessories</button>
+            </div>
+            <p class="sg-demo__label" data-i18n="sg.ctrl.badges">Badges</p>
+            <div class="u-cluster" style="--cluster-gap:10px">
+              <span class="c-badge c-badge--dot" data-i18n="card.new">New</span>
+              <span class="c-badge c-badge--limited" data-i18n="card.limited">Limited</span>
+              <span class="c-badge" data-i18n="product.handcrafted">Handcrafted</span>
+            </div>
+            <p class="sg-demo__label" data-i18n="sg.ctrl.switches">Language &amp; currency</p>
+            <div class="u-cluster" style="--cluster-gap:8px 30px">
+              <div class="c-switch" role="group" aria-label="Language" data-i18n-attr="aria-label:a11y.language">
+                <button class="c-switch__btn" type="button" data-set-lang="en" lang="en" aria-pressed="true">EN</button><span class="c-switch__sep" aria-hidden="true"></span>
+                <button class="c-switch__btn" type="button" data-set-lang="ckb" lang="ckb" aria-pressed="false">کوردی</button>
+              </div>
+              <div class="c-switch" role="group" aria-label="Currency" data-i18n-attr="aria-label:a11y.currency">
+                <button class="c-switch__btn" type="button" data-set-currency="USD" aria-pressed="true" data-i18n="currency.usd">USD</button><span class="c-switch__sep" aria-hidden="true"></span>
+                <button class="c-switch__btn" type="button" data-set-currency="IQD" aria-pressed="false" data-i18n="currency.iqd">IQD</button>
+              </div>
+            </div>
+          </div>
+          <div class="sg-demo" data-reveal="up" data-reveal-delay=".08">
+            <p class="sg-demo__label" data-i18n="sg.ctrl.swatches">Leather colours</p>
+            <div class="c-swatches" id="sg-swatches" data-select="single"></div>
+            <p class="sg-demo__note"><span data-i18n="product.color">Colour</span> — <b id="sg-swatch-name"></b></p>
+            <p class="sg-demo__label" data-i18n="sg.ctrl.sizes">Sizes</p>
+            <div class="c-sizes" data-select="single" id="sg-sizes"></div>
+            <p class="sg-demo__label" data-i18n="drawer.qty">Quantity</p>
+            <div class="c-qty" data-qty data-value="1" data-min="1" data-max="10" role="group" aria-label="Quantity" data-i18n-attr="aria-label:drawer.qty">
+              <button class="c-qty__btn" type="button" data-qty-step="-1" aria-label="Decrease quantity" data-i18n-attr="aria-label:drawer.decrease" disabled><svg class="c-icon c-icon--minus" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/></svg></button>
+              <span class="c-qty__value" data-num="1">1</span>
+              <button class="c-qty__btn" type="button" data-qty-step="1" aria-label="Increase quantity" data-i18n-attr="aria-label:drawer.increase"><svg class="c-icon c-icon--plus" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></button>
+            </div>
+          </div>
+          <div class="sg-demo" data-reveal="up" data-reveal-delay=".16">
+            <p class="sg-demo__label" data-i18n="sg.ctrl.breadcrumbs">Breadcrumbs</p>
+            <nav class="c-breadcrumbs" aria-label="Breadcrumb" data-i18n-attr="aria-label:a11y.breadcrumb">
+              <ol>
+                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="shop.html?cat=men" data-i18n="nav.men">Men</a></li>
+                <li data-product-id="azmar-oxford"><span aria-current="page" data-pfield="name">Azmar Oxford</span></li>
+              </ol>
+            </nav>
+            <p class="sg-demo__label" data-i18n="sg.ctrl.tabs">Tabs</p>
+            <div data-tabs class="sg-tabs" data-product-id="azmar-oxford">
+              <div class="c-tabs" role="tablist">
+                <button class="c-tab" type="button" role="tab" id="sg-tab-1" aria-controls="sg-panel-1" aria-selected="true" data-i18n="sg.tabs.description">Description</button>
+                <button class="c-tab" type="button" role="tab" id="sg-tab-2" aria-controls="sg-panel-2" aria-selected="false" tabindex="-1" data-i18n="sg.tabs.care">Care</button>
+              </div>
+              <div class="sg-tabs__panel" role="tabpanel" id="sg-panel-1" aria-labelledby="sg-tab-1"><p class="t-small" data-pfield="short">The cap-toe oxford, drawn in its cleanest line.</p></div>
+              <div class="sg-tabs__panel" role="tabpanel" id="sg-panel-2" aria-labelledby="sg-tab-2" hidden><p class="t-small" data-pfield="care">Rest them on cedar shoe trees between wears.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="sg-demo sg-icons-demo" data-reveal="up">
+          <p class="sg-demo__label" data-i18n="sg.ctrl.icons">Icons</p>
+          <ul class="sg-icons" id="sg-icons" role="list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         06 Product cards
+         ================================================================== -->
+    <section class="u-section theme-light sg-cards" id="cards" aria-labelledby="sg-cards-title">
+      <div class="u-container">
+        <header class="c-section-head c-section-head--split">
+          <div>
+            <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span class="c-eyebrow__num">06</span><span data-i18n="sg.nav.cards">Product cards</span></p>
+            <h2 class="sg-h2" id="sg-cards-title" data-reveal="lines" data-i18n-html="sg.cards.title">The product <em>card</em></h2>
+          </div>
+          <p class="t-body t-muted sg-head-text" data-reveal="up" data-i18n="sg.cards.text">One card everywhere — hover for the second photograph, quick add, the gold hairline and the heart.</p>
+        </header>
+        <div class="u-products u-products--4" id="sg-cards-light"></div>
+      </div>
+    </section>
+    <section class="u-section theme-dark" aria-labelledby="sg-cards-dark-title">
+      <div class="u-container">
+        <header class="c-section-head c-section-head--split">
+          <h2 class="sg-h3" id="sg-cards-dark-title" data-reveal="lines" data-i18n-html="sg.cards.dark">On the <em>dark</em> stage</h2>
+          <a class="c-link" href="#cards" data-reveal="fade"><span data-i18n="common.viewAll">View all</span><svg class="c-icon c-icon--arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 12h17M14.5 6l6 6-6 6"/></svg></a>
+        </header>
+        <div class="u-products" id="sg-cards-dark"></div>
+        <h3 class="sg-h3 sg-compact-title" data-reveal="lines" data-i18n-html="sg.cards.compact">Compact — <em>search &amp; related</em></h3>
+        <div class="sg-compact" id="sg-cards-compact"></div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         07 Overlays & accordions
+         ================================================================== -->
+    <section class="u-section theme-light" id="overlays" aria-labelledby="sg-ov-title">
+      <div class="u-container">
+        <div class="u-grid">
+          <header class="u-span-5@lg">
+            <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span class="c-eyebrow__num">07</span><span data-i18n="sg.nav.overlays">Overlays</span></p>
+            <h2 class="sg-h2" id="sg-ov-title" data-reveal="lines" data-i18n-html="sg.ov.title">Overlays <em>&amp; feedback</em></h2>
+            <p class="t-body t-muted" style="margin-top:22px" data-reveal="up" data-i18n="sg.ov.text">Every layer closes with Esc, keeps focus inside, and gives it back when it leaves.</p>
+            <div class="sg-ov-buttons" data-reveal="up" data-reveal-stagger=".05">
+              <button class="c-btn c-btn--ghost c-btn--sm" type="button" data-sg-modal><span class="c-btn__label"><span data-i18n="sg.ov.modal">Open a dialog</span></span></button>
+              <button class="c-btn c-btn--ghost c-btn--sm" type="button" data-quick-view="nawroz-tote"><span class="c-btn__label"><span data-i18n="card.quickView">Quick view</span></span></button>
+              <button class="c-btn c-btn--ghost c-btn--sm" type="button" data-sg-toast><span class="c-btn__label"><span data-i18n="sg.ov.toast">Show a toast</span></span></button>
+              <button class="c-btn c-btn--ghost c-btn--sm" type="button" data-open-drawer="bag"><span class="c-btn__label"><span data-i18n="sg.ov.bag">Open the bag</span></span></button>
+              <button class="c-btn c-btn--ghost c-btn--sm" type="button" data-open-drawer="saved"><span class="c-btn__label"><span data-i18n="sg.ov.saved">Open saved</span></span></button>
+              <button class="c-btn c-btn--ghost c-btn--sm" type="button" data-sg-search><span class="c-btn__label"><span data-i18n="sg.ov.search">Open search</span></span></button>
+              <button class="c-btn c-btn--ghost c-btn--sm" type="button" data-sg-menu><span class="c-btn__label"><span data-i18n="sg.ov.menu">Open the menu</span></span></button>
+            </div>
+          </header>
+          <div class="u-span-6@lg u-start-7@lg" data-reveal="up" data-product-id="azmar-oxford">
+            <div class="c-accordion" data-accordion="single">
+              <div class="c-accordion__item is-open">
+                <h3 class="c-accordion__heading"><button class="c-accordion__trigger" type="button"><span><span class="c-accordion__num">01</span><span data-i18n="sg.tabs.description">Description</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h3>
+                <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content"><p data-pfield="description">The Azmar takes its name from the peak that keeps watch over Sulaymaniyah.</p></div></div></div>
+              </div>
+              <div class="c-accordion__item">
+                <h3 class="c-accordion__heading"><button class="c-accordion__trigger" type="button"><span><span class="c-accordion__num">02</span><span data-i18n="sg.tabs.details">Details &amp; materials</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h3>
+                <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content"><ul class="sg-details" id="sg-details" role="list"></ul></div></div></div>
+              </div>
+              <div class="c-accordion__item">
+                <h3 class="c-accordion__heading"><button class="c-accordion__trigger" type="button"><span><span class="c-accordion__num">03</span><span data-i18n="sg.tabs.care">Care</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h3>
+                <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content"><p data-pfield="care">Rest them on cedar shoe trees between wears.</p></div></div></div>
+              </div>
+              <div class="c-accordion__item">
+                <h3 class="c-accordion__heading"><button class="c-accordion__trigger" type="button"><span><span class="c-accordion__num">04</span><span data-i18n="nav.shipping">Shipping &amp; returns</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h3>
+                <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content"><p data-i18n="drawer.note">Delivery and payment are confirmed with you personally on WhatsApp.</p></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         08 Motion
+         ================================================================== -->
+    <section class="u-section theme-night sg-motion" id="motion" aria-labelledby="sg-motion-title">
+      <div class="u-container">
+        <header class="c-section-head c-section-head--split">
+          <div>
+            <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span class="c-eyebrow__num">08</span><span data-i18n="sg.nav.motion">Motion</span></p>
+            <h2 class="sg-h2" id="sg-motion-title" data-reveal="lines" data-i18n-html="sg.motion.title">Motion, <em>slowly</em></h2>
+          </div>
+          <p class="t-body t-muted sg-head-text" data-reveal="up" data-i18n="sg.motion.text">Declarative: add an attribute, the foundation does the rest — and nothing moves for those who ask for stillness.</p>
+        </header>
+        <div class="sg-reveals">
+          <figure class="sg-reveal">
+            <div class="u-media u-ratio-4x5" data-reveal="clip"><img src="assets/img/craft/stitching.jpg" alt="" width="1600" height="2000" loading="lazy" decoding="async"></div>
+            <figcaption class="c-caption"><code>data-reveal="clip"</code></figcaption>
+          </figure>
+          <figure class="sg-reveal">
+            <div class="u-media u-ratio-4x5" data-reveal="clip-up"><img src="assets/img/craft/cutting.jpg" alt="" width="1600" height="2000" loading="lazy" decoding="async"></div>
+            <figcaption class="c-caption"><code>data-reveal="clip-up"</code></figcaption>
+          </figure>
+          <figure class="sg-reveal">
+            <div class="u-media u-ratio-4x5"><img src="assets/img/craft/finishing.jpg" alt="" width="1600" height="2000" loading="lazy" decoding="async" data-parallax="0.16"></div>
+            <figcaption class="c-caption"><code>data-parallax="0.16"</code></figcaption>
+          </figure>
+          <figure class="sg-reveal">
+            <div class="u-media u-ratio-4x5" data-reveal="scale"><img src="assets/img/craft/tools.jpg" alt="" width="1600" height="2000" loading="lazy" decoding="async"></div>
+            <figcaption class="c-caption"><code>data-reveal="scale"</code></figcaption>
+          </figure>
+        </div>
+        <div class="sg-texts">
+          <div class="sg-text"><code>data-reveal="lines"</code><p class="t-h3" data-reveal="lines" data-i18n="sg.motion.lines">Text rises line by line out of its mask, like a page being turned.</p></div>
+          <div class="sg-text"><code>data-reveal="words"</code><p class="t-h3" data-reveal="words" data-i18n="sg.motion.words">Word by word — never letter by letter.</p></div>
+          <div class="sg-text"><code>data-reveal="up" · "fade" · "draw"</code>
+            <p class="t-body" data-reveal="up" data-i18n="sg.type.body">Leather chosen by hand. Stitched with patience. Finished slowly, so that it can be worn for years.</p>
+            <span class="c-rule c-rule--gold" data-reveal="draw" style="margin-block:22px"></span>
+            <p class="t-small t-muted" data-reveal="fade" data-i18n="sg.motion.reduced">With reduced motion everything is simply there.</p>
+          </div>
+        </div>
+        <div class="sg-counters" data-reveal="up" data-reveal-stagger=".08">
+          <div class="sg-counter"><span class="sg-counter__n" data-count-to="22" data-count-pad="2">22</span><span class="c-eyebrow" data-i18n="sg.motion.pieces">Pieces in the demo collection</span></div>
+          <div class="sg-counter"><span class="sg-counter__n" data-count-to="8" data-count-pad="2">08</span><span class="c-eyebrow" data-i18n="sg.motion.leathers">House leathers</span></div>
+          <div class="sg-counter"><span class="sg-counter__n" data-count-to="3" data-count-pad="2">03</span><span class="c-eyebrow" data-i18n="sg.motion.boutiques">Boutiques</span></div>
+          <div class="sg-counter"><span class="sg-counter__n" data-count-to="2" data-count-pad="2">02</span><span class="c-eyebrow" data-i18n="sg.motion.languages">Languages</span></div>
+        </div>
+      </div>
+      <div class="c-marquee c-marquee--sm sg-motion__marquee" data-marquee data-marquee-speed="1.4" aria-hidden="true">
+        <div class="c-marquee__track">
+          <span class="c-marquee__item"><span data-i18n="nav.men">Men</span><span class="c-marquee__sep">✦</span></span>
+          <span class="c-marquee__item"><em data-i18n="nav.women">Women</em><span class="c-marquee__sep">✦</span></span>
+          <span class="c-marquee__item"><span data-i18n="nav.bags">Bags</span><span class="c-marquee__sep">✦</span></span>
+          <span class="c-marquee__item"><em data-i18n="nav.accessories">Accessories</em><span class="c-marquee__sep">✦</span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         09 Themes
+         ================================================================== -->
+    <section class="u-section theme-light" id="themes" aria-labelledby="sg-themes-title">
+      <div class="u-container">
+        <header class="c-section-head c-section-head--split">
+          <div>
+            <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span class="c-eyebrow__num">09</span><span data-i18n="sg.nav.themes">Themes</span></p>
+            <h2 class="sg-h2" id="sg-themes-title" data-reveal="lines" data-i18n-html="sg.themes.title">Five <em>stages</em></h2>
+          </div>
+          <p class="t-body t-muted sg-head-text" data-reveal="up" data-i18n="sg.themes.text">A section declares its stage with one class; text, gold, hairlines, buttons and cards follow.</p>
+        </header>
+        <div class="sg-themes" data-reveal="up" data-reveal-stagger=".07">
+          <div class="sg-theme theme-light"><code>.theme-light</code><p class="sg-theme__title" data-i18n-html="sg.type.sample">Made to <em>last</em></p><p class="c-eyebrow" data-i18n="sg.themes.sample">Leather chosen by hand</p><span class="c-rule"></span><a class="c-link" href="#themes" data-i18n="common.discover">Discover</a></div>
+          <div class="sg-theme theme-paper"><code>.theme-paper</code><p class="sg-theme__title" data-i18n-html="sg.type.sample">Made to <em>last</em></p><p class="c-eyebrow" data-i18n="sg.themes.sample">Leather chosen by hand</p><span class="c-rule"></span><a class="c-link" href="#themes" data-i18n="common.discover">Discover</a></div>
+          <div class="sg-theme theme-forest"><code>.theme-forest</code><p class="sg-theme__title" data-i18n-html="sg.type.sample">Made to <em>last</em></p><p class="c-eyebrow" data-i18n="sg.themes.sample">Leather chosen by hand</p><span class="c-rule"></span><a class="c-link" href="#themes" data-i18n="common.discover">Discover</a></div>
+          <div class="sg-theme theme-dark"><code>.theme-dark</code><p class="sg-theme__title" data-i18n-html="sg.type.sample">Made to <em>last</em></p><p class="c-eyebrow" data-i18n="sg.themes.sample">Leather chosen by hand</p><span class="c-rule"></span><a class="c-link" href="#themes" data-i18n="common.discover">Discover</a></div>
+          <div class="sg-theme theme-night"><code>.theme-night</code><p class="sg-theme__title" data-i18n-html="sg.type.sample">Made to <em>last</em></p><p class="c-eyebrow" data-i18n="sg.themes.sample">Leather chosen by hand</p><span class="c-rule"></span><a class="c-link" href="#themes" data-i18n="common.discover">Discover</a></div>
+        </div>
+        <p class="sg-lab-link"><a class="c-link" href="_lab/core-page.html"><span data-i18n="sg.lab">Test page (page transition)</span><svg class="c-icon c-icon--arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 12h17M14.5 6l6 6-6 6"/></svg></a></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/js/brand.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/pages/styleguide.js"></script>
+</body>
+</html>

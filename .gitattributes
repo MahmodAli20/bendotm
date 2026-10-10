@@ -1,0 +1,5 @@
+# normalise line endings in the repo; images and fonts are binary
+* text=auto eol=lf
+*.jpg binary
+*.png binary
+*.woff2 binary

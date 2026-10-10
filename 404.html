@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-site-root="/">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>/* Static hosts serve this page for ANY missing URL (e.g. /a/b/c), so relative links and assets would
+     resolve against that folder. Over http(s) only, resolve them from the site root: the folder of
+     /…/404.html when opened directly, else <html data-site-root> ("/" — set it if the site lives in a
+     sub-folder, e.g. "/shop/"). From file:// nothing changes: the page sits next to index.html. */
+  (function(l,h){if(!/^https?:$/.test(l.protocol))return;var m=l.pathname.match(/^(.*\/)404\.html$/i);
+  var r=h.getAttribute('data-site-root')||'/',s=l.pathname.split('/')[1];
+  if(r==='/'&&/\.github\.io$/i.test(l.hostname)&&s)r='/'+s+'/';   /* GitHub Pages project site: user.github.io/<repo>/ */
+  var b=document.createElement('base');b.href=m?m[1]:r;document.head.appendChild(b);})(location,document.documentElement);
+  </script>
+  <title data-i18n="nf.meta.title">Page not found — Ben.M</title>
+  <meta name="description" content="The page you were looking for could not be found. Return home, explore the collection or visit a boutique." data-i18n-attr="content:nf.meta.description">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0C1D17">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/brand/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <meta property="og:title" content="Page not found — Ben.M"><meta property="og:description" content="This pair seems to have wandered off.">
+  <meta property="og:image" content="assets/brand/og-image.jpg"><meta property="og:type" content="website">
+  <script>/* boot flags — identical on every page */
+  (function(h){h.classList.add('js');try{var l=localStorage.getItem('benm:lang');if(l==='ckb'){h.lang='ckb';h.dir='rtl';}
+  if(!sessionStorage.getItem('benm:visited')){h.classList.add('is-preloading');}
+  else if(sessionStorage.getItem('benm:transition')){h.classList.add('is-transitioning');}}catch(e){}})(document.documentElement);
+  </script>
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/pages/notfound.css">
+</head>
+<body data-page="notfound" data-header="dark">
+  <main id="main" class="page page--notfound">
+
+    <!-- =====================================================================
+         404 — "4 · (a lonely shoe in an oval) · 4", the line, ways back
+         ================================================================== -->
+    <section class="nf-hero theme-night" aria-labelledby="nf-title">
+      <div class="u-container nf-hero__grid">
+        <div class="nf-visual">
+          <div class="nf-stage" data-nf-stage aria-hidden="true">
+            <svg class="nf-defs" width="0" height="0" focusable="false">
+              <defs>
+                <linearGradient id="nf-foil" gradientUnits="userSpaceOnUse" x1="-20" y1="0" x2="120" y2="40" data-nf-foil>
+                  <stop offset="0" style="stop-color: var(--c-gold-800)"/>
+                  <stop offset=".22" style="stop-color: var(--c-gold-500)"/>
+                  <stop offset=".4" style="stop-color: var(--c-gold-300)"/>
+                  <stop offset=".58" style="stop-color: var(--c-gold-600)"/>
+                  <stop offset=".76" style="stop-color: var(--c-gold-400)"/>
+                  <stop offset="1" style="stop-color: var(--c-gold-700)"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <svg class="nf-digit" viewBox="0 0 100 124" focusable="false" data-nf-digit><text x="50" y="112" text-anchor="middle">4</text></svg>
+            <figure class="nf-zero" data-nf-zero>
+              <div class="nf-zero__media">
+                <img src="assets/img/editorial/notfound.jpg" width="1600" height="2000" decoding="async" fetchpriority="high" alt="" data-nf-img>
+              </div>
+              <span class="nf-zero__ring" aria-hidden="true"></span>
+            </figure>
+            <svg class="nf-digit" viewBox="0 0 100 124" focusable="false" data-nf-digit><text x="50" y="112" text-anchor="middle">4</text></svg>
+          </div>
+          <p class="nf-caption" data-reveal="fade" data-reveal-delay=".6">
+            <span class="c-caption"><span class="c-caption__num">N°404</span><span data-i18n="nf.caption">Its partner is still looking for it.</span></span>
+          </p>
+        </div>
+
+        <div class="nf-copy">
+          <p class="c-eyebrow c-eyebrow--line" data-reveal="fade" data-i18n="nf.eyebrow">Error 404 · Page not found</p>
+          <h1 class="nf-title" id="nf-title" data-reveal="lines" data-i18n-html="nf.title">This pair seems to have <em>wandered off.</em></h1>
+          <p class="nf-text" data-reveal="up" data-reveal-delay=".15" data-i18n="404.text">The page you are looking for may have moved, or never existed. The collection, however, is right where we left it.</p>
+          <div class="nf-actions" data-reveal="up" data-reveal-delay=".25">
+            <a class="c-btn c-btn--primary" href="index.html" data-magnetic>
+              <span class="c-btn__label"><span data-i18n="404.cta">Return home</span></span><span class="c-btn__arrow"></span>
+            </a>
+          </div>
+          <nav class="nf-links" aria-label="Find your way" data-i18n-attr="aria-label:nf.links.label">
+            <ol class="nf-links__list" role="list" data-reveal="up" data-reveal-stagger=".08" data-reveal-delay=".35">
+              <li><a class="nf-link" href="shop.html">
+                <span class="nf-link__num" aria-hidden="true">01</span><span class="nf-link__label" data-i18n="nf.links.shop">Shop the collection</span><span class="nf-link__icon" data-nf-icon="arrow"></span></a></li>
+              <li><a class="nf-link" href="boutiques.html">
+                <span class="nf-link__num" aria-hidden="true">02</span><span class="nf-link__label" data-i18n="nf.links.boutiques">Visit a boutique</span><span class="nf-link__icon" data-nf-icon="arrow"></span></a></li>
+              <li><button class="nf-link" type="button" aria-haspopup="dialog" data-nf-search>
+                <span class="nf-link__num" aria-hidden="true">03</span><span class="nf-link__label" data-i18n="search.label">Search the collection</span><span class="nf-link__icon" data-nf-icon="search"></span></button></li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         While you are here — a few pieces from the collection
+         ================================================================== -->
+    <section class="nf-picks theme-dark u-section u-section--tight" aria-labelledby="nf-picks-title">
+      <div class="u-container">
+        <div class="c-section-head c-section-head--split nf-picks__head">
+          <div>
+            <p class="c-eyebrow c-eyebrow--line" data-reveal="fade" data-i18n="nf.picks.eyebrow">While you are here</p>
+            <h2 class="nf-picks__title" id="nf-picks-title" data-reveal="lines" data-i18n-html="nf.picks.title">Right where <em>we left them.</em></h2>
+          </div>
+          <a class="c-link" href="shop.html" data-reveal="fade"><span data-i18n="nav.shopAll">Shop all</span><span data-nf-icon="arrow"></span></a>
+        </div>
+        <div class="u-products u-products--4 nf-picks__grid" data-nf-picks></div>
+      </div>
+    </section>
+
+  </main>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/js/brand.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/pages/notfound.js"></script>
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="atelier.meta.title">Atelier — personalisation &amp; made to order — Ben.M</title>
+  <meta name="description" content="Personalise a Ben.M leather piece with your initials in gold, silver or blind deboss — or book a made-to-order appointment with the atelier." data-i18n-attr="content:atelier.meta.description">
+  <meta name="robots" content="noindex, nofollow"><!-- DEMO: keep the preview out of search engines; remove at launch -->
+  <meta name="theme-color" content="#0C1D17">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/brand/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <meta property="og:title" content="Atelier — personalisation &amp; made to order — Ben.M"><meta property="og:description" content="Personalise a Ben.M leather piece with your initials in gold, silver or blind deboss — or book a made-to-order appointment with the atelier.">
+  <meta property="og:image" content="assets/brand/og-image.jpg"><meta property="og:type" content="website">
+  <script>/* boot flags — identical on every page */
+  (function(h){h.classList.add('js');try{var l=localStorage.getItem('benm:lang');if(l==='ckb'){h.lang='ckb';h.dir='rtl';}
+  if(!sessionStorage.getItem('benm:visited')){h.classList.add('is-preloading');}
+  else if(sessionStorage.getItem('benm:transition')){h.classList.add('is-transitioning');}}catch(e){}})(document.documentElement);
+  </script>
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/pages/atelier.css">
+</head>
+<body data-page="atelier" data-header="dark">
+  <main id="main" class="page page--atelier">
+
+    <!-- =====================================================================
+         1 · HERO — "Make it yours." over the atelier photograph
+         ================================================================== -->
+    <section class="atelier-hero theme-night" aria-labelledby="atelier-hero-title">
+      <div class="atelier-hero__media">
+        <div class="u-media atelier-hero__frame" data-reveal="clip">
+          <img src="assets/img/editorial/atelier.jpg" alt="A craftsman stamping a design into leather with a mallet" width="1600" height="2000" decoding="async" fetchpriority="high" data-parallax="0.12" data-i18n-attr="alt:atelier.hero.alt">
+        </div>
+        <p class="c-caption atelier-hero__caption" data-reveal="fade" data-reveal-delay=".6"><span class="c-caption__num">N°01</span><span data-i18n="atelier.hero.caption">Letter by letter</span></p>
+      </div>
+
+      <div class="u-container atelier-hero__inner">
+        <div class="atelier-hero__content">
+          <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span data-i18n="atelier.hero.eyebrow">Personalisation &amp; made to order</span></p>
+          <h1 class="atelier-hero__title" id="atelier-hero-title" data-reveal="lines" data-i18n-html="atelier.hero.title">Make it<br><em>yours</em>.</h1>
+          <p class="atelier-hero__lead" data-reveal="up" data-reveal-delay=".15" data-i18n="atelier.hero.lead">Your initials, pressed by hand into the leather you chose — in gold, in silver, or blind, so that only the light can read them.</p>
+          <div class="atelier-hero__actions" data-reveal="up" data-reveal-delay=".25">
+            <a class="c-btn c-btn--foil" href="#configurator" data-magnetic>
+              <span class="c-btn__label"><span data-i18n="atelier.hero.cta">Begin your piece</span></span><span class="c-btn__arrow"></span>
+            </a>
+            <a class="c-btn c-btn--ghost" href="#appointment" data-appointment-service="personalisation">
+              <span class="c-btn__label"><span data-i18n="nav.appointment">Book an appointment</span></span>
+            </a>
+          </div>
+        </div>
+
+        <ol class="atelier-hero__notes" data-reveal="up" data-reveal-stagger=".08" data-reveal-delay=".35">
+          <li><span class="atelier-hero__num" aria-hidden="true">01</span><span data-i18n="atelier.hero.note1">Up to three initials</span></li>
+          <li><span class="atelier-hero__num" aria-hidden="true">02</span><span data-i18n="atelier.hero.note2">Gold, silver or blind</span></li>
+          <li><span class="atelier-hero__num" aria-hidden="true">03</span><span data-i18n="atelier.hero.note3">Pressed by hand</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         2 · CONFIGURATOR — live leather preview + five numbered steps
+         ================================================================== -->
+    <section class="atelier-config theme-light u-section" id="configurator" aria-labelledby="config-title">
+      <div class="u-container">
+        <header class="atelier-head">
+          <div class="atelier-head__main">
+            <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span class="c-eyebrow__num">01</span><span data-i18n="atelier.config.eyebrow">Personalisation</span></p>
+            <h2 class="atelier-head__title" id="config-title" data-reveal="lines" data-i18n-html="atelier.config.title">Your letters, <em>pressed by hand.</em></h2>
+          </div>
+          <p class="atelier-head__text" data-reveal="up" data-reveal-delay=".1" data-i18n="atelier.config.text">Choose the piece, the leather and the foil, then type up to three initials. The preview follows every choice — in the atelier, the same letters are pressed into the leather by hand.</p>
+        </header>
+
+        <div class="atelier-config__grid" id="atelier-config">
+          <!-- the stage: a dark specimen table with the live leather tag -->
+          <div class="atelier-stage theme-dark" id="atelier-stage" data-item-type="card-holder" data-foil="gold" data-reveal="fade">
+            <span class="c-corners atelier-stage__corners" aria-hidden="true"></span>
+            <div class="atelier-stage__top">
+              <p class="c-caption"><span class="c-caption__num">N°02</span><span data-i18n="atelier.stage.label">Live preview</span></p>
+              <p class="atelier-stage__hint" data-i18n="atelier.stage.hint">Move across the leather to catch the light</p>
+            </div>
+            <div class="atelier-stage__area">
+              <div class="atelier-tag" id="atelier-tag"></div>
+              <p class="atelier-stage__empty" id="atelier-empty" aria-hidden="true"><span data-i18n="atelier.stage.empty">Type your initials</span></p>
+            </div>
+            <div class="atelier-stage__foot" aria-hidden="true">
+              <p class="atelier-stage__spec" id="atelier-spec">Zab Card Holder · Oxblood · Gold foil</p>
+              <p class="atelier-stage__total c-price" id="atelier-stage-total" data-price="90">$90</p>
+            </div>
+          </div>
+
+          <!-- the steps -->
+          <div class="atelier-steps" id="atelier-steps">
+            <div class="atelier-step" data-step="item">
+              <div class="atelier-step__head">
+                <h3 class="atelier-step__title" id="step-item"><span class="atelier-step__num" aria-hidden="true">01</span><span data-i18n="atelier.step.item">The piece</span></h3>
+                <p class="atelier-step__value" id="step-item-value" aria-hidden="true"></p>
+              </div>
+              <div class="atelier-items" id="atelier-items" role="radiogroup" aria-labelledby="step-item"></div>
+            </div>
+
+            <div class="atelier-step" data-step="leather">
+              <div class="atelier-step__head">
+                <h3 class="atelier-step__title" id="step-leather"><span class="atelier-step__num" aria-hidden="true">02</span><span data-i18n="atelier.step.leather">The leather</span></h3>
+                <p class="atelier-step__value" id="step-leather-value" aria-hidden="true"></p>
+              </div>
+              <div class="atelier-leathers" id="atelier-leathers" role="radiogroup" aria-labelledby="step-leather" aria-describedby="atelier-leather-note"></div>
+              <div class="atelier-leather-info">
+                <p class="atelier-leather-info__text" id="atelier-leather-desc"></p>
+                <p class="atelier-leather-info__note" id="atelier-leather-note"></p>
+              </div>
+              <p class="u-visually-hidden" id="atelier-live" role="status"></p>
+            </div>
+
+            <div class="atelier-step" data-step="foil">
+              <div class="atelier-step__head">
+                <h3 class="atelier-step__title" id="step-foil"><span class="atelier-step__num" aria-hidden="true">03</span><span data-i18n="atelier.step.foil">The foil</span></h3>
+                <p class="atelier-step__value" id="step-foil-value" aria-hidden="true"></p>
+              </div>
+              <div class="atelier-foils" role="radiogroup" aria-labelledby="step-foil">
+                <label class="atelier-opt atelier-foil atelier-foil--gold">
+                  <input class="atelier-opt__input" type="radio" name="atelier-foil" value="gold" checked>
+                  <span class="atelier-foil__chip" aria-hidden="true"><span class="atelier-foil__sample" data-sample lang="en">AB</span></span>
+                  <span class="atelier-opt__name" data-i18n="atelier.foil.gold">Gold foil</span>
+                  <span class="atelier-opt__text" data-i18n="atelier.foil.gold.text">Warm and bright — the house foil.</span>
+                </label>
+                <label class="atelier-opt atelier-foil atelier-foil--silver">
+                  <input class="atelier-opt__input" type="radio" name="atelier-foil" value="silver">
+                  <span class="atelier-foil__chip" aria-hidden="true"><span class="atelier-foil__sample" data-sample lang="en">AB</span></span>
+                  <span class="atelier-opt__name" data-i18n="atelier.foil.silver">Silver foil</span>
+                  <span class="atelier-opt__text" data-i18n="atelier.foil.silver.text">Cool and quiet, like moonlight.</span>
+                </label>
+                <label class="atelier-opt atelier-foil atelier-foil--blind">
+                  <input class="atelier-opt__input" type="radio" name="atelier-foil" value="blind">
+                  <span class="atelier-foil__chip" aria-hidden="true"><span class="atelier-foil__sample" data-sample lang="en">AB</span></span>
+                  <span class="atelier-opt__name" data-i18n="atelier.foil.blind">Blind deboss</span>
+                  <span class="atelier-opt__text" data-i18n="atelier.foil.blind.text">No foil — only the impression.</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="atelier-step" data-step="initials">
+              <div class="atelier-step__head">
+                <h3 class="atelier-step__title" id="step-initials"><span class="atelier-step__num" aria-hidden="true">04</span><span data-i18n="atelier.step.initials">Your initials</span></h3>
+                <p class="atelier-step__value atelier-step__count" id="atelier-initials-count" aria-hidden="true">0 / 3</p>
+              </div>
+              <div class="c-field atelier-initials">
+                <input class="c-field__input atelier-initials__input" id="atelier-initials" name="initials" type="text" maxlength="3" autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false" enterkeyhint="done" lang="en" dir="ltr" placeholder=" " aria-describedby="atelier-initials-hint atelier-initials-msg">
+                <label class="c-field__label" for="atelier-initials" data-i18n="atelier.initials.label">Initials</label>
+                <span class="c-field__line" aria-hidden="true"></span>
+              </div>
+              <p class="c-field__hint atelier-initials__hint" id="atelier-initials-hint" data-i18n="atelier.initials.hint">Up to 3 Latin letters, digits or a full stop</p>
+              <p class="atelier-initials__msg" id="atelier-initials-msg" aria-live="polite"></p>
+            </div>
+
+            <div class="atelier-step" data-step="style">
+              <div class="atelier-step__head">
+                <h3 class="atelier-step__title" id="step-style"><span class="atelier-step__num" aria-hidden="true">05</span><span data-i18n="atelier.step.style">The lettering</span></h3>
+                <p class="atelier-step__value" id="step-style-value" aria-hidden="true"></p>
+              </div>
+              <div class="atelier-styles" role="radiogroup" aria-labelledby="step-style">
+                <label class="atelier-opt atelier-style atelier-style--serif">
+                  <input class="atelier-opt__input" type="radio" name="atelier-style" value="serif" checked>
+                  <span class="atelier-style__sample" data-sample lang="en" aria-hidden="true">AB</span>
+                  <span class="atelier-opt__name" data-i18n="atelier.style.serif">Classic serif</span>
+                  <span class="atelier-opt__text" data-i18n="atelier.style.serif.text">Italic, like a written hand.</span>
+                </label>
+                <label class="atelier-opt atelier-style atelier-style--roman">
+                  <input class="atelier-opt__input" type="radio" name="atelier-style" value="roman">
+                  <span class="atelier-style__sample" data-sample lang="en" aria-hidden="true">AB</span>
+                  <span class="atelier-opt__name" data-i18n="atelier.style.roman">Roman capitals</span>
+                  <span class="atelier-opt__text" data-i18n="atelier.style.roman.text">Upright and spaced, as if cut in stone.</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- summary: what goes into the bag -->
+            <section class="atelier-summary" aria-labelledby="summary-title">
+              <span class="c-corners atelier-summary__corners" aria-hidden="true"></span>
+              <h3 class="atelier-summary__title" id="summary-title" data-i18n="atelier.summary.title">Your piece</h3>
+              <dl class="atelier-summary__list">
+                <div><dt data-i18n="atelier.summary.piece">Piece</dt><dd id="sum-piece">—</dd></div>
+                <div><dt data-i18n="atelier.summary.leather">Leather</dt><dd id="sum-leather">—</dd></div>
+                <div><dt data-i18n="atelier.summary.foil">Foil</dt><dd id="sum-foil">—</dd></div>
+                <div><dt data-i18n="atelier.summary.initials">Initials</dt><dd id="sum-initials">—</dd></div>
+                <div><dt data-i18n="atelier.summary.style">Lettering</dt><dd id="sum-style">—</dd></div>
+              </dl>
+              <div class="atelier-summary__prices">
+                <p><span id="sum-item-name">—</span><span class="c-price" id="sum-item-price" data-price="0">$0</span></p>
+                <p><span data-i18n="atelier.summary.fee">Personalisation</span><span class="c-price" id="sum-fee" data-price="25">$25</span></p>
+                <p class="atelier-summary__total"><span data-i18n="atelier.summary.total">Total</span><span class="c-price" id="sum-total" data-price="0">$0</span></p>
+              </div>
+              <div class="atelier-summary__actions">
+                <button class="c-btn c-btn--primary c-btn--lg c-btn--block atelier-add" type="button" id="atelier-add">
+                  <span class="c-btn__label"><span id="atelier-add-label" data-i18n="product.addToBag">Add to bag</span></span>
+                  <span class="atelier-add__price c-price" id="atelier-add-price" data-price="0">$0</span>
+                </button>
+                <a class="c-btn c-btn--ghost c-btn--block atelier-wa" id="atelier-wa" href="https://wa.me/" target="_blank" rel="noopener">
+                  <span class="c-btn__icon" data-icon="whatsapp"></span>
+                  <span class="c-btn__label"><span data-i18n="atelier.summary.wa">Request via WhatsApp</span></span>
+                  <span class="u-visually-hidden" data-i18n="a11y.newTab">(opens in a new tab)</span>
+                </a>
+              </div>
+              <p class="atelier-summary__note" data-i18n="atelier.summary.note">We confirm every personalisation with you before the letters are pressed.</p>
+              <p class="atelier-summary__inperson">
+                <span data-i18n="atelier.summary.inPerson">Prefer to choose in person?</span>
+                <a class="c-link" href="#appointment" data-appointment-service="personalisation"><span data-i18n="nav.appointment">Book an appointment</span><span data-icon="arrow"></span></a>
+              </p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         3 · MADE TO ORDER — five steps on one gold thread
+         ================================================================== -->
+    <section class="atelier-mto theme-dark u-section" id="made-to-order" aria-labelledby="mto-title">
+      <div class="u-container">
+        <header class="atelier-head atelier-head--mto">
+          <div class="atelier-head__main">
+            <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span class="c-eyebrow__num">02</span><span data-i18n="atelier.mto.eyebrow">Made to order</span></p>
+            <h2 class="atelier-head__title" id="mto-title" data-reveal="lines" data-i18n-html="atelier.mto.title">From a conversation <em>to your door.</em></h2>
+          </div>
+          <div class="atelier-head__aside" data-reveal="up" data-reveal-delay=".1">
+            <p class="atelier-head__text" data-i18n="atelier.mto.text">For shoes made to your measure, a bag drawn around what you carry, or a piece that does not exist yet. Five unhurried steps — and you are part of every one.</p>
+            <p class="atelier-head__note" data-i18n="atelier.mto.note">Timings depend on the piece and the leather; we agree them with you at the first conversation.</p>
+            <a class="c-link" href="#appointment" data-appointment-service="mto-shoes"><span data-i18n="atelier.mto.cta">Book a consultation</span><span data-icon="arrow"></span></a>
+          </div>
+        </header>
+
+        <div class="atelier-mto__track" id="atelier-mto">
+          <span class="atelier-mto__line" aria-hidden="true"><span class="atelier-mto__thread" id="atelier-mto-thread"></span></span>
+          <ol class="atelier-mto__steps">
+            <li class="atelier-mto__step">
+              <div class="atelier-mto__mark" aria-hidden="true"><span class="atelier-mto__node"></span></div>
+              <div class="atelier-mto__body">
+                <span class="atelier-mto__num" aria-hidden="true">01</span>
+                <div class="u-media atelier-mto__media" data-reveal="clip-up"><img src="assets/img/craft/workshop.jpg" alt="A master craftsman at his workbench in a leather workshop" width="2400" height="1350" loading="lazy" decoding="async" data-i18n-attr="alt:atelier.mto.1.alt"></div>
+                <h3 class="atelier-mto__title" data-i18n="atelier.mto.1.title">Consultation</h3>
+                <p class="atelier-mto__text" data-i18n="atelier.mto.1.text">We sit down together — in a boutique or on a call — and talk about what you want to wear, carry and keep.</p>
+              </div>
+            </li>
+            <li class="atelier-mto__step">
+              <div class="atelier-mto__mark" aria-hidden="true"><span class="atelier-mto__node"></span></div>
+              <div class="atelier-mto__body">
+                <span class="atelier-mto__num" aria-hidden="true">02</span>
+                <div class="u-media atelier-mto__media" data-reveal="clip-up"><img src="assets/img/editorial/hero-3.jpg" alt="An artisan's hands marking a pattern onto a hide before cutting" width="2400" height="1350" loading="lazy" decoding="async" data-i18n-attr="alt:atelier.mto.2.alt"></div>
+                <h3 class="atelier-mto__title" data-i18n="atelier.mto.2.title">Measure</h3>
+                <p class="atelier-mto__text" data-i18n="atelier.mto.2.text">Feet are measured and traced; a bag is drawn around what it must hold. Nothing is left to guesswork.</p>
+              </div>
+            </li>
+            <li class="atelier-mto__step">
+              <div class="atelier-mto__mark" aria-hidden="true"><span class="atelier-mto__node"></span></div>
+              <div class="atelier-mto__body">
+                <span class="atelier-mto__num" aria-hidden="true">03</span>
+                <div class="u-media atelier-mto__media" data-reveal="clip-up"><img src="assets/img/craft/hides.jpg" alt="Stacked hides of brown and tan leather, chosen by hand" width="1600" height="2000" loading="lazy" decoding="async" data-i18n-attr="alt:atelier.mto.3.alt"></div>
+                <h3 class="atelier-mto__title" data-i18n="atelier.mto.3.title">Select</h3>
+                <p class="atelier-mto__text" data-i18n="atelier.mto.3.text">You choose the leather from the hides themselves, then the thread, the lining and the finish.</p>
+              </div>
+            </li>
+            <li class="atelier-mto__step">
+              <div class="atelier-mto__mark" aria-hidden="true"><span class="atelier-mto__node"></span></div>
+              <div class="atelier-mto__body">
+                <span class="atelier-mto__num" aria-hidden="true">04</span>
+                <div class="u-media atelier-mto__media" data-reveal="clip-up"><img src="assets/img/craft/tools.jpg" alt="Leatherworking tools laid out on a worn wooden bench" width="1600" height="2000" loading="lazy" decoding="async" data-i18n-attr="alt:atelier.mto.4.alt"></div>
+                <h3 class="atelier-mto__title" data-i18n="atelier.mto.4.title">Craft</h3>
+                <p class="atelier-mto__text" data-i18n="atelier.mto.4.text">Cut, stitched and finished by hand, at the pace leather asks for. We keep you posted along the way.</p>
+              </div>
+            </li>
+            <li class="atelier-mto__step">
+              <div class="atelier-mto__mark" aria-hidden="true"><span class="atelier-mto__node"></span></div>
+              <div class="atelier-mto__body">
+                <span class="atelier-mto__num" aria-hidden="true">05</span>
+                <div class="u-media atelier-mto__media" data-reveal="clip-up"><img src="assets/img/editorial/campaign-3.jpg" alt="A cognac leather wallet and key fob on a walnut table" width="2400" height="1350" loading="lazy" decoding="async" data-i18n-attr="alt:atelier.mto.5.alt"></div>
+                <h3 class="atelier-mto__title" data-i18n="atelier.mto.5.title">Deliver</h3>
+                <p class="atelier-mto__text" data-i18n="atelier.mto.5.text">Your piece is fitted and handed over in person, or sent to you wrapped — with its care notes.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         4 · APPOINTMENT — request form (validated, no backend)
+         ================================================================== -->
+    <section class="atelier-appt theme-paper u-section" id="appointment" aria-labelledby="appt-title">
+      <div class="u-container atelier-appt__grid">
+        <div class="atelier-appt__intro">
+          <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span class="c-eyebrow__num">03</span><span data-i18n="atelier.appt.eyebrow">Appointments</span></p>
+          <h2 class="atelier-head__title atelier-appt__title" id="appt-title" data-reveal="lines" data-i18n-html="atelier.appt.title">Sit down <em>with the atelier.</em></h2>
+          <p class="atelier-appt__text" data-reveal="up" data-reveal-delay=".1" data-i18n="atelier.appt.text">Tell us what you have in mind and when suits you. An advisor will reply to confirm a time at the boutique of your choice.</p>
+
+          <figure class="atelier-appt__figure" data-reveal="up" data-reveal-delay=".15">
+            <div class="c-frame"><div class="u-media atelier-appt__media" data-reveal="clip-up"><img src="assets/img/stores/erbil.jpg" alt="Amber-lit glass cabinets displaying leather goods in a boutique" width="1600" height="1200" loading="lazy" decoding="async" data-parallax="0.1" data-i18n-attr="alt:atelier.appt.alt"></div></div>
+            <figcaption class="c-caption"><span class="c-caption__num">N°03</span><span data-i18n="atelier.appt.caption">In the boutique</span></figcaption>
+          </figure>
+        </div>
+
+        <div class="atelier-appt__panel" data-reveal="up" data-reveal-delay=".1">
+          <form class="c-form atelier-form" id="atelier-form" novalidate aria-labelledby="appt-title">
+            <div class="c-form__row c-form__row--2">
+              <div class="c-field">
+                <input class="c-field__input" id="ap-name" name="name" type="text" required placeholder=" " autocomplete="name">
+                <label class="c-field__label" for="ap-name" data-i18n="form.name">Full name</label>
+                <span class="c-field__line" aria-hidden="true"></span>
+                <p class="c-field__msg"></p>
+              </div>
+              <div class="c-field">
+                <input class="c-field__input" id="ap-phone" name="phone" type="tel" required placeholder=" " autocomplete="tel" inputmode="tel">
+                <label class="c-field__label" for="ap-phone" data-i18n="form.phone">Phone number</label>
+                <span class="c-field__line" aria-hidden="true"></span>
+                <p class="c-field__msg"></p>
+              </div>
+            </div>
+            <div class="c-form__row c-form__row--2">
+              <div class="c-field c-field--select">
+                <select class="c-field__input" id="ap-city" name="city" required>
+                  <option value="" data-i18n="form.select">Please choose</option>
+                </select>
+                <label class="c-field__label" for="ap-city" data-i18n="form.city">City</label>
+                <span class="c-field__line" aria-hidden="true"></span>
+                <p class="c-field__msg"></p>
+              </div>
+              <div class="c-field">
+                <input class="c-field__input" id="ap-date" name="date" type="date" required>
+                <label class="c-field__label" for="ap-date" data-i18n="form.date">Preferred date</label>
+                <span class="c-field__line" aria-hidden="true"></span>
+                <p class="c-field__msg"></p>
+              </div>
+            </div>
+            <div class="c-field c-field--select">
+              <select class="c-field__input" id="ap-service" name="service" required>
+                <option value="" data-i18n="form.select">Please choose</option>
+                <option value="personalisation" data-i18n="atelier.form.service.personalisation">Personalisation</option>
+                <option value="mto-shoes" data-i18n="atelier.form.service.mtoShoes">Made-to-order shoes</option>
+                <option value="mto-bag" data-i18n="atelier.form.service.mtoBag">Made-to-order bag</option>
+                <option value="care" data-i18n="atelier.form.service.care">Care &amp; repair</option>
+              </select>
+              <label class="c-field__label" for="ap-service" data-i18n="atelier.form.service">Service</label>
+              <span class="c-field__line" aria-hidden="true"></span>
+              <p class="c-field__msg"></p>
+            </div>
+            <div class="c-field">
+              <textarea class="c-field__input" id="ap-message" name="message" rows="4" placeholder=" "></textarea>
+              <label class="c-field__label" for="ap-message" data-i18n="atelier.form.message">Message — optional</label>
+              <span class="c-field__line" aria-hidden="true"></span>
+              <p class="c-field__msg"></p>
+            </div>
+            <div class="atelier-form__foot">
+              <button class="c-btn c-btn--primary c-btn--lg" type="submit">
+                <span class="c-btn__label"><span data-i18n="atelier.form.submit">Request an appointment</span></span><span class="c-btn__arrow"></span>
+              </button>
+              <p class="atelier-form__note" data-i18n="atelier.form.note">Nothing is charged. We reply personally to confirm.</p>
+            </div>
+          </form>
+
+          <div class="c-form-success atelier-success" id="atelier-success" hidden tabindex="-1" role="status">
+            <span class="atelier-success__seal" aria-hidden="true" data-icon="check"></span>
+            <p class="c-form-success__title atelier-success__title" id="atelier-success-title">Thank you.</p>
+            <p class="atelier-success__text" id="atelier-success-text"></p>
+            <div class="atelier-success__actions">
+              <a class="c-btn c-btn--primary" id="atelier-success-wa" href="https://wa.me/" target="_blank" rel="noopener">
+                <span class="c-btn__icon" data-icon="whatsapp"></span>
+                <span class="c-btn__label"><span data-i18n="atelier.success.wa">Send on WhatsApp</span></span>
+                <span class="u-visually-hidden" data-i18n="a11y.newTab">(opens in a new tab)</span>
+              </a>
+              <a class="c-btn c-btn--ghost" id="atelier-success-mail" href="mailto:">
+                <span class="c-btn__icon" data-icon="mail"></span>
+                <span class="c-btn__label"><span data-i18n="atelier.success.email">Send by email</span></span>
+              </a>
+            </div>
+            <button class="c-link atelier-success__again" type="button" id="atelier-success-again"><span data-i18n="atelier.success.again">Make another request</span><span data-icon="arrow"></span></button>
+          </div>
+          <div class="atelier-appt__contact" data-reveal="up">
+            <p class="atelier-appt__contact-title" data-i18n="atelier.appt.contact">Prefer to write or call?</p>
+            <ul class="atelier-appt__methods" id="atelier-methods"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         5 · FAQ — personalisation questions
+         ================================================================== -->
+    <section class="atelier-faq theme-light u-section" id="faq" aria-labelledby="faq-title">
+      <div class="u-container atelier-faq__grid">
+        <div class="atelier-faq__head">
+          <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span class="c-eyebrow__num">04</span><span data-i18n="atelier.faq.eyebrow">Questions</span></p>
+          <h2 class="atelier-head__title" id="faq-title" data-reveal="lines" data-i18n-html="atelier.faq.title">Before <em>you begin.</em></h2>
+          <p class="atelier-faq__text" data-reveal="up" data-reveal-delay=".1" data-i18n="atelier.faq.text">The questions we hear most about personalisation. For anything else, ask us — we answer personally.</p>
+          <a class="c-link" href="boutiques.html#faq" data-reveal="fade" data-reveal-delay=".2"><span data-i18n="atelier.faq.more">More in client services</span><span data-icon="arrow"></span></a>
+        </div>
+
+        <div class="c-accordion atelier-faq__list" data-accordion="single" data-reveal="up" data-reveal-delay=".1">
+          <div class="c-accordion__item is-open">
+            <h3 class="c-accordion__heading"><button class="c-accordion__trigger" type="button">
+              <span><span class="c-accordion__num">01</span><span data-i18n="atelier.faq.1.q">Which pieces can be personalised?</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h3>
+            <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content">
+              <p data-i18n="atelier.faq.1.a">Our bags and small leather goods — wallets, card holders, belts and travel pieces. Look for “Personalise it” on a product page, or begin right here.</p>
+            </div></div></div>
+          </div>
+          <div class="c-accordion__item">
+            <h3 class="c-accordion__heading"><button class="c-accordion__trigger" type="button">
+              <span><span class="c-accordion__num">02</span><span data-i18n="atelier.faq.2.q">What can be pressed?</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h3>
+            <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content">
+              <p data-i18n="atelier.faq.2.a">Up to three characters: the Latin letters A–Z, the digits 0–9 and a full stop, in classic serif or Roman capitals. If you have something else in mind, tell us at an appointment.</p>
+            </div></div></div>
+          </div>
+          <div class="c-accordion__item">
+            <h3 class="c-accordion__heading"><button class="c-accordion__trigger" type="button">
+              <span><span class="c-accordion__num">03</span><span data-i18n="atelier.faq.3.q">What is the difference between foil and a blind deboss?</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h3>
+            <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content">
+              <p data-i18n="atelier.faq.3.a">Foil lays a fine film of gold or silver into the pressed letters. A blind deboss uses no foil at all — only the impression in the leather, which deepens quietly as the leather ages.</p>
+            </div></div></div>
+          </div>
+          <div class="c-accordion__item">
+            <h3 class="c-accordion__heading"><button class="c-accordion__trigger" type="button">
+              <span><span class="c-accordion__num">04</span><span data-i18n="atelier.faq.4.q">How much does it cost?</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h3>
+            <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content">
+              <p id="atelier-faq-fee">Personalisation adds $25 to the price of the piece, whichever foil and lettering you choose.</p>
+            </div></div></div>
+          </div>
+          <div class="c-accordion__item">
+            <h3 class="c-accordion__heading"><button class="c-accordion__trigger" type="button">
+              <span><span class="c-accordion__num">05</span><span data-i18n="atelier.faq.5.q">Can I personalise a gift?</span></span><span class="c-accordion__icon" aria-hidden="true"></span></button></h3>
+            <div class="c-accordion__panel"><div class="c-accordion__inner"><div class="c-accordion__content">
+              <p data-i18n="atelier.faq.5.a">Of course. Use the initials of the person it is for, and tell us it is a gift when we confirm your order — it will be wrapped by hand, ready to give.</p>
+            </div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         6 · CLOSING BAND — on to the collection and the boutiques
+         ================================================================== -->
+    <section class="atelier-next theme-night" aria-labelledby="next-title">
+      <h2 class="u-visually-hidden" id="next-title" data-i18n="atelier.next.label">Continue your visit</h2>
+      <div class="atelier-next__grid">
+        <a class="atelier-next__link" href="shop.html" data-cursor-label="cursor.explore">
+          <span class="u-media atelier-next__media" aria-hidden="true"><img src="assets/img/categories/accessories.jpg" alt="" width="1200" height="1600" loading="lazy" decoding="async" data-parallax="0.1"></span>
+          <span class="atelier-next__body">
+            <span class="c-eyebrow c-eyebrow--line"><span data-i18n="atelier.next.shop.eyebrow">The collection</span></span>
+            <span class="atelier-next__title" data-i18n-html="atelier.next.shop.title">Choose your <em>piece.</em></span>
+            <span class="atelier-next__text" data-i18n="atelier.next.shop.text">Bags, belts and small leather goods, ready for your initials.</span>
+            <span class="atelier-next__cta"><span data-i18n="atelier.next.shop.cta">Shop the collection</span><span class="atelier-next__arrow" data-icon="arrow"></span></span>
+          </span>
+        </a>
+        <a class="atelier-next__link" href="boutiques.html" data-cursor-label="cursor.discover">
+          <span class="u-media atelier-next__media" aria-hidden="true"><img src="assets/img/stores/duhok.jpg" alt="" width="1600" height="1200" loading="lazy" decoding="async" data-parallax="0.1"></span>
+          <span class="atelier-next__body">
+            <span class="c-eyebrow c-eyebrow--line"><span data-i18n="atelier.next.visit.eyebrow">The boutiques</span></span>
+            <span class="atelier-next__title" data-i18n-html="atelier.next.visit.title">Visit <em>the house.</em></span>
+            <span class="atelier-next__text" id="atelier-next-cities">Erbil, Sulaymaniyah and Duhok — see and touch the leathers in person.</span>
+            <span class="atelier-next__cta"><span data-i18n="atelier.next.visit.cta">Find a boutique</span><span class="atelier-next__arrow" data-icon="arrow"></span></span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/js/brand.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/leather.js"></script>
+  <script src="assets/js/pages/atelier.js"></script>
+</body>
+</html>

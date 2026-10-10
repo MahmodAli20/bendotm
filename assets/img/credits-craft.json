@@ -1,0 +1,227 @@
+{
+ "craft/hides": {
+  "file": "assets/img/craft/hides.jpg",
+  "unsplash_id": "9iMh-nFFpbo",
+  "photographer": "Lifetime Leather",
+  "photographer_url": "https://unsplash.com/@lifetime_leather",
+  "source": "https://unsplash.com/photos/brown-and-green-leaves-on-blue-textile-9iMh-nFFpbo",
+  "alt": "Stacked hides of brown and tan leather, chosen by hand",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.1,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "craft/cutting": {
+  "file": "assets/img/craft/cutting.jpg",
+  "unsplash_id": "eM-gOy8AiQk",
+  "photographer": "Alexander Kirov",
+  "photographer_url": "https://unsplash.com/@alexanderdaniel",
+  "source": "https://unsplash.com/photos/a-table-topped-with-lots-of-different-types-of-tools-eM-gOy8AiQk",
+  "alt": "Round knife and freshly cut leather pieces on the cutting table",
+  "crop": {
+   "fx": 0.6,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "craft/skiving": {
+  "file": "assets/img/craft/skiving.jpg",
+  "unsplash_id": "KGQlg-K4VWA",
+  "photographer": "La Compagnie Robinson",
+  "photographer_url": "https://unsplash.com/@lacompagnierobinson",
+  "source": "https://unsplash.com/photos/black-ford-on-board-KGQlg-K4VWA",
+  "alt": "Artisan marking stitch holes along a leather edge with a pricking iron",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.55,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "craft/stitching": {
+  "file": "assets/img/craft/stitching.jpg",
+  "unsplash_id": "X875kk9-rnU",
+  "photographer": "Lifetime Leather",
+  "photographer_url": "https://unsplash.com/@lifetime_leather",
+  "source": "https://unsplash.com/photos/person-in-black-crew-neck-t-shirt-holding-brown-wooden-guitar-pick-X875kk9-rnU",
+  "alt": "Hand saddle-stitching with waxed thread at a stitching clam",
+  "crop": {
+   "fx": 0.74,
+   "fy": 0.62,
+   "zoom": 1.55,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "craft/lasting": {
+  "file": "assets/img/craft/lasting.jpg",
+  "unsplash_id": "iwvHDSCdFeg",
+  "photographer": "Matteo Vella",
+  "photographer_url": "https://unsplash.com/@dragomv",
+  "source": "https://unsplash.com/photos/a-pair-of-black-shoes-sitting-on-top-of-a-wooden-table-iwvHDSCdFeg",
+  "alt": "Shoes shaped on wooden lasts on a shoemaker's bench",
+  "crop": {
+   "fx": 0.55,
+   "fy": 0.55,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "craft/finishing": {
+  "file": "assets/img/craft/finishing.jpg",
+  "unsplash_id": "4kBsVsiFozc",
+  "photographer": "Lina Verovaya",
+  "photographer_url": "https://unsplash.com/@linaverovaya",
+  "source": "https://unsplash.com/photos/brown-and-black-brush-4kBsVsiFozc",
+  "alt": "Hand-polishing a dark leather shoe with a brush and wax",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.3,
+   "zoom": 1.2,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "craft/tools": {
+  "file": "assets/img/craft/tools.jpg",
+  "unsplash_id": "2AOpl5Zaz74",
+  "photographer": "Damien de Gouveia",
+  "photographer_url": "https://unsplash.com/@d____n",
+  "source": "https://unsplash.com/photos/a-close-up-of-a-set-of-keys-2AOpl5Zaz74",
+  "alt": "Leatherworking tools laid out on a worn wooden bench",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "craft/workshop": {
+  "file": "assets/img/craft/workshop.jpg",
+  "unsplash_id": "CB3lRHb15l0",
+  "photographer": "Mikita Yo",
+  "photographer_url": "https://unsplash.com/@mikitayo",
+  "source": "https://unsplash.com/photos/man-in-black-and-white-checkered-dress-shirt-sitting-on-chair-CB3lRHb15l0",
+  "alt": "A master craftsman at his workbench in a leather workshop",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.42,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "textures/leather-dark": {
+  "file": "assets/img/textures/leather-dark.jpg",
+  "unsplash_id": "Y5RNGe_xkAQ",
+  "photographer": "Ayush Design",
+  "photographer_url": "https://unsplash.com/@ayushdesign",
+  "source": "https://unsplash.com/photos/black-leather-texture-with-fine-grain-Y5RNGe_xkAQ",
+  "alt": "Macro texture of fine black leather grain",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "textures/leather-brown": {
+  "file": "assets/img/textures/leather-brown.jpg",
+  "unsplash_id": "m5o4dOHAibM",
+  "photographer": "Jayanth Muppaneni",
+  "photographer_url": "https://unsplash.com/@jay_5",
+  "source": "https://unsplash.com/photos/a-close-up-of-a-brown-leather-texture-m5o4dOHAibM",
+  "alt": "Macro texture of cognac leather with natural creasing",
+  "crop": {
+   "fx": 0.58,
+   "fy": 0.5,
+   "zoom": 1.2,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "textures/leather-grain": {
+  "file": "assets/img/textures/leather-grain.jpg",
+  "unsplash_id": "dmKhCuPIXjs",
+  "photographer": "The New York Public Library",
+  "photographer_url": "https://unsplash.com/@nypl",
+  "source": "https://unsplash.com/photos/dark-brown-textured-leather-surface-dmKhCuPIXjs",
+  "alt": "Macro texture of dark pebble-grain leather",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "stores/erbil": {
+  "file": "assets/img/stores/erbil.jpg",
+  "unsplash_id": "CF1_3iPojjw",
+  "photographer": "Chris Loverseed | PK9 Gear",
+  "photographer_url": "https://unsplash.com/@pk9gear",
+  "source": "https://unsplash.com/photos/leather-belts-and-collars-in-cabinet-CF1_3iPojjw",
+  "alt": "Amber-lit glass cabinets displaying leather goods in a boutique",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.43,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "stores/sulaymaniyah": {
+  "file": "assets/img/stores/sulaymaniyah.jpg",
+  "unsplash_id": "LoaMJwALBG4",
+  "photographer": "Nikolay Samara",
+  "photographer_url": "https://unsplash.com/@nikolaysamara",
+  "source": "https://unsplash.com/photos/white-and-black-labeled-box-LoaMJwALBG4",
+  "alt": "Tailored menswear salon with shelves of shoes and folded shirts",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "stores/duhok": {
+  "file": "assets/img/stores/duhok.jpg",
+  "unsplash_id": "Do4_QlnBHbc",
+  "photographer": "Kathya Meza",
+  "photographer_url": "https://unsplash.com/@kathyadahil",
+  "source": "https://unsplash.com/photos/a-display-of-handbags-and-purses-in-a-store-Do4_QlnBHbc",
+  "alt": "Lit wooden shelving displaying leather bags and shoes",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.33,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ },
+ "stores/interior-wide": {
+  "file": "assets/img/stores/interior-wide.jpg",
+  "unsplash_id": "VZzp1uxnkI8",
+  "photographer": "Mathias Reding",
+  "photographer_url": "https://unsplash.com/@matreding",
+  "source": "https://unsplash.com/photos/shoes-on-a-leather-chair-VZzp1uxnkI8",
+  "alt": "A row of polished leather shoes on a boutique display",
+  "crop": {
+   "fx": 0.5,
+   "fy": 0.5,
+   "zoom": 1.0,
+   "flip": false
+  },
+  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+ }
+}
