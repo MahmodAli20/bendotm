@@ -161,6 +161,15 @@
 @media (max-width: 699.98px) {
   :root { --header-h: 64px; }
 }
+/* Phones: the tracked uppercase labels read better a touch larger (ckb keeps its own 13 px tokens below) */
+@media (max-width: 600px) {
+  :root { --fs-ui: .72rem; --fs-micro: .6875rem; }
+}
+/* Touch screens: taller hit areas for small text links — the layout does not move */
+@media (pointer: coarse) {
+  .c-breadcrumbs a, .c-text-link { position: relative; }
+  .c-breadcrumbs a::after, .c-text-link::after { content: ''; position: absolute; inset-block: -13px; inset-inline: 0; }
+}
 
 
 /* =============================================================================
@@ -1036,6 +1045,8 @@ h3, .t-h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); letter-spacing: 
   transform: scaleX(0);
   transition: transform .5s var(--ease-out);
 }
+.c-switch__btn::before { content: ''; position: absolute; inset-block: 0; inset-inline: -12px; }   /* invisible: ≥ 44px tap target */
+@media (pointer: coarse) { .c-switch { gap: 14px; } }                                               /* hit areas never overlap */
 .c-switch__btn:hover { opacity: .9; }
 .c-switch__btn[aria-pressed="true"] { opacity: 1; }
 .c-switch__btn[aria-pressed="true"]::after { transform: scaleX(1); }

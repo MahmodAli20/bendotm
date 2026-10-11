@@ -170,6 +170,10 @@
   white-space: nowrap;
   transition: color .6s var(--ease-out);
 }
+@media (pointer: coarse) {
+  /* 44 px tap targets, kept inside the scroll strip's padding so nothing is clipped or shifted */
+  .shop-cats__link { padding-block: 2px 14px; margin-block: -2px -14px; }
+}
 .shop-cats__link:hover, .shop-cats__link[aria-current="page"] { color: var(--fg-strong); }
 .shop-cats__link[aria-current="page"] .shop-cats__label { font-style: var(--fst-em); }
 .shop-cats__link.is-empty { opacity: .45; }

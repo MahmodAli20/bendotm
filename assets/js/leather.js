@@ -1512,7 +1512,13 @@
     this._syncMotion();
     if (!this.webgl) { this._showFallback(true); return this; }
     if (level >= 2) this._schedule(level);
-    else if (level === 1 && this._built) { this._render(); this._wake(); }
+    else if (level === 1 && this._built) {
+      // colour / foil / stitch colour / light height are uniforms: no rebuild, but the renderer draws from the options
+      // it was last built with, so hand it the new ones (otherwise e.g. noir → cognac, both smooth, keeps the old colour)
+      this.r.o = this.o;
+      this._render();
+      this._wake();
+    }
     else this._wake();
     return this;
   };
