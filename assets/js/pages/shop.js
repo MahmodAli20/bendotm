@@ -5,7 +5,7 @@
    sort) · 05 Hero · 06 Category tabs · 07 Toolbar (count · sort · density)
    08 Active filters · 09 Grid (cards, editorial tiles, FLIP) · 10 Empty states
    11 End of list & band · 12 Filter panel · 13 In-page navigation · 14 Boot
-   URL contract: ?cat=men|women|bags|accessories · ?q= · ?new=1 · ?saved=1
+   URL contract: ?cat=<main or sub-category id, e.g. men · men-shoes> · ?q= · ?new=1 · ?saved=1
    (+ type, color, size, min, max, sort — written back with history.replaceState)
    ========================================================================== */
 (function (B, w, d) {
@@ -36,6 +36,8 @@
       'shop.lead.searchNone': 'No piece matches your search.',
       'shop.tabs.label': 'Categories',
       'shop.tabs.all': 'All',
+      'shop.subs.label': 'Sub-categories',
+      'shop.subs.all': 'View all',
       'shop.count': '{n} pieces',
       'shop.count_one': '1 piece',
       'shop.results': 'The pieces',
@@ -158,6 +160,8 @@
       'shop.lead.searchNone': 'هیچ پارچەیەک لەگەڵ گەڕانەکەت ناگونجێت.',
       'shop.tabs.label': 'بەشەکان',
       'shop.tabs.all': 'هەموو',
+      'shop.subs.label': 'بەشە لاوەکییەکان',
+      'shop.subs.all': 'بینینی هەموو',
       'shop.count': '{n} پارچە',
       'shop.results': 'پارچەکان',
       'shop.filter': 'فلتەر',
@@ -271,7 +275,6 @@
   var STORES = w.BENM_STORES || [];
   var CONFIG = w.BENM_CONFIG || {};
 
-  var CAT_IDS = CATS.map(function (c) { return c.id; });
   var TYPE_IDS = unique(PRODUCTS.map(function (p) { return p.type; }));
   var COLOR_IDS = LEATHERS.map(function (l) { return l.id; });
   var SIZE_IDS = unique([].concat.apply([], PRODUCTS.map(function (p) { return p.sizes || []; }))).sort(byNum);
@@ -288,23 +291,24 @@
   var DENSITY_DEFAULT = { s: 2, m: 2, l: 3 };
   var DENSITY_KEY = 'benm:shop-density';
 
-  // hero image per view (categories use their own data image)
+  // hero image per view; categories use their own photo (else their parent's), these add framing + alt
   var MEDIA = {
     all: { src: 'assets/img/editorial/hero-1.jpg', w: 2400, h: 1350, pos: '64% 62%', alt: 'shop.img.all' },
     fresh: { src: 'assets/img/editorial/campaign-2.jpg', w: 2400, h: 1350, pos: '44% 50%', alt: 'shop.img.new' },
     saved: { src: 'assets/img/lookbook/look-7.jpg', w: 1200, h: 1600, pos: '50% 50%', alt: 'shop.img.saved' },
     search: { src: 'assets/img/lookbook/look-6.jpg', w: 1200, h: 1600, pos: '50% 50%', alt: 'shop.img.search' },
-    men: { w: 1200, h: 1600, pos: '50% 42%', alt: 'shop.img.men' },
-    women: { w: 1200, h: 1600, pos: '50% 50%', alt: 'shop.img.women' },
-    bags: { w: 1200, h: 1600, pos: '50% 50%', alt: 'shop.img.bags' },
-    accessories: { w: 1200, h: 1600, pos: '50% 50%', alt: 'shop.img.accessories' }
+    men: { pos: '50% 42%', alt: 'shop.img.men' },
+    women: { alt: 'shop.img.women' },
+    'men-bags': { pos: '50% 62%', alt: 'shop.tile.travel.alt' },
+    'women-bags': { alt: 'shop.img.bags' },
+    'women-accessories': { alt: 'shop.img.accessories' }
   };
 
   // editorial interruptions (kind: split = portrait photo + text panel · wide = landscape photo)
   var TILES = [
     { id: 'craft', kind: 'wide', src: 'assets/img/editorial/maison-hero.jpg', w: 2400, h: 1350, pos: '50% 62%', href: 'maison.html#materials' },
     { id: 'atelier', kind: 'split', theme: 'dark', src: 'assets/img/editorial/atelier.jpg', w: 1600, h: 2000, pos: '50% 50%', href: 'atelier.html#configurator' },
-    { id: 'travel', kind: 'split', theme: 'paper', src: 'assets/img/lookbook/look-1.jpg', w: 1200, h: 1600, pos: '50% 62%', href: 'shop.html?cat=bags', cat: 'bags' },
+    { id: 'travel', kind: 'split', theme: 'paper', src: 'assets/img/lookbook/look-1.jpg', w: 1200, h: 1600, pos: '50% 62%', href: 'shop.html?cat=men-bags', cat: 'men-bags' },
     { id: 'care', kind: 'split', theme: 'dark', src: 'assets/img/editorial/care.jpg', w: 1600, h: 2000, pos: '50% 50%', href: 'maison.html#care' },
     { id: 'women', kind: 'split', theme: 'paper', src: 'assets/img/lookbook/look-5.jpg', w: 1200, h: 1600, pos: '50% 70%', href: 'shop.html?cat=women', cat: 'women' },
     { id: 'men', kind: 'split', theme: 'dark', src: 'assets/img/lookbook/look-3.jpg', w: 1200, h: 1600, pos: '50% 50%', href: 'shop.html?cat=men', cat: 'men' },
@@ -351,7 +355,7 @@
   }
   function readParams(params) {
     var cat = (params.get('cat') || '').toLowerCase();
-    state.cat = CAT_IDS.indexOf(cat) > -1 ? cat : '';
+    state.cat = B.category(cat) ? cat : '';
     state.q = (params.get('q') || '').replace(/\s+/g, ' ').trim().slice(0, 80);
     state.fresh = params.get('new') === '1' || params.get('new') === 'true';
     state.saved = params.get('saved') === '1' || params.get('saved') === 'true';
@@ -372,7 +376,7 @@
   // shop.html?… for a state (scope only unless `full`)
   function queryFor(s, full) {
     var p = [];
-    if (s.cat) p.push('cat=' + s.cat);
+    if (s.cat) p.push('cat=' + encodeURIComponent(s.cat));
     if (s.q) p.push('q=' + encodeURIComponent(s.q));
     if (s.fresh) p.push('new=1');
     if (s.saved) p.push('saved=1');
@@ -415,7 +419,7 @@
   }
   function scopeList() {
     var base = baseList();
-    return state.cat ? base.filter(function (p) { return p.category === state.cat; }) : base;
+    return state.cat ? base.filter(function (p) { return B.inCategory(p, state.cat); }) : base;
   }
   function inStock(p, size) { return (p.sizes || []).indexOf(size) > -1 && (p.soldOut || []).indexOf(size) < 0; }
   function hasColor(p, id) { return (p.colors || []).some(function (c) { return c.id === id; }); }
@@ -476,24 +480,40 @@
     if (state.cat) return B.loc((B.category(state.cat) || {}).name) || state.cat;
     return B.t('shop.title.all');
   }
+  // the category, then its parent: "Men · Shoes" / a sub-category without its own texts borrows the parent's
+  function parentOf(id) { var c = B.category(id); return c && c.parent ? B.category(c.parent) : null; }
+  function catTrail(id) { var up = parentOf(id); return (up ? B.loc(up.name) + ' · ' : '') + B.loc((B.category(id) || {}).name); }
+  function catText(id, field) {
+    var c = B.category(id), up = parentOf(id);
+    return B.loc(c && c[field]) || B.loc(up && up[field]);
+  }
   function leadHTML(v, n) {
     if (v === 'search') return n ? esc(B.t('shop.lead.search', { n: n })) : esc(B.t('shop.lead.searchNone'));
     if (v === 'saved') return B.t('shop.lead.saved');
     if (v === 'fresh') return B.t('shop.lead.new');
     if (v === 'all') return B.t('shop.lead.all');
-    return esc(B.loc((B.category(v) || {}).tagline));
+    return esc(catText(v, 'tagline'));
   }
   function introText(v) {
     if (v === 'search') return '';
     if (v === 'saved') return B.t('shop.intro.saved');
     if (v === 'fresh') return B.t('shop.intro.new');
     if (v === 'all') return B.t('shop.intro.all');
-    return B.loc((B.category(v) || {}).intro);
+    return catText(v, 'intro');
   }
   function mediaFor(v) {
-    var m = MEDIA[v] || MEDIA.all;
-    if (!m.src && B.category(v)) m.src = B.category(v).image;
-    return m;
+    var c = B.category(v);
+    if (!c) return MEDIA[v] || MEDIA.all;
+    var up = parentOf(v), first = B.products(function (p) { return B.inCategory(p, v); })[0];
+    var src = c.image || (first && first.images && first.images[0]) || (up && up.image);
+    if (!src) return MEDIA.all;
+    var m = MEDIA[v] || {};
+    return { src: src, w: 1200, h: 1600, pos: m.pos || '50% 50%', alt: m.alt || 'cat.' + c.id + '.name' };
+  }
+  // N° of the main category in catalogue order (sub-categories share their parent's)
+  function catNo(v) {
+    var top = B.topCategory(v);
+    return top ? B.categories(null, { nonEmpty: true }).map(function (c) { return c.id; }).indexOf(top.id) + 1 : 0;
   }
 
   function renderHero(animate) {
@@ -521,14 +541,15 @@
     ui.ask.hidden = !savedItems.length;
     if (savedItems.length) ui.askLink.href = B.whatsappLink(savedMessage(savedItems));
 
-    d.title = B.t('shop.meta.titleFor', { title: title });
+    var isCat = !!B.category(v);
+    d.title = B.t('shop.meta.titleFor', { title: isCat ? catTrail(v) : title });
     renderCrumbs(v, title);
     swapMedia(v, animate && v !== last.view);
-    // caption: N° + view name (categories numbered in catalogue order)
-    var idx = CAT_IDS.indexOf(v);
-    ui.capNum.textContent = 'N°' + pad2(idx > -1 ? idx + 1 : 0);
-    ui.capNum.hidden = !(idx > -1 || v === 'all');
-    ui.cap.textContent = v === 'search' ? B.t('header.search') : title;
+    // caption: N° + view name (main categories numbered in catalogue order)
+    var no = isCat ? catNo(v) : 0;
+    ui.capNum.textContent = 'N°' + pad2(no);
+    ui.capNum.hidden = !(no || v === 'all');
+    ui.cap.textContent = v === 'search' ? B.t('header.search') : isCat ? catTrail(v) : title;
     last.view = v;
     last.title = title;
   }
@@ -539,9 +560,11 @@
   }
   function renderCrumbs(v, title) {
     var home = '<li><a href="' + esc(B.url('index.html')) + '">' + esc(B.t('nav.home')) + '</a></li>';
+    var up = parentOf(v);
     var html = v === 'all'
       ? home + '<li><span aria-current="page">' + esc(B.t('nav.shop')) + '</span></li>'
       : home + '<li><a href="' + esc(B.url('shop.html')) + '">' + esc(B.t('nav.shop')) + '</a></li>' +
+        (up ? '<li><a href="' + esc(hrefFor({ cat: up.id })) + '">' + esc(B.loc(up.name)) + '</a></li>' : '') +
         '<li><span aria-current="page">' + esc(v === 'search' ? B.t('header.search') : title) + '</span></li>';
     ui.crumbs.innerHTML = html;
   }
@@ -618,22 +641,66 @@
   /* ===========================================================================
      06  Category tabs — counts per scope, aria-current, travelling underline
      ======================================================================== */
+  // "All" + the main categories that hold pieces (Men, Women, … — added in the admin)
+  function buildTabs() {
+    var list = $('[data-shop-tabs]', ui.main), all = list && $('[data-cat="all"]', list);
+    if (!all) return;
+    var allLi = all.closest('li');
+    list.innerHTML = '';
+    list.appendChild(allLi);
+    B.categories(null, { nonEmpty: true }).forEach(function (c) {
+      var li = d.createElement('li');
+      li.innerHTML = '<a class="shop-cats__link" href="' + esc(B.url('shop.html?cat=' + encodeURIComponent(c.id))) + '" data-cat="' + esc(c.id) + '">' +
+        '<span class="shop-cats__label" data-i18n="cat.' + esc(c.id) + '.name">' + esc(B.loc(c.name)) + '</span>' +
+        '<sup class="shop-cats__n" aria-hidden="true"></sup><span class="u-visually-hidden" data-cat-sr></span></a>';
+      list.appendChild(li);
+    });
+    ui.tabs = $$('.shop-cats__link', list);
+  }
   function renderTabs() {
-    var base = baseList();
+    var base = baseList(), top = B.topCategory(state.cat);
     ui.tabs.forEach(function (a) {
       var id = a.getAttribute('data-cat');
       var cat = id === 'all' ? '' : id;
-      var n = cat ? base.filter(function (p) { return p.category === cat; }).length : base.length;
+      var n = cat ? base.filter(function (p) { return B.inCategory(p, cat); }).length : base.length;
       a.setAttribute('href', hrefFor({ cat: cat }));
       $('.shop-cats__n', a).textContent = B.num(n);
       $('[data-cat-sr]', a).textContent = ' (' + B.t('shop.count', { n: n }) + ')';
       a.classList.toggle('is-empty', !n);
       if (cat === state.cat) a.setAttribute('aria-current', 'page');
+      else if (top && cat === top.id) a.setAttribute('aria-current', 'true');     // inside one of its sub-categories
+      else a.removeAttribute('aria-current');
+    });
+    renderSubs(base, top);
+  }
+  // second row: "View all" + the non-empty sub-categories of the active main category.
+  // Rebuilt only when that set changes, so a clicked chip keeps keyboard focus.
+  function renderSubs(base, top) {
+    if (!ui.subs) return;
+    var subs = top ? B.categories(top.id, { nonEmpty: true }) : [];
+    var ids = subs.length ? [top.id].concat(subs.map(function (s) { return s.id; })) : [];
+    ui.subs.hidden = !ids.length;
+    if (ui.subs.getAttribute('data-key') !== ids.join(',')) {
+      ui.subs.setAttribute('data-key', ids.join(','));
+      ui.subs.innerHTML = ids.map(function (id) {
+        return '<li><a class="shop-subs__link" href="#" data-cat="' + esc(id) + '"><span data-sub-label></span>' +
+          '<span class="shop-subs__n" aria-hidden="true"></span><span class="u-visually-hidden" data-sub-sr></span></a></li>';
+      }).join('');
+    }
+    $$('.shop-subs__link', ui.subs).forEach(function (a, i) {
+      var id = a.getAttribute('data-cat');
+      var n = base.filter(function (p) { return B.inCategory(p, id); }).length;
+      a.setAttribute('href', hrefFor({ cat: id }));
+      $('[data-sub-label]', a).textContent = i ? B.loc((B.category(id) || {}).name) : B.t('shop.subs.all');
+      $('.shop-subs__n', a).textContent = B.num(n);
+      $('[data-sub-sr]', a).textContent = ' (' + B.t('shop.count', { n: n }) + ')';
+      a.classList.toggle('is-empty', !n);
+      if (id === state.cat) a.setAttribute('aria-current', 'page');
       else a.removeAttribute('aria-current');
     });
   }
   function placeLine(animate) {
-    var line = ui.line, active = $('.shop-cats__link[aria-current="page"] .shop-cats__label', ui.cats);
+    var line = ui.line, active = $('.shop-cats__link[aria-current] .shop-cats__label', ui.cats);
     if (!line) return;
     if (!active) { line.style.opacity = '0'; return; }
     var origin = ui.origin.getBoundingClientRect().left;
@@ -796,8 +863,12 @@
      09  Grid — product cards + editorial tiles, keyed nodes, FLIP transitions
      ======================================================================== */
   function tilePool() {
-    var pool = TILES.filter(function (t) { return t.cat !== state.cat; });
-    var shift = state.cat ? CAT_IDS.indexOf(state.cat) + 1 : state.saved ? 1 : state.fresh ? 2 : 0;
+    // no tile pointing at the view itself (or its main category), nor at a category with no pieces
+    var top = B.topCategory(state.cat);
+    var pool = TILES.filter(function (t) {
+      return !t.cat || (t.cat !== state.cat && !(top && t.cat === top.id) && B.categoryCount(t.cat) > 0);
+    });
+    var shift = state.cat ? CATS.map(function (c) { return c.id; }).indexOf(state.cat) + 1 : state.saved ? 1 : state.fresh ? 2 : 0;
     shift = shift % pool.length;
     return pool.slice(shift).concat(pool.slice(0, shift));
   }
@@ -850,7 +921,7 @@
   function tileHTML(it) {
     var tl = it.tile, base = 'shop.tile.' + tl.id + '.';
     var theme = it.kind === 'split' ? (tl.theme === 'paper' ? 'theme-paper' : 'theme-dark') : 'theme-dark';
-    return '<article class="shop-tile ' + theme + '" data-key="' + it.key + '" data-cursor-label="cursor.discover" aria-labelledby="shop-tile-' + tl.id + '">' +
+    return '<article class="shop-tile ' + theme + '" data-key="' + it.key + '" aria-labelledby="shop-tile-' + tl.id + '">' +
       '<div class="shop-tile__media">' +
         '<img src="' + esc(B.url(tl.src)) + '" alt="' + esc(B.t(base + 'alt')) + '" data-i18n-attr="alt:' + base + 'alt" width="' + tl.w + '" height="' + tl.h + '"' +
         ' loading="lazy" decoding="async" style="object-position:' + tl.pos + '">' +
@@ -1290,7 +1361,7 @@
     var m = SHOP_HREF.exec(a.getAttribute('href') || '');
     if (!m) return;
     e.preventDefault();
-    navigate(m[1] || '', a.closest('.shop-cats') ? 'tabs' : 'link');
+    navigate(m[1] || '', a.closest('.shop-cats, .shop-subs') ? 'tabs' : 'link');
   }
   function focusAfterChips(at) {
     var chips = $$('[data-remove]', ui.active);
@@ -1380,6 +1451,7 @@
     ui.origin = $('.shop-cats__origin', main);
     ui.line = $('.shop-cats__line', main);
     ui.tabs = $$('.shop-cats__link', main);
+    ui.subs = $('[data-shop-subs]', main);
     ui.sentinel = $('.shop-sentinel', main);
     ui.toolbar = $('[data-shop-toolbar]', main);
     ui.filterBtn = $('[data-shop-filter-open]', main);
@@ -1451,6 +1523,7 @@
     if (!cache()) return;
     fillIcons(ui.main);
     readURL();
+    buildTabs();
     initSort();
     renderDensity();
     renderBand();

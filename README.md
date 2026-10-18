@@ -33,7 +33,7 @@ preview (with placeholder contacts) never appears in Google under the brand's na
 
 | File | Page |
 |---|---|
-| `index.html` | Home — interactive leather hero (the logo debossed in gold foil, lit by the mouse), collections, new arrivals, craft, leathers, atelier teaser, lookbook, newsletter |
+| `index.html` | Home — hero film (the craft, graded green & gold), collections, new arrivals, craft, leathers, atelier teaser, lookbook, newsletter |
 | `shop.html` | Collection — `?cat=men\|women\|bags\|accessories`, `?q=search`, `?new=1`, `?saved=1`; filters, sort, grid density, quick view |
 | `product.html` | Product detail — `?id=<product id>` (e.g. `product.html?id=azmar-oxford`); gallery + zoom, colours, sizes, size guide, bag, WhatsApp order |
 | `maison.html` | The House — story, the craft in six steps (`#craft`), materials (`#materials`), care guide (`#care`) |
@@ -44,7 +44,9 @@ preview (with placeholder contacts) never appears in Google under the brand's na
 
 ## Features
 
-- Header with menu overlay, live search (both languages), bag + saved-items drawer, toasts, custom cursor.
+- Header with menu overlay, live search (both languages), bag + saved-items drawer, toasts.
+- Two main categories (Men, Women), each with sub-categories (Shoes, Bags, Accessories…), in the menu, the
+  home collections, the shop tabs and the product breadcrumbs. Categories without products stay hidden.
 - First-visit preloader (the wordmark draws itself in gold) and page-transition curtain.
 - **EN ⇄ کوردی** switch: full RTL layout, Kurdish fonts, Eastern Arabic digits; remembered per visitor.
 - **USD ⇄ IQD** switch (rate in `BENM_CONFIG.currency.iqdRate`).
@@ -58,7 +60,7 @@ preview (with placeholder contacts) never appears in Google under the brand's na
 | What | Where |
 |---|---|
 | **Contact details, WhatsApp number, socials, IQD rate, free-shipping threshold, personalisation fee** | `assets/js/data.js` → `BENM_CONFIG` |
-| Products (22 demo pieces), categories, leather colours | `assets/js/data.js` → `BENM_PRODUCTS`, `BENM_CATEGORIES`, `BENM_LEATHERS` |
+| Products (22 demo pieces), categories (main + sub-categories, `parent`), leather colours | `assets/js/data.js` → `BENM_PRODUCTS`, `BENM_CATEGORIES`, `BENM_LEATHERS` (or the admin, see `../bendotm-backend`) |
 | Boutique addresses, hours, phones, map positions | `assets/js/data.js` → `BENM_STORES` |
 | Shared texts (menu, header, footer, bag, forms) in EN + Kurdish | `assets/js/i18n.js` |
 | Page texts in EN + Kurdish | top of `assets/js/pages/<page>.js` (`BENM.i18n.add({ en: {…}, ckb: {…} })`) |
@@ -71,8 +73,22 @@ Developer reference for every component, class and JS API: `docs/FOUNDATION.md` 
 ### Photo sizes (replace with the same file names)
 
 - Products: `assets/img/products/<id>-1.jpg` (main) and `<id>-2.jpg` (hover/second) — 1200×1500
-- Categories: `assets/img/categories/{men,women,bags,accessories}.jpg` — 1200×1600
+- Categories: `assets/img/categories/{men,women}.jpg` (sub-categories reuse lookbook / category photos, see `BENM_CATEGORIES`) — 1200×1600
 - Editorial: `assets/img/editorial/hero-1..3, campaign-1..3, maison-hero` — 2400×1350; `atelier, care, notfound` — 1600×2000
+- Hero film: see below
+
+### Hero film (home page)
+
+A 12.8 s muted loop: `assets/video/hero.mp4` (1920×1080, ~4.5 MB) and `assets/video/hero-portrait.mp4`
+(720×1280, ~1.8 MB, used on tall screens), with stills of their first frame as posters
+(`assets/img/editorial/hero-film.jpg`, `hero-film-portrait.jpg`). It plays only while the hero is on screen,
+pauses under the menu and has a pause button; with "reduce motion" or data saving on, it waits for the button.
+
+**Demo footage** — five stock clips from Pexels (free licence, commercial use allowed, no credit required), hands
+only, cut and colour-graded for Ben.M: pexels.com/video/6653241 (smoothing the hide), 5963493 (cutting along a
+rule), 34740037 (hand stitching), 40318175 and 40318184 (lasting a shoe). Best replaced at launch with the
+client's own film of their workshop: export it as a 10–20 s loop, no sound, 1920×1080 H.264 MP4 (≤ 6 MB) plus a
+720×1280 portrait cut (≤ 2.5 MB), keep the file names and replace the two poster stills with their first frames.
 - Lookbook: `assets/img/lookbook/look-1..8.jpg` — 1200×1600
 - Craft: `assets/img/craft/*.jpg` — 1600×2000 (`workshop.jpg` 2400×1350)
 - Boutiques: `assets/img/stores/{erbil,sulaymaniyah,duhok}.jpg` — 1600×1200 (`interior-wide.jpg` 2400×1350)

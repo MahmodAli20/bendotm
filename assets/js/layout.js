@@ -6,7 +6,7 @@
 
      before <main>  skip link · header · menu overlay · search overlay
      after  <main>  footer (omit with <body data-footer="none">)
-     end of <body>  drawer · toast region · cursor · curtain · grain ·
+     end of <body>  drawer · toast region · curtain · grain ·
                     preloader (only when <html class="is-preloading">)
 
    Strings are rendered in the current language straight away (no flash) and
@@ -91,7 +91,7 @@
   }
   function t(key, vars) { return esc(raw(key, vars)); }
   function loc(obj) { return obj ? (obj[lang] || obj.en || '') : ''; }
-  function url(path) { return BASE + path; }
+  function url(path) { return /^(https?:|data:)/.test(path || '') ? path : BASE + (path || ''); }
   function attrs(key) { return ' data-i18n="' + key + '"'; }
   function logo(name, opts) { return BRAND ? BRAND.svg(name, opts || {}) : '<span class="u-visually-hidden">Ben.M</span>'; }
   function waLink(text) {
@@ -175,46 +175,91 @@
   /* ---------------------------------------------------------------------------
      4. Menu overlay — collections (with category previews) + the House
      ------------------------------------------------------------------------ */
+  /* Collections come from the data (editable in the admin): main categories (Men, Women) with their
+     sub-categories. Their texts are registered as strings ("cat.<id>.name") so data-i18n switches language. */
   var catMap = {};
-  CATS.forEach(function (c) { catMap[c.id] = c; });
-  var MENU = [
-    { key: 'nav.men', href: 'shop.html?cat=men', cat: 'men' },
-    { key: 'nav.women', href: 'shop.html?cat=women', cat: 'women' },
-    { key: 'nav.bags', href: 'shop.html?cat=bags', cat: 'bags' },
-    { key: 'nav.accessories', href: 'shop.html?cat=accessories', cat: 'accessories' },
+  var PRODUCTS = w.BENM_PRODUCTS || [];
+  function registerCats() {
+    catMap = {};
+    CATS.forEach(function (c) {
+      catMap[c.id] = c;
+      ['name', 'tagline', 'intro'].forEach(function (f) {
+        if (!c[f]) return;
+        (I18N.en = I18N.en || {})['cat.' + c.id + '.' + f] = c[f].en || '';
+        (I18N.ckb = I18N.ckb || {})['cat.' + c.id + '.' + f] = c[f].ckb || c[f].en || '';
+      });
+    });
+  }
+  registerCats();
+  function topOf(id) { var c = catMap[id]; return c && c.parent ? catMap[c.parent] || c : c; }
+  function catCount(id) {
+    return PRODUCTS.filter(function (p) { var top = topOf(p.category); return p.category === id || (top && top.id === id); }).length;
+  }
+  function mainCats() {   // the ones holding pieces (all of them while the catalogue is empty)
+    var all = CATS.filter(function (c) { return !c.parent; });
+    var full = all.filter(function (c) { return catCount(c.id) > 0; });
+    return full.length ? full : all;
+  }
+  function subCats(id) { return CATS.filter(function (c) { return c.parent === id && catCount(c.id) > 0; }); }   // empty ones stay hidden
+  function catItems() {
+    return mainCats().map(function (c) { return { key: 'cat.' + c.id + '.name', href: 'shop.html?cat=' + encodeURIComponent(c.id), cat: c.id }; });
+  }
+  var MENU = catItems().concat([
     { key: 'nav.maison', href: 'maison.html', img: 'assets/img/craft/stitching.jpg', cap: 'menu.maison.caption' },
     { key: 'nav.atelier', href: 'atelier.html', img: 'assets/img/editorial/atelier.jpg', cap: 'menu.atelier.caption' },
     { key: 'nav.boutiques', href: 'boutiques.html', img: 'assets/img/stores/erbil.jpg', cap: 'menu.boutiques.caption' }
-  ];
-  var PRODUCTS = w.BENM_PRODUCTS || [];
-  function catCount(id) { return PRODUCTS.filter(function (p) { return p.category === id; }).length; }
+  ]);
+  var NCATS = MENU.filter(function (m) { return m.cat; }).length;
+  function menuLists() {
+    return {
+      cats: MENU.slice(0, NCATS).map(menuLink).join(''),
+      house: MENU.slice(NCATS).map(function (m, i) { return menuLink(m, i + NCATS); }).join('')
+    };
+  }
   function menuLink(item, i) {
     var n = item.cat ? catCount(item.cat) : 0;
+    var subs = item.cat ? subCats(item.cat) : [];
     return '<li class="c-menu__item"><a class="c-menu__link" href="' + url(item.href) + '" data-menu-index="' + i + '">' +
       '<span class="c-menu__num" aria-hidden="true">' + (i < 9 ? '0' : '') + (i + 1) + '</span>' +
       '<span class="c-menu__mask"><span class="c-menu__label"' + attrs(item.key) + '>' + t(item.key) + '</span></span>' +
       (n ? '<sup class="c-menu__count" aria-hidden="true" data-num="' + (n < 10 ? '0' : '') + n + '">' + digits((n < 10 ? '0' : '') + n) + '</sup>' : '') +
       '<span class="c-menu__arrow" aria-hidden="true">' + icon('arrow') + '</span>' +
-    '</a></li>';
+    '</a>' +
+    (subs.length ? '<ul class="c-menu__subs" role="list">' + subs.map(function (s) {
+      return '<li><a class="c-menu__sub" href="' + url('shop.html?cat=' + encodeURIComponent(s.id)) + '" data-menu-index="' + i + '"' +
+        attrs('cat.' + s.id + '.name') + '>' + esc(loc(s.name)) + '</a></li>';
+    }).join('') + '</ul>' : '') +
+    '</li>';
   }
-  var menuImgs = MENU.map(function (item, i) {
-    var cat = item.cat && catMap[item.cat];
-    var src = cat ? cat.image : item.img;
-    return '<img class="c-menu__img' + (i === 0 ? ' is-active' : '') + '" src="' + url(src) + '" alt="" width="1200" height="1600" loading="lazy" decoding="async" data-menu-img="' + i + '">';
-  }).join('');
+  function catImage(id) {   // its own photo, else the first piece filed under it
+    var c = catMap[id];
+    if (c && c.image) return c.image;
+    for (var i = 0; i < PRODUCTS.length; i++) {
+      var p = PRODUCTS[i], top = topOf(p.category);
+      if ((p.category === id || (top && top.id === id)) && p.images && p.images[0]) return p.images[0];
+    }
+    return 'assets/img/editorial/hero-1.jpg';
+  }
+  function menuImgs() {
+    return MENU.map(function (item, i) {
+      var src = item.cat ? catImage(item.cat) : item.img;
+      return '<img class="c-menu__img' + (i === 0 ? ' is-active' : '') + '" src="' + url(src) + '" alt="" width="1200" height="1600" loading="lazy" decoding="async" data-menu-img="' + i + '">';
+    }).join('');
+  }
+  var lists = menuLists();
   var first = catMap[MENU[0].cat];
   var menuHTML = '' +
     '<div class="c-menu" id="site-menu" role="dialog" aria-modal="true" aria-label="' + t('header.menu') + '" data-i18n-attr="aria-label:header.menu" hidden>' +
       '<div class="c-menu__inner u-container" data-lenis-prevent>' +
         '<nav class="c-menu__nav" aria-label="' + t('a11y.mainNav') + '" data-i18n-attr="aria-label:a11y.mainNav">' +
           '<span class="c-eyebrow c-eyebrow--line c-menu__group-label"' + attrs('menu.collections') + '>' + t('menu.collections') + '</span>' +
-          '<ol class="c-menu__list" role="list">' + MENU.slice(0, 4).map(menuLink).join('') + '</ol>' +
+          '<ol class="c-menu__list" role="list" data-menu-cats>' + lists.cats + '</ol>' +
           '<span class="c-eyebrow c-eyebrow--line c-menu__group-label"' + attrs('menu.house') + '>' + t('menu.house') + '</span>' +
-          '<ul class="c-menu__list c-menu__list--house" role="list">' + MENU.slice(4).map(function (m, i) { return menuLink(m, i + 4); }).join('') + '</ul>' +
+          '<ul class="c-menu__list c-menu__list--house" role="list" data-menu-house>' + lists.house + '</ul>' +
         '</nav>' +
         '<div class="c-menu__aside" aria-hidden="true">' +
           '<figure class="c-menu__figure">' +
-            '<div class="c-menu__media">' + menuImgs + '</div>' +
+            '<div class="c-menu__media" data-menu-media>' + menuImgs() + '</div>' +
             '<figcaption class="c-menu__caption">' +
               '<span class="c-menu__cap-title" data-menu-cap-title>' + t(MENU[0].key) + '</span>' +
               '<span class="c-menu__cap-text" data-menu-cap-text>' + esc(first ? loc(first.tagline) : '') + '</span>' +
@@ -266,7 +311,7 @@
     '</div>';
 
   /* ---------------------------------------------------------------------------
-     6. Drawer (bag + saved), toasts, cursor, curtain, grain
+     6. Drawer (bag + saved), toasts, curtain, grain
      ------------------------------------------------------------------------ */
   var drawerHTML = '' +
     '<div class="c-drawer" id="site-drawer" role="dialog" aria-modal="true" aria-label="' + t('drawer.label') + '" data-i18n-attr="aria-label:drawer.label" hidden>' +
@@ -291,7 +336,6 @@
 
   var miscHTML = '' +
     '<div class="c-toasts" role="status" aria-live="polite" data-toasts></div>' +
-    '<div class="c-cursor" aria-hidden="true"><div class="c-cursor__ring"><div class="c-cursor__circle"></div><div class="c-cursor__label"></div></div><div class="c-cursor__dot"></div></div>' +
     '<div class="c-curtain" aria-hidden="true"><div class="c-curtain__panel"><div class="c-curtain__mark">' +
       logo('monogram', { foil: true, decorative: true }) + '</div></div></div>' +
     '<div class="c-grain" aria-hidden="true"></div>';
@@ -347,6 +391,10 @@
     return '<li><a href="' + esc(href) + '"' + (label ? ' aria-label="' + esc(label) + '"' : '') + '>' + icon(iconName) +
       '<span class="c-hover-line c-footer__contact" dir="ltr">' + esc(text) + '</span></a></li>';
   }
+  function footerShop() {
+    return mainCats().map(function (c) { return fLink(url('shop.html?cat=' + encodeURIComponent(c.id)), 'cat.' + c.id + '.name'); }).join('') +
+      fLink(url('shop.html?new=1'), 'nav.newArrivals') + fLink(url('shop.html?saved=1'), 'nav.saved');
+  }
   var nt = ' target="_blank" rel="noopener"';
   var social = CONFIG.social || {};
   var year = new Date().getFullYear();
@@ -372,10 +420,8 @@
           '</div>' +
         '</div>' +
         '<nav class="c-footer__cols" aria-label="' + t('a11y.footerNav') + '" data-i18n-attr="aria-label:a11y.footerNav">' +
-          '<div class="c-footer__col"><h2 class="c-eyebrow c-footer__col-title"' + attrs('footer.col.shop') + '>' + t('footer.col.shop') + '</h2><ul class="c-footer__list" role="list">' +
-            fLink(url('shop.html?cat=men'), 'nav.men') + fLink(url('shop.html?cat=women'), 'nav.women') +
-            fLink(url('shop.html?cat=bags'), 'nav.bags') + fLink(url('shop.html?cat=accessories'), 'nav.accessories') +
-            fLink(url('shop.html?new=1'), 'nav.newArrivals') + fLink(url('shop.html?saved=1'), 'nav.saved') +
+          '<div class="c-footer__col"><h2 class="c-eyebrow c-footer__col-title"' + attrs('footer.col.shop') + '>' + t('footer.col.shop') + '</h2><ul class="c-footer__list" role="list" data-footer-shop>' +
+            footerShop() +
           '</ul></div>' +
           '<div class="c-footer__col"><h2 class="c-eyebrow c-footer__col-title"' + attrs('footer.col.maison') + '>' + t('footer.col.maison') + '</h2><ul class="c-footer__list" role="list">' +
             fLink(url('maison.html'), 'nav.story') + fLink(url('maison.html#craft'), 'nav.craft') +
@@ -417,5 +463,30 @@
   }
   body.insertAdjacentHTML('beforeend', drawerHTML + miscHTML + (html.classList.contains('is-preloading') ? preloaderHTML() : ''));
 
-  w.BENM_LAYOUT = { icon: icon, base: BASE, url: url, menu: MENU };
+  /* The live catalogue (api.js) can land with other categories than the ones the chrome was built with
+     (the saved copy is one visit old): main.js calls refresh() once it is in, before the menu is wired. */
+  var built = lists.cats + menuImgs() + footerShop();
+  function refresh() {
+    registerCats();
+    MENU.splice.apply(MENU, [0, NCATS].concat(catItems()));
+    NCATS = MENU.filter(function (m) { return m.cat; }).length;
+    lists = menuLists();
+    var now = lists.cats + menuImgs() + footerShop();
+    if (now === built) return;
+    built = now;
+    var root = d.getElementById('site-menu');
+    var set = function (sel, html, scope) { var el = (scope || d).querySelector(sel); if (el) el.innerHTML = html; };
+    if (root) {
+      set('[data-menu-cats]', lists.cats, root);
+      set('[data-menu-house]', lists.house, root);
+      set('[data-menu-media]', menuImgs(), root);
+      var top = catMap[MENU[0].cat];
+      var cap = root.querySelector('[data-menu-cap-title]'), capText = root.querySelector('[data-menu-cap-text]');
+      if (cap) cap.textContent = raw(MENU[0].key);
+      if (capText) capText.textContent = top ? loc(top.tagline) : '';
+    }
+    set('[data-footer-shop]', footerShop());
+  }
+
+  w.BENM_LAYOUT = { icon: icon, base: BASE, url: url, menu: MENU, refresh: refresh };
 })(window, document);

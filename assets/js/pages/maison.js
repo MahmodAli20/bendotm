@@ -658,7 +658,7 @@
     if (!colourRow || !LEATHERS.length) return;
     if (!leatherById(colourSel)) colourSel = LEATHERS[0].id;
     colourRow.innerHTML = LEATHERS.map(function (l) {
-      return '<button class="maison-colour" type="button" data-leather="' + esc(l.id) + '" aria-pressed="' + (l.id === colourSel) + '" style="--swatch:' + esc(l.hex) + '" data-cursor>' +
+      return '<button class="maison-colour" type="button" data-leather="' + esc(l.id) + '" aria-pressed="' + (l.id === colourSel) + '" style="--swatch:' + esc(l.hex) + '">' +
         '<span class="maison-colour__chip" aria-hidden="true"></span>' +
         '<span class="maison-colour__en" lang="en">' + esc(l.name.en) + '</span>' +
         '<span class="maison-colour__ku" lang="ckb">' + esc(l.name.ckb) + '</span>' +

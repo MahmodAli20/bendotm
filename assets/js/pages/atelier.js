@@ -376,7 +376,7 @@
     return !!p && (p.colors || []).some(function (c) { return c.id === leatherId; });
   }
   function personalisable(p) { return !!(p && p.personalisable); }
-  function shapeOf(p) { return SHAPES[p && p.type] || (p && p.category === 'bags' ? SHAPES._bag : SHAPES._small); }
+  function shapeOf(p) { return SHAPES[p && p.type] || ((B.category(p && p.category) || {}).kind === 'bags' ? SHAPES._bag : SHAPES._small); }
   /** t() in a given language — the cart line keeps its summary in both. */
   function tIn(l, key, vars) {
     var all = w.BENM_I18N || {};

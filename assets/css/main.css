@@ -3,7 +3,7 @@
    -----------------------------------------------------------------------------
    "Emerald & Gilt": deep forest-green lacquer, antique gold foil, ivory paper.
    One file for every page: tokens, reset, typography, utilities, components,
-   the shared chrome (header, menu, search, drawer, footer, cursor, curtain,
+   the shared chrome (header, menu, search, drawer, footer, curtain,
    preloader, grain) and the motion / RTL / reduced-motion rules.
    Page-specific styles live in assets/css/pages/<page>.css.
 
@@ -16,7 +16,7 @@
      06  Layout utilities            17  Menu overlay
      07  Utilities                   18  Search overlay
      08  Icons                       19  Footer
-     09  Small components            20  Cursor · curtain · preloader · grain
+     09  Small components            20  Curtain · preloader · grain
      10  Buttons & links             21  Lenis · motion states · marquee
      11  Chips · swatches · sizes    22  RTL · focus · reduced motion · print
 
@@ -131,7 +131,6 @@
   --z-curtain: 150;
   --z-preloader: 160;
   --z-grain: 170;
-  --z-cursor: 180;
   --z-skip: 190;
 
   /* ---- Theme slots (light = default; see section 03) -------------------- */
@@ -2014,6 +2013,34 @@ html.is-menu-open .c-header .c-header__bar::after { opacity: 1; }
   [dir="rtl"] .c-menu__link:hover .c-menu__label { translate: -.14em 0; }
   .c-menu__link:hover .c-menu__arrow { opacity: 1; translate: 0 0; }
 }
+/* Sub-categories under each main collection (Shoes · Bags · Accessories…), aligned with the label */
+.c-menu__subs {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px clamp(16px, 1.8vw, 30px);
+  margin: 0 0 clamp(8px, 1.8vh, 18px);
+  padding: 0;
+  padding-inline-start: calc(2.6 * clamp(.8rem, 1vw, .95rem) + clamp(12px, 1.6vw, 26px));
+  opacity: 0;
+  transition: opacity .6s var(--ease-out);
+}
+html.is-menu-open .c-menu__subs { opacity: 1; transition-delay: .35s; }
+.c-menu__sub {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 32px;
+  font-family: var(--f-sans);
+  font-size: var(--fs-ui);
+  font-weight: 500;
+  letter-spacing: var(--ls-micro);
+  text-transform: var(--tt-ui);
+  color: rgba(244, 239, 229, .68);
+  text-decoration: none;
+  transition: color .3s;
+}
+.c-menu__sub:hover, .c-menu__sub:focus-visible { color: var(--c-gold-300); }
+@media (pointer: coarse) { .c-menu__sub { min-block-size: 44px; } }
 .c-menu__list--house { display: flex; flex-wrap: wrap; gap: 4px clamp(20px, 3vw, 48px); }
 .c-menu__list--house .c-menu__label { font-size: clamp(1.7rem, min(2.8vw, 5vh), 3rem); font-style: var(--fst-em); }
 .c-menu__list--house .c-menu__label:lang(ckb) { font-size: clamp(1.4rem, min(2.3vw, 4.2vh), 2.4rem); }
@@ -2297,46 +2324,8 @@ html.is-menu-open .c-header .c-header__bar::after { opacity: 1; }
 
 
 /* =============================================================================
-   20  Cursor · curtain · preloader · grain
+   20  Curtain · preloader · grain
    ========================================================================== */
-/* Custom cursor — (pointer: fine) only, added by main.js as html.has-cursor */
-.c-cursor { position: fixed; inset-block-start: 0; left: 0; z-index: var(--z-cursor); pointer-events: none; display: none; }
-html.has-cursor .c-cursor { display: block; }
-.c-cursor__dot, .c-cursor__ring { position: absolute; top: 0; left: 0; will-change: transform; }
-.c-cursor__dot { inline-size: 6px; block-size: 6px; margin: -3px 0 0 -3px; border-radius: 50%; background: var(--c-gold-500); transition: opacity .3s, scale .4s var(--ease-out); }
-.c-cursor__ring { inline-size: 40px; block-size: 40px; margin: -20px 0 0 -20px; }
-.c-cursor__circle {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 1px solid rgba(196, 160, 98, .7);
-  transition: transform .6s var(--ease-out), background-color .45s, border-color .45s, opacity .35s;
-}
-.c-cursor__label {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  font-family: var(--f-sans);
-  font-size: 9.5px;
-  font-weight: 600;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--c-green-950);
-  opacity: 0;
-  transform: scale(.6);
-  transition: opacity .35s, transform .6s var(--ease-out);
-  white-space: nowrap;
-}
-.c-cursor__label:lang(ckb) { font-size: 11.5px; letter-spacing: 0; }
-.c-cursor.is-link .c-cursor__circle { transform: scale(1.5); background: rgba(196, 160, 98, .08); }
-.c-cursor.is-label .c-cursor__circle { transform: scale(2.3); border-color: transparent; background: var(--g-foil); }
-.c-cursor.is-label .c-cursor__label { opacity: 1; transform: scale(1); }
-.c-cursor.is-label .c-cursor__dot, .c-cursor.is-link .c-cursor__dot { opacity: 0; }
-.c-cursor.is-hidden .c-cursor__dot, .c-cursor.is-hidden .c-cursor__circle { opacity: 0; }
-.c-cursor.is-down .c-cursor__circle { transform: scale(.8); }
-html.has-cursor [data-cursor-label] { cursor: none; }
-
 /* Page-transition curtain */
 .c-curtain { position: fixed; inset: 0; z-index: var(--z-curtain); pointer-events: none; visibility: hidden; }
 .c-curtain.is-active { visibility: visible; pointer-events: auto; }
@@ -2537,12 +2526,11 @@ html.lenis, html.lenis body { height: auto; }
     transition-delay: 0s !important;
   }
   .c-grain { display: none; }
-  .c-cursor { display: none !important; }
   [data-parallax] { transform: none !important; }
 }
 
 @media print {
-  .c-header, .c-menu, .c-search, .c-drawer, .c-toasts, .c-cursor, .c-curtain, .c-preloader, .c-grain, .c-skip { display: none !important; }
+  .c-header, .c-menu, .c-search, .c-drawer, .c-toasts, .c-curtain, .c-preloader, .c-grain, .c-skip { display: none !important; }
   .c-footer__mark, .c-footer__form { display: none; }
   body { background: #fff; color: #000; }
 }

@@ -5,8 +5,8 @@
 
      0  Strings (home.*)            7  Manifesto — ink-in words
      1  Helpers                     8  Leathers — hanging tags (snapshots)
-     2  Hero — leather tag, intro,  9  Atelier — try your initials
-        light sweep, scroll-out    10  Lookbook — column parallax
+     2  Hero — the film, intro,     9  Atelier — try your initials
+        scroll-out                 10  Lookbook — column parallax
      3  Campaign expand            11  Services + boutiques
      4  Collections pin            12  Shared: icons, brand marks, overlays,
      5  New arrivals rail              language & currency changes
@@ -14,7 +14,7 @@
 
    Rules: every GSAP/ScrollTrigger target is guarded; direction-dependent
    motion reads BENM.isRTL(); reduced motion → final states, no pin/scrub;
-   WebGL: hero tag + atelier preview + the shared snapshot context (≤ 3).
+   WebGL: atelier preview + the shared snapshot context (≤ 2).
    ========================================================================== */
 (function (w, d) {
   'use strict';
@@ -30,13 +30,13 @@
       'home.meta.description': 'Shoes, bags, belts and wallets in genuine leather — chosen by hand, stitched with patience and made to last.',
 
       'home.hero.eyebrow': 'Shoes · Bags · Belts · Wallets',
-      'home.hero.hint': 'Move your cursor — the light follows',
+      'home.hero.play': 'Play the film',
+      'home.hero.pause': 'Pause the film',
       'home.hero.line1': 'Genuine leather,',
       'home.hero.line2': '<em>made to last.</em>',
       'home.hero.cta': 'Shop the collection',
       'home.hero.cta2': 'Discover the craft',
       'home.hero.scroll': 'Scroll',
-      'home.hero.tagLabel': 'Ben.M — gold foil debossed on green leather',
 
       'home.marquee.handcrafted': 'Handcrafted',
       'home.marquee.a': 'Full-grain leather',
@@ -52,15 +52,13 @@
       'home.campaign.alt': 'A man in a dark tailored suit seated in a moody interior',
 
       'home.collections.eyebrow': 'The collections',
-      'home.collections.title': 'Four collections, <em>one standard.</em>',
-      'home.collections.text': 'Shoes for men and women, bags for every day and the small things you carry — all in genuine leather, all finished by hand.',
+      'home.collections.title': 'Men &amp; women, <em>one standard.</em>',
+      'home.collections.text': 'Shoes, bags and the small things you carry, for him and for her — all in genuine leather, all finished by hand.',
       'home.collections.explore': 'Explore the collection',
       'home.collections.all': 'View the <em>full collection</em>',
       'home.collections.count': '{n} pieces',
       'home.cat.men.alt': 'A man in a navy suit carrying a black leather briefcase',
       'home.cat.women.alt': 'A woman in a check trench coat holding a cognac leather bag',
-      'home.cat.bags.alt': 'A dark brown leather tote resting on a side table',
-      'home.cat.accessories.alt': 'A brown leather belt worn with light denim and a knit sweater',
 
       'home.new.eyebrow': 'New arrivals',
       'home.new.title': 'Fresh from <em>the workshop.</em>',
@@ -166,13 +164,13 @@
       'home.meta.description': 'پێڵاو، جانتا، قایش و جزدان لە چەرمی ڕەسەن — بە دەست هەڵبژێردراون، بە پشوودرێژی دوورراون و بۆ ماوەیەکی درێژ دروستکراون.',
 
       'home.hero.eyebrow': 'پێڵاو · جانتا · قایش · جزدان',
-      'home.hero.hint': 'ماوسەکە بجووڵێنە، ڕووناکییەکە دوات دەکەوێت',
+      'home.hero.play': 'ڤیدیۆکە لێبدە',
+      'home.hero.pause': 'ڤیدیۆکە ڕابگرە',
       'home.hero.line1': 'چەرمی ڕەسەن،',
       'home.hero.line2': '<em>بۆ هەمیشە.</em>',
       'home.hero.cta': 'کۆلێکشنەکە ببینە',
       'home.hero.cta2': 'وەستاییەکە بدۆزەرەوە',
       'home.hero.scroll': 'بڕۆ خوارەوە',
-      'home.hero.tagLabel': 'Ben.M — مۆرکراو بە فۆیلی زێڕین لەسەر چەرمی سەوز',
 
       'home.marquee.handcrafted': 'دەستکرد',
       'home.marquee.a': 'چەرمی ڕووتەواو',
@@ -188,15 +186,13 @@
       'home.campaign.alt': 'پیاوێک بە جلێکی ڕێکوپێکی تۆخەوە لە ژوورێکی نیوەتاریکدا دانیشتووە',
 
       'home.collections.eyebrow': 'کۆلێکشنەکان',
-      'home.collections.title': 'چوار کۆلێکشن، <em>یەک پێوەر.</em>',
-      'home.collections.text': 'پێڵاو بۆ پیاوان و ئافرەتان، جانتا بۆ هەموو ڕۆژێک و ئەو شتە بچووکانەی لەگەڵ خۆت هەڵیاندەگریت — هەمووی لە چەرمی ڕەسەن، هەمووی بە دەست تەواوکراو.',
+      'home.collections.title': 'پیاوان و خانمان، <em>یەک پێوەر.</em>',
+      'home.collections.text': 'پێڵاو، جانتا و ئەو شتە بچووکانەی لەگەڵ خۆت هەڵیاندەگریت، بۆ پیاوان و خانمان — هەمووی لە چەرمی ڕەسەن، هەمووی بە دەست تەواوکراو.',
       'home.collections.explore': 'کۆلێکشنەکە بدۆزەرەوە',
       'home.collections.all': 'بینینی <em>هەموو کۆلێکشنەکە</em>',
       'home.collections.count': '{n} پارچە',
       'home.cat.men.alt': 'پیاوێک بە جلی شینی تۆخەوە، جانتایەکی کاری چەرمی ڕەشی هەڵگرتووە',
       'home.cat.women.alt': 'ئافرەتێک بە باڵتۆیەکی چوارخانەوە، جانتایەکی چەرمی کۆنیاکی بە دەستەوەیە',
-      'home.cat.bags.alt': 'جانتایەکی تۆتی چەرمی قاوەیی تۆخ لەسەر مێزێکی بچووک',
-      'home.cat.accessories.alt': 'قایشێکی چەرمی قاوەیی لەگەڵ پانتۆڵی جینزی کاڵ و بلووزێکی چنراو',
 
       'home.new.eyebrow': 'تازە گەیشتووەکان',
       'home.new.title': 'تازە <em>لە کارگەکەوە.</em>',
@@ -305,14 +301,12 @@
   var gsap = w.gsap || null;
   var ST = w.ScrollTrigger || null;
   var RM = !!B.reducedMotion;                  // also true when GSAP is missing
-  var FINE = media('(hover: hover) and (pointer: fine)');
   var mm = !RM && gsap && gsap.matchMedia ? gsap.matchMedia() : null;
   var CONFIG = w.BENM_CONFIG || {};
   var LEATHERS = w.BENM_LEATHERS || [];
   var STORES = w.BENM_STORES || [];
   var html = d.documentElement;
 
-  function media(q) { try { return w.matchMedia(q).matches; } catch (e) { return false; } }
   function $(sel, root) { return (root || d).querySelector(sel); }
   function $$(sel, root) { return Array.prototype.slice.call((root || d).querySelectorAll(sel)); }
   function pad2(n) { return n < 10 ? '0' + n : String(n); }
@@ -351,74 +345,96 @@
   }
 
   /* ===========================================================================
-     2. Hero — the embossed leather tag
+     2. Hero — the film
+     A muted loop: landscape cut, or the portrait cut on tall screens. It plays
+     only while the hero is on screen, the tab visible and no overlay open; it
+     starts paused with reduced motion or data saving — the button always works.
      ======================================================================== */
   var hero = $('.home-hero');
-  var heroTagEl = $('#hero-tag');
-  var heroTag = null;
   var heroLines = $$('.home-hero__line');
   var heroIntro = null;
-  var heroSweep = null;
-  var mqSmall = w.matchMedia ? w.matchMedia('(max-width: 699.98px)') : null;
+  var film = hero && $('.home-hero__video', hero);
+  var filmBtn = hero && $('[data-hero-film]', hero);
+  var mqPortrait = w.matchMedia ? w.matchMedia('(max-aspect-ratio: 4/5)') : null;
+  var filmWanted = !RM && !saveData();
+  var filmSeen = true, filmCovered = false;
 
-  function heroMarkScale() { return mqSmall && mqSmall.matches ? 0.68 : 0.56; }
-
-  // Created as early as possible: the shader compiles while the cover is up.
-  function createHeroTag() {
-    if (heroTag || !heroTagEl || !B.Leather) return;
-    var forest = leatherById('forest');
-    try {
-      heroTag = B.Leather.create(heroTagEl, B.Leather.preset('hero', {
-        color: forest ? forest.hex : undefined,
-        markScale: heroMarkScale(),
-        light: [0.5, 0.34],                      // at rest the lamp hangs just above the wordmark: the foil glows
-        label: B.t('home.hero.tagLabel')
-      }));
-    } catch (e) { console.error(e); }
+  function saveData() {
+    var c = w.navigator.connection;
+    return !!(c && (c.saveData || /(^|-)2g$/.test(c.effectiveType || '')));
   }
-  createHeroTag();
-  if (mqSmall && mqSmall.addEventListener) {
-    mqSmall.addEventListener('change', function () { if (heroTag) heroTag.set({ markScale: heroMarkScale() }); });
+  function filmSrc() {
+    return B.url(film.getAttribute(mqPortrait && mqPortrait.matches ? 'data-src-portrait' : 'data-src'));
+  }
+  function loadFilm() {                          // also switches cut on rotation, at the same moment of the loop
+    var src = filmSrc();
+    if (film.getAttribute('src') === src) return;
+    var t = film.currentTime || 0;
+    film.setAttribute('src', src);
+    if (t) film.addEventListener('loadedmetadata', function () { try { film.currentTime = t; } catch (e) { /* not seekable yet */ } }, { once: true });
+  }
+  function renderFilmBtn() {
+    if (!filmBtn) return;
+    var key = film.paused ? 'home.hero.play' : 'home.hero.pause';
+    var label = $('[data-film-label]', filmBtn);
+    filmBtn.setAttribute('data-state', film.paused ? 'paused' : 'playing');
+    if (label) { label.setAttribute('data-i18n', key); label.textContent = B.t(key); }
+  }
+  function syncFilm() {
+    if (!film) return;
+    var go = filmWanted && filmSeen && !filmCovered && !d.hidden;
+    if (go && film.paused) {
+      loadFilm();
+      var p = film.play();
+      if (p && p.catch) p.catch(renderFilmBtn);  // refused (e.g. low-power mode): the button offers it
+    } else if (!go && !film.paused) film.pause();
+    renderFilmBtn();
+  }
+  if (film) {
+    film.muted = true;                           // the property, not only the attribute, unlocks autoplay
+    film.addEventListener('playing', function () { hero.classList.add('is-film'); renderFilmBtn(); });
+    film.addEventListener('pause', renderFilmBtn);
+    if (filmBtn) filmBtn.addEventListener('click', function () { filmWanted = film.paused; syncFilm(); });
+    if (mqPortrait && mqPortrait.addEventListener) {
+      mqPortrait.addEventListener('change', function () {
+        if (!film.getAttribute('src')) return;
+        var playing = !film.paused;
+        loadFilm();
+        if (playing) syncFilm();
+      });
+    }
+    if ('IntersectionObserver' in w) {
+      new IntersectionObserver(function (entries) {
+        filmSeen = entries[entries.length - 1].isIntersecting;
+        syncFilm();
+      }).observe(hero);
+    }
+    d.addEventListener('visibilitychange', syncFilm);
   }
 
   function heroPieces(el) { return el && el.__benmSplit ? el.__benmSplit.lines : []; }
 
   B.page(function () {
-    if (!hero || RM) return;
-    var tagIn = $('.home-hero__tag-in', hero);
+    if (!hero) return;
+    syncFilm();                                  // starts behind the cover, so it is running when the page opens
+    if (RM) return;
     heroLines.forEach(function (el) { if (B.split(el, 'lines')) keepReadable(el); });
     var pieces = heroPieces(heroLines[0]).concat(heroPieces(heroLines[1]));
     if (pieces.length) gsap.set(pieces, { yPercent: 118 });
     gsap.set($$('[data-hero-fade]', hero), { opacity: 0, y: 18 });
-    if (tagIn) gsap.set(tagIn, { opacity: 0, y: 70, scale: 0.92, rotationX: 16, transformPerspective: 1400, transformOrigin: '50% 65%' });
+    var filmEl = $('.home-hero__film', hero);
+    if (filmEl) gsap.set(filmEl, { scale: 1.1 });
 
-    // scroll-out: the tag tilts back and sinks (soft parallax), the headline drifts up
-    var tag = $('.home-hero__tag', hero), title = $('.home-hero__title', hero);
+    // scroll-out: the film sinks behind the page (parallax), the headline drifts up
+    var media = $('.home-hero__media', hero), title = $('.home-hero__title', hero);
     var top = $('.home-hero__top', hero), foot = $('.home-hero__foot', hero);
     var tl = gsap.timeline({
       defaults: { ease: 'none' },
       scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true }
     });
-    if (tag) tl.to(tag, { yPercent: 26, scale: 0.8, rotationX: 24, transformPerspective: 1600, transformOrigin: '50% 0%' }, 0);
+    if (media) tl.to(media, { yPercent: 22, scale: 1.06 }, 0);
     if (title) tl.to(title, { yPercent: -30, opacity: 0.15 }, 0);
     if (top && foot) tl.to([top, foot], { opacity: 0, duration: 0.45 }, 0);
-
-    // a pool of lamplight on the stage follows the mouse (fine pointers only)
-    if (FINE) {
-      var light = d.createElement('span');
-      light.className = 'home-hero__light';
-      light.setAttribute('aria-hidden', 'true');
-      hero.insertBefore(light, hero.firstChild);
-      var xTo = gsap.quickTo(light, 'x', { duration: 1.2, ease: 'power3.out' });
-      var yTo = gsap.quickTo(light, 'y', { duration: 1.2, ease: 'power3.out' });
-      hero.addEventListener('pointermove', function (e) {
-        if (e.pointerType !== 'mouse') return;
-        xTo(e.clientX);
-        yTo(e.clientY + (w.scrollY || 0));       // the hero starts at the top of the page
-        hero.classList.add('is-lit');
-      });
-      hero.addEventListener('pointerleave', function () { hero.classList.remove('is-lit'); });
-    }
   });
 
   function endHeroIntro() {
@@ -426,33 +442,15 @@
     heroIntro = null;
   }
 
-  // a slow light sweep across the foil (in the reading direction), then the
-  // light is handed back to the pointer
-  function sweepLight() {
-    if (!heroTag || RM) return;
-    var rtl = B.isRTL();
-    var o = { x: rtl ? 1.3 : -0.3, y: 0.16 };
-    heroTag.setLight(o.x, o.y, true);
-    heroSweep = gsap.to(o, {
-      x: rtl ? -0.28 : 1.28, y: 0.52, duration: 2.8, ease: 'power2.inOut',
-      onUpdate: function () { heroTag.setLight(o.x, o.y, true); },
-      onComplete: function () { heroTag.setLight(null); heroSweep = null; }
-    });
-  }
-
   B.ready(function () {
     if (!hero || RM) return;
-    var tagIn = $('.home-hero__tag-in', hero);
+    var filmEl = $('.home-hero__film', hero);
     heroIntro = gsap.timeline({ defaults: { ease: 'expo.out' }, onComplete: endHeroIntro });
-    if (tagIn) heroIntro.to(tagIn, { opacity: 1, y: 0, scale: 1, rotationX: 0, duration: 2.2, clearProps: 'transform,opacity' }, 0);
+    if (filmEl) heroIntro.to(filmEl, { scale: 1, duration: 2.6, ease: 'power3.out', clearProps: 'transform' }, 0);
     var l1 = heroPieces(heroLines[0]), l2 = heroPieces(heroLines[1]);
     if (l1.length) heroIntro.to(l1, { yPercent: 0, duration: 1.5, stagger: 0.12 }, 0.25);
     if (l2.length) heroIntro.to(l2, { yPercent: 0, duration: 1.5, stagger: 0.12 }, 0.5);
     heroIntro.to($$('[data-hero-fade]', hero), { opacity: 1, y: 0, duration: 1.3, stagger: 0.07, clearProps: 'transform,opacity' }, 0.85);
-    heroIntro.call(function () {
-      if (heroTag && heroTag.ready && heroTag.ready.then) heroTag.ready.then(sweepLight);
-      else sweepLight();
-    }, null, 1.0);
   });
 
   /* ===========================================================================
@@ -490,13 +488,42 @@
      ======================================================================== */
   var collSec = $('.home-collections');
 
+  // One card per main category that holds pieces (Men, Women — editable in the admin), listing its
+  // non-empty sub-categories. Rendered once; texts carry data-i18n="cat.<id>.…" so a language switch
+  // re-labels them in place.
+  function renderCollections() {
+    var list = $('[data-home-cats]', collSec);
+    if (!list || !B.categories) return;
+    var mains = B.categories(null, { nonEmpty: true });
+    if (!mains.length) return;
+    list.innerHTML = mains.map(function (c, i) {
+      var first = B.products(function (p) { return B.inCategory(p, c.id); })[0];
+      var img = c.image || (first && first.images && first.images[0]) || '';
+      var altKey = 'home.cat.' + c.id + '.alt', alt = B.t(altKey) === altKey ? '' : B.t(altKey);
+      var subs = B.categories(c.id, { nonEmpty: true }).map(function (s) {
+        return '<li><a class="home-cat__sub" href="' + esc(B.url('shop.html?cat=' + encodeURIComponent(s.id))) + '">' +
+          '<span data-i18n="cat.' + esc(s.id) + '.name">' + esc(B.loc(s.name)) + '</span>' +
+          '<sup class="home-cat__sub-n" data-sub-count="' + esc(s.id) + '"></sup></a></li>';
+      }).join('');
+      return '<li class="home-cat" data-cat="' + esc(c.id) + '" data-reveal="up"' + (i ? ' data-reveal-delay="' + Math.min(.3, i * .08).toFixed(2) + '"' : '') + '>' +
+        '<span class="home-cat__num" aria-hidden="true">' + pad2(i + 1) + '</span>' +
+        '<div class="home-cat__media u-media">' + (img ? '<img src="' + esc(B.url(img)) + '" alt="' + esc(alt) + '"' + (alt ? ' data-i18n-attr="alt:' + esc(altKey) + '"' : '') + ' width="1200" height="1600" loading="lazy" decoding="async">' : '') + '</div>' +
+        '<div class="home-cat__body">' +
+          '<p class="home-cat__index">N°' + pad2(i + 1) + '</p>' +
+          '<h3 class="home-cat__name"><a class="home-cat__link" href="' + esc(B.url('shop.html?cat=' + encodeURIComponent(c.id))) + '" data-i18n="cat.' + esc(c.id) + '.name">' + esc(B.loc(c.name)) + '</a></h3>' +
+          '<p class="home-cat__tagline" data-i18n="cat.' + esc(c.id) + '.tagline">' + esc(B.loc(c.tagline)) + '</p>' +
+          (subs ? '<ul class="home-cat__subs" role="list">' + subs + '</ul>' : '') +
+          '<p class="home-cat__cta" aria-hidden="true"><span data-i18n="home.collections.explore">' + esc(B.t('home.collections.explore')) + '</span><span data-icon="arrow"></span></p>' +
+        '</div>' +
+      '</li>';
+    }).join('');
+    var total = $('[data-collection-total]', collSec);
+    if (total) total.textContent = '/ ' + pad2(mains.length);
+  }
+
   function fillCategories() {
     if (!collSec) return;
-    $$('.home-cat', collSec).forEach(function (li) {
-      var cat = B.category && B.category(li.getAttribute('data-cat'));
-      var tag = $('[data-cat-tagline]', li);
-      if (cat && tag) tag.textContent = B.loc(cat.tagline);
-    });
+    $$('[data-sub-count]', collSec).forEach(function (el) { el.textContent = B.num(pad2(B.categoryCount(el.getAttribute('data-sub-count')))); });
     var count = $('[data-collection-count]', collSec);
     if (count) count.textContent = B.t('home.collections.count', { n: (w.BENM_PRODUCTS || []).length });
   }
@@ -551,6 +578,7 @@
 
   B.page(function () {
     if (!collSec) return;
+    renderCollections();
     fillCategories();
     if (mm) mm.add('(min-width: 1024px)', setupCollectionsPin);
   });
@@ -575,12 +603,10 @@
     listEl.innerHTML = newArrivals().map(function (p, i) {
       return '<li class="home-rail__item">' + B.productCard(p, { index: i + 1, heading: 'h3' }) + '</li>';
     }).join('') +
-      '<li class="home-rail__item"><a class="home-rail__end" href="shop.html?new=1" data-cursor-label="cursor.drag">' +
+      '<li class="home-rail__item"><a class="home-rail__end" href="shop.html?new=1">' +
         '<span class="c-eyebrow" data-i18n="home.new.eyebrow">' + esc(B.t('home.new.eyebrow')) + '</span>' +
         '<span class="home-rail__end-title" data-i18n="home.new.end">' + esc(B.t('home.new.end')) + '</span>' +
         B.icon('arrow') + '</a></li>';
-    // the whole rail drags: the card links keep working on click, the cursor says "Drag"
-    $$('[data-cursor-label="cursor.view"]', listEl).forEach(function (a) { a.setAttribute('data-cursor-label', 'cursor.drag'); });
   }
 
   function initRail() {
@@ -1010,14 +1036,16 @@
     drawSignature();
   });
 
-  // WebGL tags rest while an overlay (menu, search, drawer, dialog) covers the page
+  // the film and the WebGL tag rest while an overlay (menu, search, drawer, dialog) covers the page
   if (w.MutationObserver) {
     var covered = false;
     new MutationObserver(function () {
       var now = html.classList.contains('is-menu-open') || html.classList.contains('is-locked');
       if (now === covered) return;
       covered = now;
-      [heroTag, atelierTag].forEach(function (t) { if (t) { if (now) t.pause(); else t.resume(); } });
+      filmCovered = now;
+      syncFilm();
+      if (atelierTag) { if (now) atelierTag.pause(); else atelierTag.resume(); }
     }).observe(html, { attributes: true, attributeFilter: ['class'] });
   }
 
@@ -1025,7 +1053,7 @@
     // hero: finish a running intro (its pieces were just re-split) and settle the text
     if (heroIntro) heroIntro.progress(1);
     endHeroIntro();
-    if (heroTag) heroTag.set({ label: B.t('home.hero.tagLabel') });
+    if (film) renderFilmBtn();
     if (atelierTag) atelierTag.set({ label: B.t('home.atelier.preview') });
     fillCategories();
     buildInk();

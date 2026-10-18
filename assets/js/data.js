@@ -5,7 +5,7 @@
    Loaded after i18n.js and before layout.js; it only assigns window globals:
 
      BENM_CONFIG      brand, currency, thresholds, contact details
-     BENM_CATEGORIES  the four collections (Men, Women, Bags, Accessories)
+     BENM_CATEGORIES  Men and Women, each with sub-categories (Shoes, Bags, …)
      BENM_LEATHERS    the eight house leather colours (swatches + product colours)
      BENM_PRODUCTS    the 22 demo products
      BENM_STORES      the three boutiques
@@ -25,6 +25,14 @@
      1. Configuration
      ------------------------------------------------------------------------ */
   w.BENM_CONFIG = {
+    // Live backend (Directus, ../bendotm-backend): site address → its backend. Anywhere else (GitHub Pages,
+    // double-clicked files) the site uses the catalogue in this file. The production pair is added at deploy.
+    api: {
+      servers: {
+        'localhost': 'http://localhost:8055',
+        '127.0.0.1': 'http://localhost:8055'
+      }
+    },
     brand: 'Ben.M',
     currency: { default: 'USD', iqdRate: 1310 },     // IQD per USD — configurable
     freeShippingThreshold: 200,                       // USD
@@ -40,62 +48,73 @@
   };
 
   /* ---------------------------------------------------------------------------
-     2. Categories — order = N°01–04 on the home page
-        tagline: one line (cards, menu) · intro: 1–2 sentences (shop hero)
+     2. Categories — main ones (parent: null) in order = N°01, N°02 on the home page,
+        each followed by its sub-categories (parent: main id).
+        tagline: one line (cards, menu) · intro: 1–2 sentences (shop hero; a sub-category without one
+        borrows its parent's). Products are filed under a sub-category (or directly under a main one).
+        kind = what a sub-category holds (shoes | bags | clothes | accessories): search words + atelier shape.
+        Categories without products are hidden on the site.
      ------------------------------------------------------------------------ */
   w.BENM_CATEGORIES = [
     {
-      id: 'men',
+      id: 'men', parent: null,
       name: { en: 'Men', ckb: 'پیاوان' },
       tagline: {
         en: 'Built on the last. Broken in by life.',
         ckb: 'لەسەر قاڵب دروستکراون، هەنگاو بە هەنگاو لەگەڵ پێت ڕادێن.'
       },
       intro: {
-        en: 'Oxfords, derbies, loafers and boots, each one built on the last and finished by hand. Shoes for the formal hours, and for the long walks in between.',
-        ckb: 'ئۆکسفۆرد، دێربی، لۆفەر و پۆتین، هەر یەکەیان لەسەر قاڵب دروستکراوە و بە دەست تەواوکراوە. پێڵاو بۆ کاتە فەرمییەکان، و بۆ ئەو ڕێگا درێژانەی لە نێوانیاندان.'
+        en: 'Shoes, bags and small leather goods for men — each piece cut from genuine leather and finished by hand, for the formal hours and the long walks in between.',
+        ckb: 'پێڵاو، جانتا و پارچە بچووکەکانی چەرم بۆ پیاوان — هەر پارچەیەک لە چەرمی ڕەسەن دەبڕدرێت و بە دەست تەواو دەکرێت، بۆ کاتە فەرمییەکان و بۆ ئەو ڕێگا درێژانەی لە نێوانیاندان.'
       },
       image: 'assets/img/categories/men.jpg'
     },
+    { id: 'men-shoes', parent: 'men', kind: 'shoes',
+      name: { en: 'Shoes', ckb: 'پێڵاو' },
+      tagline: { en: 'Oxfords, loafers and boots, built on the last and finished by hand.', ckb: 'ئۆکسفۆرد، لۆفەر و پۆتین، لەسەر قاڵب دروستکراون و بە دەست تەواوکراون.' },
+      image: 'assets/img/lookbook/look-4.jpg' },
+    { id: 'men-bags', parent: 'men', kind: 'bags',
+      name: { en: 'Bags', ckb: 'جانتاکان' },
+      tagline: { en: 'Briefcases, weekenders and backpacks for the working day and the long road.', ckb: 'جانتای کار، جانتای گەشت و جانتای پشت، بۆ ڕۆژی کار و ڕێگای درێژ.' },
+      image: 'assets/img/lookbook/look-1.jpg' },
+    { id: 'men-clothes', parent: 'men', kind: 'clothes',
+      name: { en: 'Clothes', ckb: 'جلوبەرگ' },
+      tagline: { en: 'Leather clothing, cut and finished by hand.', ckb: 'جلوبەرگی چەرم، بە دەست دەبڕدرێت و تەواو دەکرێت.' },
+      image: '' },
+    { id: 'men-accessories', parent: 'men', kind: 'accessories',
+      name: { en: 'Accessories', ckb: 'ئێکسسوارات' },
+      tagline: { en: 'Belts, wallets and the small things, made with the same patience.', ckb: 'قایش، جزدان و شتە بچووکەکان، بە هەمان پشوودرێژی دروستکراون.' },
+      image: 'assets/img/lookbook/look-3.jpg' },
+
     {
-      id: 'women',
-      name: { en: 'Women', ckb: 'ئافرەتان' },
+      id: 'women', parent: null,
+      name: { en: 'Women', ckb: 'خانمان' },
       tagline: {
         en: 'Poised lines in supple leather, made to move with you.',
         ckb: 'هێڵی ناسک و چەرمی نەرم، دروستکراو بۆ ئەوەی لەگەڵ هەر هەنگاوێکت بڕوات.'
       },
       intro: {
-        en: 'Pumps, loafers, ballerinas and boots in supple calf and suede. Light on the foot, exact in line, made for days that run late into the evening.',
-        ckb: 'پاژنەبەرز، لۆفەر، باڵێرینا و پۆتین لە چەرمی گوێرەکەی نەرم و چەرمی مەخمەڵی. سووک لە پێدا، ورد لە هێڵدا، بۆ ئەو ڕۆژانەی تا درەنگانی ئێوارە درێژ دەبنەوە.'
+        en: 'Shoes, bags and small leather goods for women — supple calf and suede, light on the foot and exact in line, made for days that run late into the evening.',
+        ckb: 'پێڵاو، جانتا و پارچە بچووکەکانی چەرم بۆ خانمان — چەرمی گوێرەکەی نەرم و چەرمی مەخمەڵی، سووک لە پێدا و ورد لە هێڵدا، بۆ ئەو ڕۆژانەی تا درەنگانی ئێوارە درێژ دەبنەوە.'
       },
       image: 'assets/img/categories/women.jpg'
     },
-    {
-      id: 'bags',
+    { id: 'women-shoes', parent: 'women', kind: 'shoes',
+      name: { en: 'Shoes', ckb: 'پێڵاو' },
+      tagline: { en: 'Pumps, loafers and boots in supple leather, made to move with you.', ckb: 'پاژنەبەرز، لۆفەر و پۆتین لە چەرمی نەرم، دروستکراو بۆ ئەوەی لەگەڵت بجووڵێن.' },
+      image: 'assets/img/lookbook/look-5.jpg' },
+    { id: 'women-bags', parent: 'women', kind: 'bags',
       name: { en: 'Bags', ckb: 'جانتاکان' },
-      tagline: {
-        en: 'Leather that carries your day, and keeps its shape for years.',
-        ckb: 'چەرمێک کە ڕۆژەکەت هەڵدەگرێت و ساڵانێک شێوەی خۆی دەپارێزێت.'
-      },
-      intro: {
-        en: 'Totes, briefcases and travel bags in full-grain and vegetable-tanned leather. Built around what you carry, and made to go on carrying it.',
-        ckb: 'جانتای تۆت، جانتای کار و جانتای گەشت لە چەرمی ڕووتەواو و چەرمی خۆشکراو بە ڕووەک. بە دەوری ئەو شتانەدا دروستکراون کە هەڵیاندەگریت، بۆ ئەوەی بە درێژایی ساڵان هەڵیانبگرن.'
-      },
-      image: 'assets/img/categories/bags.jpg'
-    },
-    {
-      id: 'accessories',
+      tagline: { en: 'Totes, crossbodies and mini bags that keep their shape for years.', ckb: 'جانتای دەستی، جانتای شان و جانتای بچووک، کە ساڵانێک شێوەی خۆیان دەپارێزن.' },
+      image: 'assets/img/categories/bags.jpg' },
+    { id: 'women-clothes', parent: 'women', kind: 'clothes',
+      name: { en: 'Clothes', ckb: 'جلوبەرگ' },
+      tagline: { en: 'Leather clothing, cut and finished by hand.', ckb: 'جلوبەرگی چەرم، بە دەست دەبڕدرێت و تەواو دەکرێت.' },
+      image: '' },
+    { id: 'women-accessories', parent: 'women', kind: 'accessories',
       name: { en: 'Accessories', ckb: 'ئێکسسوارات' },
-      tagline: {
-        en: 'The small things, made with the same patience.',
-        ckb: 'شتە بچووکەکان، بە هەمان پشوودرێژی دروستکراون.'
-      },
-      intro: {
-        en: 'Belts, wallets and travel pieces, saddle-stitched and edge-painted by hand. Small things, held to the same standard as everything else we make.',
-        ckb: 'قایش، جزدان و پێداویستییەکانی گەشت، بە دوو دەرزی و بە دەست دوورراون و لێوارەکانیان بە دەست ڕەنگ کراون. شتی بچووک، بەڵام بە هەمان ئەو پێوەرەی هەموو بەرهەمەکانی ترمانی پێ دروست دەکەین.'
-      },
-      image: 'assets/img/categories/accessories.jpg'
-    }
+      tagline: { en: 'Card holders and small leather goods for every day.', ckb: 'جێکارت و پارچە بچووکەکانی چەرم بۆ هەموو ڕۆژێک.' },
+      image: 'assets/img/categories/accessories.jpg' }
   ];
 
   /* ---------------------------------------------------------------------------
@@ -197,7 +216,7 @@
     /* ----- Men -------------------------------------------------------- */
     {
       id: 'azmar-oxford',
-      category: 'men',
+      category: 'men-shoes',
       type: 'oxford',
       typeName: { en: 'Oxford', ckb: 'ئۆکسفۆرد' },
       name: { en: 'Azmar Oxford', ckb: 'ئۆکسفۆردی ئەزمەڕ' },
@@ -242,7 +261,7 @@
     },
     {
       id: 'goizha-derby',
-      category: 'men',
+      category: 'men-shoes',
       type: 'derby',
       typeName: { en: 'Derby', ckb: 'دێربی' },
       name: { en: 'Goizha Derby', ckb: 'دێربی گۆیژە' },
@@ -287,7 +306,7 @@
     },
     {
       id: 'safeen-penny-loafer',
-      category: 'men',
+      category: 'men-shoes',
       type: 'penny-loafer',
       typeName: { en: 'Penny loafer', ckb: 'لۆفەری پێنی' },
       name: { en: 'Safeen Penny Loafer', ckb: 'لۆفەری سەفین' },
@@ -332,7 +351,7 @@
     },
     {
       id: 'shaqlawa-tassel-loafer',
-      category: 'men',
+      category: 'men-shoes',
       type: 'tassel-loafer',
       typeName: { en: 'Tassel loafer', ckb: 'لۆفەری گوڵینگدار' },
       name: { en: 'Shaqlawa Tassel Loafer', ckb: 'لۆفەری گوڵینگداری شەقڵاوە' },
@@ -377,7 +396,7 @@
     },
     {
       id: 'zagros-chelsea-boot',
-      category: 'men',
+      category: 'men-shoes',
       type: 'chelsea-boot',
       typeName: { en: 'Chelsea boot', ckb: 'پۆتینی چێلسی' },
       name: { en: 'Zagros Chelsea Boot', ckb: 'پۆتینی زاگرۆس' },
@@ -424,7 +443,7 @@
     },
     {
       id: 'korek-double-monk',
-      category: 'men',
+      category: 'men-shoes',
       type: 'double-monk',
       typeName: { en: 'Double monk strap', ckb: 'مۆنکی دووقایش' },
       name: { en: 'Korek Double Monk', ckb: 'مۆنکی کۆڕەک' },
@@ -469,7 +488,7 @@
     },
     {
       id: 'amedi-wingtip-brogue',
-      category: 'men',
+      category: 'men-shoes',
       type: 'wingtip-brogue',
       typeName: { en: 'Wingtip brogue', ckb: 'برۆگی باڵدار' },
       name: { en: 'Amedi Wingtip', ckb: 'برۆگی ئامێدی' },
@@ -514,7 +533,7 @@
     },
     {
       id: 'rawanduz-lace-boot',
-      category: 'men',
+      category: 'men-shoes',
       type: 'lace-up-boot',
       typeName: { en: 'Lace-up boot', ckb: 'پۆتینی قەیتاندار' },
       name: { en: 'Rawanduz Lace Boot', ckb: 'پۆتینی قەیتانداری ڕەواندز' },
@@ -562,7 +581,7 @@
     /* ----- Women ------------------------------------------------------ */
     {
       id: 'nergiz-pump',
-      category: 'women',
+      category: 'women-shoes',
       type: 'pump',
       typeName: { en: 'Pump', ckb: 'پێڵاوی پاژنەبەرز' },
       name: { en: 'Nergiz Pump', ckb: 'پاژنەبەرزی نێرگز' },
@@ -607,7 +626,7 @@
     },
     {
       id: 'shilan-loafer',
-      category: 'women',
+      category: 'women-shoes',
       type: 'loafer',
       typeName: { en: 'Loafer', ckb: 'لۆفەر' },
       name: { en: 'Shilan Loafer', ckb: 'لۆفەری شیلان' },
@@ -652,7 +671,7 @@
     },
     {
       id: 'hiva-ankle-boot',
-      category: 'women',
+      category: 'women-shoes',
       type: 'ankle-boot',
       typeName: { en: 'Ankle boot', ckb: 'پۆتینی کورت' },
       name: { en: 'Hiva Ankle Boot', ckb: 'پۆتینی هیڤا' },
@@ -699,7 +718,7 @@
     },
     {
       id: 'nali-ballet-flat',
-      category: 'women',
+      category: 'women-shoes',
       type: 'ballet-flat',
       typeName: { en: 'Ballet flat', ckb: 'باڵێرینا' },
       name: { en: 'Nali Ballerina', ckb: 'باڵێرینای نالی' },
@@ -745,7 +764,7 @@
     /* ----- Bags ------------------------------------------------------- */
     {
       id: 'nawroz-tote',
-      category: 'bags',
+      category: 'women-bags',
       type: 'tote',
       typeName: { en: 'Tote', ckb: 'جانتای تۆت' },
       name: { en: 'Nawroz Tote', ckb: 'جانتای نەورۆز' },
@@ -792,7 +811,7 @@
     },
     {
       id: 'qalat-crossbody',
-      category: 'bags',
+      category: 'women-bags',
       type: 'crossbody',
       typeName: { en: 'Crossbody', ckb: 'جانتای سەرشان' },
       name: { en: 'Qalat Crossbody', ckb: 'جانتای سەرشانی قەڵات' },
@@ -839,7 +858,7 @@
     },
     {
       id: 'hawler-briefcase',
-      category: 'bags',
+      category: 'men-bags',
       type: 'briefcase',
       typeName: { en: 'Briefcase', ckb: 'جانتای کار' },
       name: { en: 'Hawler Briefcase', ckb: 'جانتای کاری هەولێر' },
@@ -886,7 +905,7 @@
     },
     {
       id: 'dukan-weekender',
-      category: 'bags',
+      category: 'men-bags',
       type: 'weekender',
       typeName: { en: 'Weekender', ckb: 'جانتای گەشت' },
       name: { en: 'Dukan Weekender', ckb: 'جانتای گەشتی دوکان' },
@@ -933,7 +952,7 @@
     },
     {
       id: 'sirwan-clutch',
-      category: 'bags',
+      category: 'women-bags',
       type: 'mini-bag',
       typeName: { en: 'Mini bag', ckb: 'جانتای بچووک' },
       name: { en: 'Sirwan Mini Bag', ckb: 'جانتای بچووکی سیروان' },
@@ -980,7 +999,7 @@
     },
     {
       id: 'bekhal-backpack',
-      category: 'bags',
+      category: 'men-bags',
       type: 'backpack',
       typeName: { en: 'Backpack', ckb: 'جانتای پشت' },
       name: { en: 'Bekhal Backpack', ckb: 'جانتای پشتی بێخاڵ' },
@@ -1028,7 +1047,7 @@
     /* ----- Accessories ------------------------------------------------ */
     {
       id: 'dijla-belt',
-      category: 'accessories',
+      category: 'men-accessories',
       type: 'belt',
       typeName: { en: 'Belt', ckb: 'قایش' },
       name: { en: 'Dijla Belt', ckb: 'قایشی دیجلە' },
@@ -1073,7 +1092,7 @@
     },
     {
       id: 'slemani-bifold',
-      category: 'accessories',
+      category: 'men-accessories',
       type: 'bifold',
       typeName: { en: 'Bifold wallet', ckb: 'جزدانی دووقات' },
       name: { en: 'Slemani Bifold', ckb: 'جزدانی سلێمانی' },
@@ -1118,7 +1137,7 @@
     },
     {
       id: 'zab-card-holder',
-      category: 'accessories',
+      category: 'women-accessories',
       type: 'card-holder',
       typeName: { en: 'Card holder', ckb: 'جێکارت' },
       name: { en: 'Zab Card Holder', ckb: 'جێکارتی زێ' },
@@ -1163,7 +1182,7 @@
     },
     {
       id: 'penjwen-passport-cover',
-      category: 'accessories',
+      category: 'men-accessories',
       type: 'passport-cover',
       typeName: { en: 'Passport cover', ckb: 'بەرگی پاسپۆرت' },
       name: { en: 'Penjwen Passport Cover', ckb: 'بەرگی پاسپۆرتی پێنجوێن' },

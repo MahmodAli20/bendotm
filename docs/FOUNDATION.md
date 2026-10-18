@@ -69,7 +69,7 @@ ask the Foundation owner (see "Requests" in its report) and never redefine `.c-*
 | `data-footer="none"` | omit the footer (rarely wanted) |
 | `data-base="../"` | only for pages in sub-folders (`_lab/`): prefixes every internal link and asset path |
 
-Do **not** add a `<header>`, `<footer>`, skip link, cursor, grain or drawer yourself — `layout.js` injects them.
+Do **not** add a `<header>`, `<footer>`, skip link, grain or drawer yourself — `layout.js` injects them.
 Do not add `<link rel="preload">` (from file:// it produces console errors).
 
 ### Anchors the chrome links to (page builders must provide these ids)
@@ -182,7 +182,7 @@ Motion: `--ease-out` (expo-out) · `--ease-inout` · `--ease-soft` · `--dur-mic
 
 Z-index scale (use the variables): `--z-raised 2` · `--z-sticky 50` (page sticky bars) · `--z-menu 90` ·
 `--z-header 100` · `--z-search 110` · `--z-drawer 120` · `--z-modal 130` · `--z-toast 140` · `--z-curtain 150` ·
-`--z-preloader 160` · `--z-grain 170` · `--z-cursor 180` · `--z-skip 190`. Page content stays below 50.
+`--z-preloader 160` · `--z-grain 170` · `--z-skip 190`. Page content stays below 50.
 
 Breakpoints (min-width unless noted): 560 · **700** (header compact below; `@md` helpers) · 760 (modal becomes a
 bottom sheet below) · 900 · 1000 · **1100** (menu image preview; `@lg` helpers) · 1280 (4-column product grid).
@@ -328,7 +328,7 @@ BENM.reveal(el);                              // after injecting: reveals, accor
 ```
 Includes: 4:5 media with second photo on hover, New/Limited badge, wishlist heart (`[data-wish]`), quick add
 (one-size → adds to bag with toast + fly animation; sized → quick view), type, colour dots, name link
-(stretched over the card, cursor label "View"), price (`data-price`). Re-localises **in place** on language change
+(stretched over the card), price (`data-price`). Re-localises **in place** on language change
 (no re-render needed) via `data-product-id` + `data-pfield`. You can use the same mechanism on product pages:
 `<div data-product-id="azmar-oxford"><h1 data-pfield="name"></h1><p data-pfield="short"></p></div>` — any `{en, ckb}`
 field of the product (`name typeName short description care`) is kept in the current language.
@@ -342,7 +342,9 @@ field of the product (`name typeName short description care`) is kept in the cur
   setTheme('light'|'dark')`. Menu + search at the start, centred logo (never mirrored), language + saved + bag at the
   end. Under 700 px: icons only, language moves into the menu.
 * **Menu** `#site-menu` — `BENM.menu.open() / close() / toggle() / isOpen()`. Collections with live previews
-  (category images + taglines from `BENM_CATEGORIES`), the House links, secondary links, language/currency, socials.
+  (main categories of `BENM_CATEGORIES` with their sub-category links, images + taglines), the House links, secondary
+  links, language/currency, socials. `BENM_LAYOUT.refresh()` rebuilds the collections (menu + footer) when the live
+  catalogue arrives; hover/focus handlers are delegated, so rebuilt links keep working.
 * **Search** `#site-search` — `BENM.searchUI.open() / close()`. Live results (6 compact cards) via `BENM.search(q)`
   (name, type, category, colours, short text; both languages; normalises Arabic/Kurdish letters and digits; English
   plurals and Kurdish ـەکان). Enter → `shop.html?q=<query>` with the page transition. **shop.html must read `?q=`
@@ -361,9 +363,6 @@ field of the product (`name typeName short description care`) is kept in the cur
   toasts on screen are dismissed. Scrollable regions inside layers need `data-lenis-prevent`.
 * **Toasts** — `BENM.toast(message, { icon: 'check', action: { label, onClick }, duration: 4200 })` → `{ el, close }`.
   Max 3, pause on hover/focus, announced politely.
-* **Cursor** — only `(hover:hover) and (pointer:fine)` and not reduced motion. Dot + ring; grows over links/buttons;
-  shows a foil "seal" with a label over `[data-cursor-label="<i18n key>"]` (cursor.view / explore / drag / open / zoom /
-  discover); hidden over inputs and iframes. `[data-cursor]` = grow without label.
 * **Page transitions** — every internal `.html` link (same tab, no modifier keys, not `#hash`-only, not
   `target=_blank`, not `download`, not `data-no-transition`) → curtain covers (0.58 s) → navigate → next page arrives
   covered and uncovers when ready. bfcache-safe. Programmatic: `BENM.go('shop.html?cat=men')`.
@@ -390,7 +389,6 @@ Scanned at boot and by `BENM.reveal(root)` (call it after you inject markup — 
 | `data-reveal-start="top 70%"` | ScrollTrigger start (default `top 88%`) |
 | `data-parallax="0.15"` | on the `img` inside an overflow-hidden wrapper (`.u-media`): travels ±7.5 % and is scaled to cover; off in reduced motion |
 | `data-magnetic` / `="0.4"` | element follows the pointer (fine pointers only) |
-| `data-cursor-label="cursor.explore"` | cursor label (i18n key) · `data-cursor` grow only |
 | `data-marquee` + `data-marquee-speed="1.4"` | infinite marquee of `.c-marquee__track` children; reacts to scroll velocity; RTL flows the other way; pauses off-screen; static in reduced motion |
 | `data-split="words|lines"` | split at boot without animating (for your own timelines; prefer `BENM.split`) |
 | `data-count-to="100"` (+ `data-count-from`, `-pad="3"`, `-duration="1.8"`) | counts up when revealed, localised digits |
@@ -452,7 +450,7 @@ add `data-wish-static` to keep your own aria-label) · `[data-quick-add="<id>"]`
 ## 11. Reduced motion
 
 `BENM.reducedMotion === true` → no Lenis (`BENM.lenis === null`), no pin, no parallax, no scrub, reveals instant,
-marquee static, counters final, cursor off, preloader = 0.45 s fade, curtain off. In page code:
+marquee static, counters final, preloader = 0.45 s fade, curtain off. In page code:
 ```js
 if (B.reducedMotion) { /* final state, no ScrollTrigger pin / scrub */ return; }
 ```

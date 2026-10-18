@@ -9,7 +9,7 @@
      2 i18n applied to the document               6 declarative scan (BENM.reveal)
      3 Lenis + ScrollTrigger (not reduced motion)  7 preloader / curtain-out →
      4 chrome: header, menu, search, drawer,        html[data-ready="true"] →
-       cursor, switches, transitions                BENM.ready callbacks → 'ready'
+       switches, transitions                        BENM.ready callbacks → 'ready'
                                                   8 ScrollTrigger.refresh after
                                                     fonts + images
 
@@ -276,12 +276,47 @@
      4. Catalogue helpers
      ======================================================================== */
   var productIndex = {};
-  PRODUCTS.forEach(function (p) { productIndex[p.id] = p; });
+  function reindexProducts() {                         // again after api.js swaps in the live catalogue
+    productIndex = {};
+    PRODUCTS.forEach(function (p) { productIndex[p.id] = p; });
+  }
+  reindexProducts();
   function findProduct(id) { return (id && productIndex[id]) || null; }
   function category(id) {
     for (var i = 0; i < CATEGORIES.length; i++) if (CATEGORIES[i].id === id) return CATEGORIES[i];
     return null;
   }
+  /* Categories are a two-level tree: main categories (Men, Women: parent = null) and their sub-categories
+     (Shoes, Bags…: parent = main id). Products belong to a sub-category. */
+  function topCategory(id) {                            // the main category a (sub-)category belongs to
+    var c = category(id);
+    for (var i = 0; c && c.parent && i < 5; i++) { var up = category(c.parent); if (!up) break; c = up; }
+    return c;
+  }
+  function inCategory(p, id) {
+    if (!id) return true;
+    return !!p && (p.category === id || (topCategory(p.category) || {}).id === id);
+  }
+  function categoryCount(id, list) { return (list || PRODUCTS).filter(function (p) { return inCategory(p, id); }).length; }
+  /** Main categories (no parentId), or the sub-categories of parentId; opts.nonEmpty keeps only those with pieces */
+  function categories(parentId, opts) {
+    var out = CATEGORIES.filter(function (c) { return (c.parent || null) === (parentId || null); });
+    if (opts && opts.nonEmpty) out = out.filter(function (c) { return categoryCount(c.id, opts.list) > 0; });
+    return out;
+  }
+  // Category texts are data (editable in the admin): registered as strings so data-i18n="cat.<id>.name" switches language
+  function categoryStrings() {
+    var en = {}, ckb = {};
+    CATEGORIES.forEach(function (c) {
+      ['name', 'tagline', 'intro'].forEach(function (f) {
+        if (!c[f]) return;
+        en['cat.' + c.id + '.' + f] = c[f].en || '';
+        ckb['cat.' + c.id + '.' + f] = c[f].ckb || c[f].en || '';
+      });
+    });
+    addStrings({ en: en, ckb: ckb });
+  }
+  categoryStrings();
   function products(filter) { return typeof filter === 'function' ? PRODUCTS.filter(filter) : PRODUCTS.slice(); }
   function colorOf(p, id) {
     var list = (p && p.colors) || [];
@@ -307,23 +342,25 @@
     if (/[\u0600-\u06FF]/.test(tok) && tok.length > 4) return tok.replace(/(ەکان|کان|ەکە|یەکان)$/, '');
     return tok;
   }
-  var ALIASES = {
-    men: 'shoe shoes footwear پێڵاو پیاو',
-    women: 'shoe shoes footwear heels پێڵاو ئافرەت',
-    bags: 'bag bags جانتا',
-    accessories: 'small leather goods wallet ئێکسسوار'
+  var ALIASES = {                                       // by main category id and by sub-category kind
+    men: 'men man mens پیاو پیاوان',
+    women: 'women woman womens ladies ئافرەت ئافرەتان خانم خانمان',
+    shoes: 'shoe shoes footwear heels پێڵاو',
+    bags: 'bag bags handbag جانتا',
+    clothes: 'clothes clothing wear jacket جل جلوبەرگ',
+    accessories: 'accessories small leather goods wallet belt ئێکسسوار'
   };
   var searchIndex = null;
   function buildIndex() {
     searchIndex = PRODUCTS.map(function (p) {
-      var c = category(p.category) || {};
+      var c = category(p.category) || {}, top = topCategory(p.category) || {};
       var both = function (o) { return o ? (o.en || '') + ' ' + (o.ckb || '') : ''; };
       return {
         p: p,
         fields: [
           [norm(both(p.name)), 10],
           [norm(both(p.typeName) + ' ' + p.type), 7],
-          [norm(both(c.name) + ' ' + p.category + ' ' + (ALIASES[p.category] || '')), 5],
+          [norm(both(c.name) + ' ' + both(top.name) + ' ' + (ALIASES[c.kind] || '') + ' ' + (ALIASES[top.id] || '')), 5],
           [norm((p.colors || []).map(function (x) { return both(x.name); }).join(' ')), 3],
           [norm(both(p.short)), 1]
         ]
@@ -527,15 +564,40 @@
         options: it.options || null, unitPrice: p.price + fee, lineTotal: (p.price + fee) * qty };
     }).filter(Boolean);
   }
-  /** Localised order message for WhatsApp — default: the current bag. */
-  function orderMessage(items) {
+  /** Localised order message for WhatsApp — default: the current bag. ref: order reference saved in the backend */
+  function orderMessage(items, ref) {
     items = normaliseItems(items);
     var total = 0;
     var lines = items.map(function (it, i) {
       total += it.lineTotal;
       return t('wa.line', { i: i + 1, name: loc(it.product.name), details: lineDetails(it), price: price(it.lineTotal) });
     });
-    return [t('wa.order')].concat(lines, ['', t('wa.subtotal', { amount: price(total) }), t('wa.thanks')]).join('\n');
+    var head = [t('wa.order')];
+    if (ref) head.push(t('wa.ref', { ref: ref }));
+    return head.concat(lines, ['', t('wa.subtotal', { amount: price(total) }), t('wa.thanks')]).join('\n');
+  }
+  /* Checkout (bag → WhatsApp). With the backend on, the order is saved first under a reference that is also
+     written into the WhatsApp message, so staff can match the chat to the order in the admin. */
+  function orderRef() {
+    var dt = new Date(), p2 = function (n) { return (n < 10 ? '0' : '') + n; };
+    var rnd = Math.random().toString(36).slice(2, 6).toUpperCase();
+    return 'BM-' + String(dt.getFullYear()).slice(2) + p2(dt.getMonth() + 1) + p2(dt.getDate()) + '-' + rnd;
+  }
+  function checkout(link) {
+    var A = w.BENM_API, items = normaliseItems();
+    if (!A || !A.enabled || !items.length) return;
+    var ref = orderRef(), total = 0, count = 0;
+    var rows = items.map(function (it) {
+      total += it.lineTotal; count += it.qty;
+      return { id: it.id, name: it.product.name.en, color: it.color ? it.color.id : null, size: it.size, qty: it.qty,
+        unit_price: it.unitPrice, options: it.options || null };
+    });
+    var summary = items.map(function (it) {
+      return it.qty + ' × ' + it.product.name.en + (it.color ? ' — ' + it.color.name.en : '') + (it.size != null ? ' — size ' + it.size : '') +
+        (it.options && it.options.summary ? ' — ' + it.options.summary.en : '') + ' — $' + it.lineTotal;
+    }).join('\n');
+    link.setAttribute('href', whatsappLink(orderMessage(null, ref)));   // the browser follows the updated link
+    A.saveOrder({ reference: ref, summary: summary, items: rows, item_count: count, total_usd: total, currency: currency, language: lang });
   }
   /** One-product enquiry ("Order via WhatsApp" on the product page). */
   function productMessage(id, opts) {
@@ -783,7 +845,7 @@
             (!compact && dots ? '<span class="c-card__dots" aria-hidden="true">' + dots + '</span>' : '') +
           '</div>' +
           '<div class="c-card__row">' +
-            '<' + heading + ' class="c-card__name"><a class="c-card__link" href="' + esc(productUrl(p.id)) + '" data-pfield="name" data-cursor-label="cursor.view">' + esc(name) + '</a></' + heading + '>' +
+            '<' + heading + ' class="c-card__name"><a class="c-card__link" href="' + esc(productUrl(p.id)) + '" data-pfield="name">' + esc(name) + '</a></' + heading + '>' +
             '<span class="c-card__price c-price" data-price="' + (+p.price) + '">' + esc(price(p.price)) + '</span>' +
           '</div>' +
         '</div>' +
@@ -829,7 +891,7 @@
     if (!p) return null;
     var key = uid('qv');
     var name = loc(p.name);
-    var cat = category(p.category);
+    var cat = topCategory(p.category);                  // Men / Women (the type already says "Oxford")
     var oneSize = isOneSize(p);
     var soldOut = p.soldOut || [];
     var slides = p.images.map(function (src, i) {
@@ -1303,8 +1365,6 @@
     if (!root || !toggle) return;
     var labelEl = $('[data-menu-label]', toggle);
     var open = false, tl = null, layer = null, active = 0;
-    var links = $$('.c-menu__link', root);
-    var imgs = $$('[data-menu-img]', root);
     var capTitle = $('[data-menu-cap-title]', root), capText = $('[data-menu-cap-text]', root);
     var items = (w.BENM_LAYOUT && w.BENM_LAYOUT.menu) || [];
 
@@ -1324,6 +1384,7 @@
       }
     }
     function preview(i) {
+      var imgs = $$('[data-menu-img]', root);
       if (i === active || !imgs[i]) return;
       var prev = imgs[active];
       active = i;
@@ -1338,11 +1399,14 @@
       });
       if (capTitle) gsap.fromTo([capTitle, capText], { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: .7, ease: 'expo.out', stagger: .05 });
     }
-    links.forEach(function (a) {
-      var i = +a.getAttribute('data-menu-index');
-      a.addEventListener('pointerenter', function () { preview(i); });
-      a.addEventListener('focus', function () { preview(i); });
-    });
+    // delegated: the collection links are rebuilt when the live catalogue lands (BENM_LAYOUT.refresh);
+    // a sub-category link previews its main category
+    function linkIndex(e) {
+      var a = e.target && e.target.closest && e.target.closest('[data-menu-index]');
+      return a && root.contains(a) ? +a.getAttribute('data-menu-index') : -1;
+    }
+    root.addEventListener('pointerover', function (e) { var i = linkIndex(e); if (i > -1) preview(i); });
+    root.addEventListener('focusin', function (e) { var i = linkIndex(e); if (i > -1) preview(i); });
 
     function doOpen() {
       if (open) return;
@@ -1364,7 +1428,7 @@
           .fromTo($$('.c-menu__figure', root), { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 1.3, ease: 'expo.out' }, .45)
           .fromTo($('.c-menu__foot', root), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 1, ease: 'expo.out' }, .7);
       }
-      setTimeout(function () { if (open) focusEl(links[0]); }, REDUCED ? 0 : 450);
+      setTimeout(function () { if (open) focusEl($('.c-menu__link', root)); }, REDUCED ? 0 : 450);
     }
     function doClose(o) {
       o = o || {};
@@ -1637,48 +1701,6 @@
   function openDrawer(tab) { drawer.open(tab); }
   function closeDrawer() { drawer.close(); }
 
-  /* ===========================================================================
-     18. Custom cursor (pointer: fine only)
-     ======================================================================== */
-  function initCursor() {
-    var c = $('.c-cursor');
-    if (!c || REDUCED || !FINE_POINTER) return;
-    html.classList.add('has-cursor');
-    var dot = $('.c-cursor__dot', c), ring = $('.c-cursor__ring', c), label = $('.c-cursor__label', c);
-    var dx = gsap.quickTo(dot, 'x', { duration: .12, ease: 'power3' }), dy = gsap.quickTo(dot, 'y', { duration: .12, ease: 'power3' });
-    var rx = gsap.quickTo(ring, 'x', { duration: .55, ease: 'power3' }), ry = gsap.quickTo(ring, 'y', { duration: .55, ease: 'power3' });
-    var mode = '', labelKey = '', seen = false;
-    c.classList.add('is-hidden');
-    function setMode(m, key) {
-      if (m === mode && key === labelKey) return;
-      mode = m;
-      labelKey = key || '';
-      c.classList.toggle('is-link', m === 'link');
-      c.classList.toggle('is-label', m === 'label');
-      c.classList.toggle('is-hidden', m === 'hidden');
-      if (m === 'label') label.textContent = t(labelKey);
-    }
-    w.addEventListener('pointermove', function (e) {
-      if (e.pointerType !== 'mouse') return;
-      if (!seen) { seen = true; gsap.set([dot, ring], { x: e.clientX, y: e.clientY }); if (mode !== 'hidden') c.classList.remove('is-hidden'); }
-      dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY);
-    }, { passive: true });
-    d.addEventListener('pointerover', function (e) {
-      if (e.pointerType !== 'mouse') return;
-      var tg = e.target;
-      if (!tg || !tg.closest) return;
-      var lab = tg.closest('[data-cursor-label]');
-      if (tg.closest('input, textarea, select, iframe, [contenteditable="true"]')) setMode('hidden');
-      else if (lab) setMode('label', lab.getAttribute('data-cursor-label'));
-      else if (tg.closest('a, button, [role="button"], [role="tab"], label, summary, [data-cursor]')) setMode('link');
-      else setMode('');
-    });
-    d.documentElement.addEventListener('mouseleave', function () { c.classList.add('is-hidden'); });
-    d.documentElement.addEventListener('mouseenter', function () { if (mode !== 'hidden') c.classList.remove('is-hidden'); });
-    w.addEventListener('pointerdown', function () { c.classList.add('is-down'); });
-    w.addEventListener('pointerup', function () { c.classList.remove('is-down'); });
-    on('langchange', function () { if (mode === 'label') label.textContent = t(labelKey); });
-  }
 
   /* ===========================================================================
      19. Accordions · tabs · selectable groups · qty steppers · forms
@@ -1921,6 +1943,7 @@
     if (!tg || !tg.closest) return;
 
     var btn;
+    if ((btn = tg.closest('[data-checkout]'))) { checkout(btn); return; }   // no preventDefault: WhatsApp still opens
     if ((btn = tg.closest('[data-set-lang]'))) { setLang(btn.getAttribute('data-set-lang')); return; }
     if ((btn = tg.closest('[data-set-currency]'))) { setCurrency(btn.getAttribute('data-set-currency')); return; }
     if ((btn = tg.closest('[data-open-drawer]'))) { e.preventDefault(); openDrawer(btn.getAttribute('data-open-drawer')); return; }
@@ -2039,6 +2062,10 @@
     refreshProducts: refreshProducts,
     findProduct: findProduct,
     category: category,
+    topCategory: topCategory,
+    categories: categories,
+    inCategory: inCategory,
+    categoryCount: categoryCount,
     products: products,
     search: search,
     cart: cart,
@@ -2103,6 +2130,18 @@
     });
   }
   function step(fn) { tryCall(fn); }
+  // Live catalogue (api.js, local backend only): wait a moment for it, then render with whatever we have
+  function liveData() {
+    var A = w.BENM_API;
+    if (!A || !A.enabled) return Promise.resolve();
+    return Promise.race([A.ready, new Promise(function (ok) { setTimeout(ok, 2500); })]).then(function () {
+      A.lock();                                           // a later answer only refreshes the saved snapshot
+      reindexProducts();
+      categoryStrings();                                  // live category names → strings
+      searchIndex = null;
+      if (w.BENM_LAYOUT && w.BENM_LAYOUT.refresh) tryCall(w.BENM_LAYOUT.refresh);   // menu + footer collections
+    });
+  }
 
   function boot() {
     // 1. language + currency
@@ -2120,7 +2159,6 @@
     step(initMenu);
     step(initSearch);
     step(initDrawer);
-    step(initCursor);
     step(function () { renderCounts(); });
     step(function () { $$('.c-accordion').forEach(initAccordion); });
     d.addEventListener('click', onDocClick);
@@ -2152,7 +2190,7 @@
     var preloading = html.classList.contains('is-preloading');
     if (preloading) step(function () { runPreloader(function () { coverDone = true; maybeReady(); }); });
 
-    fontsReady(1500).then(function () {
+    Promise.all([fontsReady(1500), liveData()]).then(function () {
       // 5. page initialisers
       pageFns.splice(0).forEach(function (fn) { tryCall(fn, BENM); });
       // 6. declarative animation attributes

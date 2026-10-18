@@ -274,16 +274,32 @@
     setMeta('meta[property="og:description"]', desc);
   }
 
+  function catHrefFor(c) { return B.url('shop.html' + (c ? '?cat=' + encodeURIComponent(c.id) : '')); }
   function renderMeta() {
     var cat = B.category(P.category);
+    var top = B.topCategory(P.category);
+    var up = top && cat && top.id !== cat.id ? top : null;    // filed under a sub-category: Home › Men › Shoes › piece
     var catName = cat ? B.loc(cat.name) : '';
-    var catHref = B.url('shop.html' + (cat ? '?cat=' + encodeURIComponent(cat.id) : ''));
+    var catHref = catHrefFor(cat);
     var crumb = byId('pdp-crumb-cat');
-    if (crumb) { crumb.textContent = catName || B.t('nav.shop'); crumb.setAttribute('href', catHref); }
+    if (crumb) {
+      crumb.textContent = catName || B.t('nav.shop');
+      crumb.setAttribute('href', catHref);
+      var upLink = byId('pdp-crumb-top');
+      if (up && !upLink) {
+        var li = d.createElement('li');
+        li.innerHTML = '<a id="pdp-crumb-top"></a>';
+        crumb.parentNode.parentNode.insertBefore(li, crumb.parentNode);
+        upLink = byId('pdp-crumb-top');
+      }
+      if (upLink && !up) upLink.parentNode.remove();
+      else if (upLink) { upLink.textContent = B.loc(up.name); upLink.setAttribute('href', catHrefFor(up)); }
+    }
     var num = byId('pdp-num');
     if (num) num.textContent = 'N°' + pad(INDEX + 1);
     var catEl = byId('pdp-cat');
-    if (catEl) catEl.textContent = catName;
+    if (catEl) catEl.textContent = top ? B.loc(top.name) : catName;
+    if (up) catName = B.loc(up.name) + ' · ' + catName;
     var badge = byId('pdp-badge');
     if (badge) {
       badge.innerHTML = P.badge === 'new' ? '<span class="c-badge c-badge--dot">' + esc(B.t('card.new')) + '</span>' :
@@ -337,7 +353,7 @@
     var total = FRAMES.length;
     framesEl.innerHTML = FRAMES.map(function (f, i) {
       return '<figure class="pdp-frame pdp-frame--' + (f.kind === 'detail' ? 'detail' : 'full') + '" data-frame="' + i + '">' +
-        '<button class="pdp-frame__btn" type="button" data-zoom="' + i + '" data-cursor-label="cursor.zoom">' +
+        '<button class="pdp-frame__btn" type="button" data-zoom="' + i + '">' +
           '<span class="pdp-frame__media u-media" data-reveal="clip-up"' + (i ? '' : ' data-reveal-delay=".1"') + '>' + wrapCrop(f, imgTag(f, i === 0)) + '</span>' +
           (f.kind === 'detail' ? '<span class="pdp-frame__tag" aria-hidden="true"><span class="c-diamond"></span><span data-i18n="product.gallery.detailTag">' +
             esc(B.t('product.gallery.detailTag')) + '</span></span>' : '') +
@@ -623,10 +639,11 @@
      8. Size guide — EU / UK / US + foot length, men & women (BENM.modal)
      ======================================================================== */
   var dialogN = 0;
+  function sizeGroup() { return (B.topCategory(P.category) || {}).id === 'women' ? 'women' : 'men'; }
   function guideTable(group) {
     var head = '<thead><tr><th scope="col">' + esc(B.t('product.guide.eu')) + '</th><th scope="col">' + esc(B.t('product.guide.uk')) + '</th>' +
       '<th scope="col">' + esc(B.t('product.guide.us')) + '</th><th scope="col">' + esc(B.t('product.guide.foot')) + '</th></tr></thead>';
-    var mine = group === P.category && state.size != null;
+    var mine = group === sizeGroup() && state.size != null;
     var rows = SIZE_TABLES[group].map(function (r) {
       var cur = mine && r[0] === state.size;
       var cm = (r[0] / 1.5 - 1.5).toFixed(1);
@@ -641,7 +658,7 @@
 
   function openGuide() {
     var k = 'pdp-guide-' + (++dialogN);
-    var initial = P.category === 'women' ? 'women' : 'men';
+    var initial = sizeGroup();
     var tabs = ['men', 'women'].map(function (g) {
       var on = g === initial;
       return '<button class="c-tab" type="button" role="tab" id="' + k + '-tab-' + g + '" aria-controls="' + k + '-' + g + '" aria-selected="' + on + '"' +
@@ -1021,7 +1038,9 @@
     var ids = [];
     var push = function (id) { if (id && id !== P.id && ids.indexOf(id) < 0 && B.findProduct(id)) ids.push(id); };
     (P.related || []).forEach(push);
+    var top = B.topCategory(P.category);
     if (ids.length < 4) B.products(function (q) { return q.category === P.category; }).forEach(function (q) { push(q.id); });
+    if (ids.length < 4 && top) B.products(function (q) { return B.inCategory(q, top.id); }).forEach(function (q) { push(q.id); });
     if (ids.length < 4) PRODUCTS.forEach(function (q) { push(q.id); });
     return ids.slice(0, 4);
   }

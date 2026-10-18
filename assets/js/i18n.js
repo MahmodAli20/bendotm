@@ -229,6 +229,7 @@
 
     /* ---- WhatsApp messages ---------------------------------------------------- */
     'wa.order': 'Hello Ben.M, I would like to order:',
+    'wa.ref': 'Order reference: {ref}',
     'wa.line': '{i}. {name} — {details} — {price}',
     'wa.color': 'Colour: {value}',
     'wa.size': 'Size: {value}',
@@ -463,6 +464,7 @@
 
     /* ---- WhatsApp messages ---------------------------------------------------- */
     'wa.order': 'سڵاو Ben.M، دەمەوێت ئەم پارچانە داوا بکەم:',
+    'wa.ref': 'ژمارەی داواکاری: {ref}',
     'wa.line': '{i}. {name} — {details} — {price}',
     'wa.color': 'ڕەنگ: {value}',
     'wa.size': 'قەبارە: {value}',

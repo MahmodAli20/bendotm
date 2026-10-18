@@ -25,21 +25,31 @@
   <main id="main" class="page page--home">
 
     <!-- =====================================================================
-         01 · HERO — the embossed leather tag
+         01 · HERO — the film (stock footage for the demo, see README → Hero film)
          ================================================================== -->
     <section class="home-hero theme-night" id="top" aria-labelledby="hero-title">
+      <div class="home-hero__film" aria-hidden="true">
+        <div class="home-hero__media">
+          <picture class="home-hero__poster">
+            <source media="(max-aspect-ratio: 4/5)" srcset="assets/img/editorial/hero-film-portrait.jpg" width="720" height="1280">
+            <img src="assets/img/editorial/hero-film.jpg" alt="" width="1920" height="1080" fetchpriority="high" decoding="async">
+          </picture>
+          <!-- source chosen by home.js: landscape cut, or the portrait cut on tall screens -->
+          <video class="home-hero__video" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback
+                 data-src="assets/video/hero.mp4" data-src-portrait="assets/video/hero-portrait.mp4"></video>
+        </div>
+        <span class="home-hero__scrim"></span>
+      </div>
+
       <div class="home-hero__inner u-container">
         <div class="home-hero__top">
           <p class="c-eyebrow c-eyebrow--line home-hero__eyebrow" data-hero-fade data-i18n="home.hero.eyebrow">Shoes · Bags · Belts · Wallets</p>
-          <p class="home-hero__hint" data-hero-fade><span class="home-hero__hint-dot" aria-hidden="true"></span><span data-i18n="home.hero.hint">Move your cursor — the light follows</span></p>
+          <button class="home-hero__film-btn" type="button" data-hero-film data-state="paused" data-hero-fade>
+            <span class="home-hero__film-icon" aria-hidden="true"></span><span class="home-hero__film-label" data-film-label data-i18n="home.hero.play">Play the film</span>
+          </button>
         </div>
 
         <div class="home-hero__stage">
-          <div class="home-hero__tag">
-            <div class="home-hero__tag-in">
-              <div class="home-hero__leather" id="hero-tag"></div>
-            </div>
-          </div>
           <h1 class="home-hero__title" id="hero-title">
             <span class="home-hero__line home-hero__line--1" data-i18n="home.hero.line1">Genuine leather,</span>
             <span class="home-hero__line home-hero__line--2" data-i18n-html="home.hero.line2"><em>made to last.</em></span>
@@ -118,11 +128,12 @@
         <div class="home-collections__track">
           <header class="home-collections__intro">
             <p class="c-eyebrow c-eyebrow--line" data-reveal="fade"><span class="c-eyebrow__num">01</span><span data-i18n="home.collections.eyebrow">The collections</span></p>
-            <h2 class="home-collections__title" id="collections-title" data-reveal="lines" data-i18n-html="home.collections.title">Four collections, <em>one standard.</em></h2>
-            <p class="home-collections__text" data-reveal="up" data-reveal-delay=".15" data-i18n="home.collections.text">Shoes for men and women, bags for every day and the small things you carry — all in genuine leather, all finished by hand.</p>
+            <h2 class="home-collections__title" id="collections-title" data-reveal="lines" data-i18n-html="home.collections.title">Men &amp; women, <em>one standard.</em></h2>
+            <p class="home-collections__text" data-reveal="up" data-reveal-delay=".15" data-i18n="home.collections.text">Shoes, bags and the small things you carry, for him and for her — all in genuine leather, all finished by hand.</p>
           </header>
 
-          <ul class="home-collections__list" role="list">
+          <!-- Rendered from the categories in data.js / the admin (home.js); these two cards are the no-script fallback. -->
+          <ul class="home-collections__list" role="list" data-home-cats>
             <li class="home-cat" data-cat="men" data-reveal="up">
               <span class="home-cat__num" aria-hidden="true">01</span>
               <div class="home-cat__media u-media">
@@ -130,8 +141,8 @@
               </div>
               <div class="home-cat__body">
                 <p class="home-cat__index">N°01</p>
-                <h3 class="home-cat__name"><a class="home-cat__link" href="shop.html?cat=men" data-cursor-label="cursor.explore" data-i18n="nav.men">Men</a></h3>
-                <p class="home-cat__tagline" data-cat-tagline>Built on the last. Broken in by life.</p>
+                <h3 class="home-cat__name"><a class="home-cat__link" href="shop.html?cat=men">Men</a></h3>
+                <p class="home-cat__tagline">Built on the last. Broken in by life.</p>
                 <p class="home-cat__cta" aria-hidden="true"><span data-i18n="home.collections.explore">Explore the collection</span><span data-icon="arrow"></span></p>
               </div>
             </li>
@@ -142,39 +153,15 @@
               </div>
               <div class="home-cat__body">
                 <p class="home-cat__index">N°02</p>
-                <h3 class="home-cat__name"><a class="home-cat__link" href="shop.html?cat=women" data-cursor-label="cursor.explore" data-i18n="nav.women">Women</a></h3>
-                <p class="home-cat__tagline" data-cat-tagline>Poised lines in supple leather, made to move with you.</p>
-                <p class="home-cat__cta" aria-hidden="true"><span data-i18n="home.collections.explore">Explore the collection</span><span data-icon="arrow"></span></p>
-              </div>
-            </li>
-            <li class="home-cat" data-cat="bags" data-reveal="up" data-reveal-delay=".16">
-              <span class="home-cat__num" aria-hidden="true">03</span>
-              <div class="home-cat__media u-media">
-                <img src="assets/img/categories/bags.jpg" alt="A dark brown leather tote resting on a side table" width="1200" height="1600" loading="lazy" decoding="async" data-i18n-attr="alt:home.cat.bags.alt">
-              </div>
-              <div class="home-cat__body">
-                <p class="home-cat__index">N°03</p>
-                <h3 class="home-cat__name"><a class="home-cat__link" href="shop.html?cat=bags" data-cursor-label="cursor.explore" data-i18n="nav.bags">Bags</a></h3>
-                <p class="home-cat__tagline" data-cat-tagline>Leather that carries your day, and keeps its shape for years.</p>
-                <p class="home-cat__cta" aria-hidden="true"><span data-i18n="home.collections.explore">Explore the collection</span><span data-icon="arrow"></span></p>
-              </div>
-            </li>
-            <li class="home-cat" data-cat="accessories" data-reveal="up" data-reveal-delay=".24">
-              <span class="home-cat__num" aria-hidden="true">04</span>
-              <div class="home-cat__media u-media">
-                <img src="assets/img/categories/accessories.jpg" alt="A brown leather belt worn with light denim and a knit sweater" width="1200" height="1600" loading="lazy" decoding="async" data-i18n-attr="alt:home.cat.accessories.alt">
-              </div>
-              <div class="home-cat__body">
-                <p class="home-cat__index">N°04</p>
-                <h3 class="home-cat__name"><a class="home-cat__link" href="shop.html?cat=accessories" data-cursor-label="cursor.explore" data-i18n="nav.accessories">Accessories</a></h3>
-                <p class="home-cat__tagline" data-cat-tagline>The small things, made with the same patience.</p>
+                <h3 class="home-cat__name"><a class="home-cat__link" href="shop.html?cat=women">Women</a></h3>
+                <p class="home-cat__tagline">Poised lines in supple leather, made to move with you.</p>
                 <p class="home-cat__cta" aria-hidden="true"><span data-i18n="home.collections.explore">Explore the collection</span><span data-icon="arrow"></span></p>
               </div>
             </li>
           </ul>
 
           <div class="home-collections__outro">
-            <a class="home-collections__all" href="shop.html" data-cursor-label="cursor.discover">
+            <a class="home-collections__all" href="shop.html">
               <span class="home-collections__all-count" data-collection-count>22 pieces</span>
               <span class="home-collections__all-label" data-i18n-html="home.collections.all">View the <em>full collection</em></span>
               <span class="home-collections__all-arrow" data-icon="arrow"></span>
@@ -183,7 +170,7 @@
         </div>
       </div>
       <div class="home-collections__progress" aria-hidden="true">
-        <span class="home-collections__counter"><span data-collection-current>01</span><span class="home-collections__counter-total">/ 04</span></span>
+        <span class="home-collections__counter"><span data-collection-current>01</span><span class="home-collections__counter-total" data-collection-total>/ 02</span></span>
         <span class="home-collections__bar"><span class="home-collections__bar-fill"></span></span>
       </div>
     </section>
@@ -210,7 +197,7 @@
           </div>
         </div>
       </div>
-      <div class="home-rail" id="new-rail" tabindex="0" role="region" aria-label="New arrivals — use the arrow keys or drag to browse" data-i18n-attr="aria-label:home.new.railLabel" data-cursor-label="cursor.drag" data-lenis-prevent-horizontal>
+      <div class="home-rail" id="new-rail" tabindex="0" role="region" aria-label="New arrivals — use the arrow keys or drag to browse" data-i18n-attr="aria-label:home.new.railLabel" data-lenis-prevent-horizontal>
         <ul class="home-rail__list" role="list" data-reveal="up" data-reveal-stagger=".08"></ul>
       </div>
       <div class="u-container">
@@ -467,7 +454,7 @@
         </ul>
 
         <div class="home-boutiques" id="boutiques-teaser">
-          <a class="home-boutiques__visual" href="boutiques.html" data-cursor-label="cursor.discover" tabindex="-1" aria-hidden="true">
+          <a class="home-boutiques__visual" href="boutiques.html" tabindex="-1" aria-hidden="true">
             <span class="home-boutiques__media u-media" data-reveal="clip-up">
               <img class="home-boutiques__img is-active" src="assets/img/stores/interior-wide.jpg" alt="" width="2400" height="1350" loading="lazy" decoding="async" data-store-img="all">
               <img class="home-boutiques__img" src="assets/img/stores/erbil.jpg" alt="" width="1600" height="1200" loading="lazy" decoding="async" data-store-img="erbil">
@@ -539,6 +526,7 @@
   <script src="assets/js/brand.js"></script>
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/data.js"></script>
+  <script src="assets/js/api.js"></script>
   <script src="assets/js/layout.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/leather.js"></script>

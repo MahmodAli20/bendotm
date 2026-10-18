@@ -82,16 +82,17 @@
         <nav class="shop-cats" aria-label="Categories" data-i18n-attr="aria-label:shop.tabs.label" data-reveal="up" data-reveal-delay=".35">
           <div class="shop-cats__scroller" data-shop-cats>
             <span class="shop-cats__origin" aria-hidden="true"></span>
-            <ul class="shop-cats__list" role="list">
+            <!-- main categories after "All" are rebuilt from the catalogue (shop.js) -->
+            <ul class="shop-cats__list" role="list" data-shop-tabs>
               <li><a class="shop-cats__link" href="shop.html" data-cat="all"><span class="shop-cats__label" data-i18n="shop.tabs.all">All</span><sup class="shop-cats__n" aria-hidden="true"></sup><span class="u-visually-hidden" data-cat-sr></span></a></li>
               <li><a class="shop-cats__link" href="shop.html?cat=men" data-cat="men"><span class="shop-cats__label" data-i18n="nav.men">Men</span><sup class="shop-cats__n" aria-hidden="true"></sup><span class="u-visually-hidden" data-cat-sr></span></a></li>
               <li><a class="shop-cats__link" href="shop.html?cat=women" data-cat="women"><span class="shop-cats__label" data-i18n="nav.women">Women</span><sup class="shop-cats__n" aria-hidden="true"></sup><span class="u-visually-hidden" data-cat-sr></span></a></li>
-              <li><a class="shop-cats__link" href="shop.html?cat=bags" data-cat="bags"><span class="shop-cats__label" data-i18n="nav.bags">Bags</span><sup class="shop-cats__n" aria-hidden="true"></sup><span class="u-visually-hidden" data-cat-sr></span></a></li>
-              <li><a class="shop-cats__link" href="shop.html?cat=accessories" data-cat="accessories"><span class="shop-cats__label" data-i18n="nav.accessories">Accessories</span><sup class="shop-cats__n" aria-hidden="true"></sup><span class="u-visually-hidden" data-cat-sr></span></a></li>
             </ul>
             <span class="shop-cats__line" aria-hidden="true"></span>
           </div>
         </nav>
+        <!-- sub-categories of the active main category (Shoes, Bags, …) -->
+        <ul class="shop-subs" role="list" aria-label="Sub-categories" data-i18n-attr="aria-label:shop.subs.label" data-shop-subs hidden></ul>
       </div>
     </section>
 
@@ -194,6 +195,7 @@
   <script src="assets/js/brand.js"></script>
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/data.js"></script>
+  <script src="assets/js/api.js"></script>
   <script src="assets/js/layout.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/pages/shop.js"></script>
