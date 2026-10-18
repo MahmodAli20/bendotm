@@ -31,7 +31,8 @@
   if (!enabled) return;
 
   /* ---- mapping: Directus rows → the shapes data.js uses ------------------------------------------ */
-  function asset(id, width) { return id ? URL_ + '/assets/' + id + '?width=' + width + '&quality=82&format=auto' : ''; }
+  // WebP for every browser: as small as it needs to be, and quick for the server to make (AVIF is not)
+  function asset(id, width) { return id ? URL_ + '/assets/' + id + '?width=' + width + '&quality=82&format=webp' : ''; }
   function pair(row, base) { var en = row[base + '_en'] || ''; return { en: en, ckb: row[base + '_ckb'] || en }; }
   function lines(s) { return String(s || '').split(/\r?\n/).map(function (x) { return x.trim(); }).filter(Boolean); }
   function list(v) { return Array.isArray(v) ? v : String(v || '').split(',').filter(Boolean); }
