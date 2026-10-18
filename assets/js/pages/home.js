@@ -38,18 +38,13 @@
       'home.hero.cta2': 'Discover the craft',
       'home.hero.scroll': 'Scroll',
 
-      'home.marquee.handcrafted': 'Handcrafted',
-      'home.marquee.a': 'Full-grain leather',
-      'home.marquee.b': 'Saddle-stitched',
-      'home.marquee.c': 'Finished by hand',
-      'home.marquee.d': 'Made to last',
 
       'home.campaign.eyebrow': 'The House of Ben.M',
       'home.campaign.title': 'Every pair begins with <em>a single hide.</em>',
       'home.campaign.text': 'We choose every hide by hand, read its grain and cut around its flaws. What reaches you has been looked at, touched and finished by people who care.',
       'home.campaign.link': 'Our story',
-      'home.campaign.caption': 'Tailoring & leather',
-      'home.campaign.alt': 'A man in a dark tailored suit seated in a moody interior',
+      'home.campaign.caption': 'Made to travel',
+      'home.campaign.alt': 'A tan leather case beside dried flowers against a deep green wall',
 
       'home.collections.eyebrow': 'The collections',
       'home.collections.title': 'Men &amp; women, <em>one standard.</em>',
@@ -172,18 +167,13 @@
       'home.hero.cta2': 'وەستاییەکە بدۆزەرەوە',
       'home.hero.scroll': 'بڕۆ خوارەوە',
 
-      'home.marquee.handcrafted': 'دەستکرد',
-      'home.marquee.a': 'چەرمی ڕووتەواو',
-      'home.marquee.b': 'بە دوو دەرزی دوورراو',
-      'home.marquee.c': 'بە دەست تەواوکراو',
-      'home.marquee.d': 'بۆ ماوەیەکی درێژ دروستکراو',
 
       'home.campaign.eyebrow': 'ماڵی Ben.M',
       'home.campaign.title': 'هەر جووتێک <em>لە یەک پێستەوە</em> دەست پێدەکات.',
       'home.campaign.text': 'هەموو پێستێک بە دەست هەڵدەبژێرین، ڕووەکەی دەخوێنینەوە و بە دەوری کەموکوڕییەکانیدا دەیبڕین. ئەوەی دەگاتە دەستت، کەسانێک بینیویانە، دەستیان لێداوە و تەواویان کردووە کە گرنگی پێدەدەن.',
       'home.campaign.link': 'چیرۆکی ئێمە',
-      'home.campaign.caption': 'بەرگ و چەرم',
-      'home.campaign.alt': 'پیاوێک بە جلێکی ڕێکوپێکی تۆخەوە لە ژوورێکی نیوەتاریکدا دانیشتووە',
+      'home.campaign.caption': 'دروستکراو بۆ گەشت',
+      'home.campaign.alt': 'جانتایەکی چەرمی قاوەیی کاڵ لە تەنیشت گوڵی وشک، لە بەردەم دیوارێکی سەوزی تۆخ',
 
       'home.collections.eyebrow': 'کۆلێکشنەکان',
       'home.collections.title': 'پیاوان و خانمان، <em>یەک پێوەر.</em>',

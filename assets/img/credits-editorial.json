@@ -44,20 +44,18 @@
   },
   "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
  },
- "editorial/campaign-1": {
-  "file": "assets/img/editorial/campaign-1.jpg",
-  "unsplash_id": "03mI51AMHoE",
-  "photographer": "Troy Spoelma",
-  "photographer_url": "https://unsplash.com/@spoelee4",
-  "source": "https://unsplash.com/photos/man-in-black-suit-sitting-on-brown-wooden-bench-03mI51AMHoE",
-  "alt": "A man in a dark tailored suit seated in a moody interior",
+ "editorial/campaign-case": {
+  "file": "assets/img/editorial/campaign-case.jpg",
+  "pexels_id": "2977304",
+  "source": "https://www.pexels.com/photo/brown-leather-handbag-2977304/",
+  "alt": "A tan leather case beside dried flowers against a deep green wall",
   "crop": {
    "fx": 0.5,
    "fy": 0.5,
    "zoom": 1.0,
    "flip": false
   },
-  "license": "Unsplash License (placeholder - replace with Ben.M photography before launch)"
+  "license": "Pexels License (placeholder - replace with Ben.M photography before launch)"
  },
  "editorial/campaign-2": {
   "file": "assets/img/editorial/campaign-2.jpg",

@@ -9,7 +9,7 @@
    Contents
      00  Page-wide                       07  Manifesto
      01  Hero — the film                 08  Leathers — hanging tags
-     02  Marquee band                    09  Atelier — try your initials
+                                         09  Atelier — try your initials
      03  Campaign expand                 10  Lookbook — parallax masonry
      04  The collections                 11  Services + boutiques
      05  New arrivals rail               12  Join the House
@@ -298,46 +298,6 @@ body[data-page="home"] .c-footer__cols { border-block-start: 0; }
 
 
 /* =============================================================================
-   02  Marquee band — outlined + foil serif, velocity-reactive (main.js)
-   ========================================================================== */
-.home-marquee {
-  position: relative;
-  padding-block: clamp(26px, 3.6vw, 60px) clamp(34px, 4.6vw, 76px);
-  overflow: clip;
-}
-.home-marquee::before {
-  content: '';
-  position: absolute;
-  inset-inline: var(--gutter);
-  inset-block-start: 0;
-  block-size: 1px;
-  background: var(--g-hairline);
-  opacity: .7;
-}
-.home-marquee__big .home-marquee__item {
-  font-size: clamp(3.6rem, 10.4vw, 11.5rem);
-  line-height: 1.12;
-}
-.home-marquee__big .c-marquee__item--outline { -webkit-text-stroke: 1px var(--c-gold-500); }
-.home-marquee__big [lang="ckb"] { font-size: .8em; }
-.home-marquee__logo { display: inline-flex; align-items: center; color: var(--c-gold-400); }
-.home-marquee__logo svg { block-size: .58em; inline-size: auto; aspect-ratio: auto; overflow: visible; }
-.home-marquee__small { margin-block-start: clamp(8px, 1.4vw, 20px); }
-.home-marquee .home-marquee__note {
-  gap: clamp(20px, 2.6vw, 40px);
-  padding-inline-end: clamp(20px, 2.6vw, 40px);
-  font-family: var(--f-sans);
-  font-size: var(--fs-eyebrow);
-  font-weight: 500;
-  line-height: 2;
-  letter-spacing: var(--ls-eyebrow);
-  text-transform: var(--tt-ui);
-  color: var(--c-sage-300);
-}
-.home-marquee .home-marquee__note .c-diamond { background: var(--c-gold-500); }
-
-
-/* =============================================================================
    03  Campaign — framed inset expands to full bleed (scrubbed in home.js)
    --ci-y / --ci-x: the inset of the framed state (also read by home.js)
    ========================================================================== */
@@ -428,7 +388,7 @@ body[data-page="home"] .c-footer__cols { border-block-start: 0; }
 }
 @media (max-width: 899.98px) {
   .home-campaign { --ci-y: 17%; --ci-x: 9%; }
-  .home-campaign__media img { object-position: 30% 50%; }
+  .home-campaign__media img { object-position: 12% 50%; }   /* the leather case sits on the photo's left edge */
   .home-campaign__statement {
     right: var(--gutter);
     left: var(--gutter);

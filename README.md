@@ -74,7 +74,7 @@ Developer reference for every component, class and JS API: `docs/FOUNDATION.md` 
 
 - Products: `assets/img/products/<id>-1.jpg` (main) and `<id>-2.jpg` (hover/second) — 1200×1500
 - Categories: `assets/img/categories/{men,women}.jpg` (sub-categories reuse lookbook / category photos, see `BENM_CATEGORIES`) — 1200×1600
-- Editorial: `assets/img/editorial/hero-1..3, campaign-1..3, maison-hero` — 2400×1350; `atelier, care, notfound` — 1600×2000
+- Editorial: `assets/img/editorial/hero-1..3, campaign-case, campaign-2..3, maison-hero` — 2400×1350; `atelier, care, notfound` — 1600×2000
 - Hero film: see below
 
 ### Hero film (home page)
