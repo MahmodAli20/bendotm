@@ -50,7 +50,7 @@
     'nav.accessories': 'Accessories',
     'nav.maison': 'Maison',
     'nav.atelier': 'Atelier',
-    'nav.boutiques': 'Boutiques',
+    'nav.boutiques': 'Boutique',
     'nav.shop': 'The collection',
     'nav.shopAll': 'Shop all',
     'nav.newArrivals': 'New arrivals',
@@ -99,7 +99,7 @@
     'menu.discover': 'Discover',
     'menu.maison.caption': 'The house, the craft, and the care behind every piece.',
     'menu.atelier.caption': 'Initials pressed by hand. Pieces made to order.',
-    'menu.boutiques.caption': 'Visit the House in Erbil, Sulaymaniyah and Duhok.',
+    'menu.boutiques.caption': 'Visit the House in Sulaymaniyah.',
     'menu.writeUs': 'Write to us on WhatsApp',
 
     /* ---- Search --------------------------------------------------------------- */
@@ -285,7 +285,7 @@
     'nav.accessories': 'ئێکسسوارات',
     'nav.maison': 'مەیزۆن',
     'nav.atelier': 'ئاتێلیێ',
-    'nav.boutiques': 'بووتیکەکان',
+    'nav.boutiques': 'بووتیک',
     'nav.shop': 'کۆلێکشن',
     'nav.shopAll': 'هەموو بەرهەمەکان',
     'nav.newArrivals': 'تازەگەیشتووەکان',
@@ -334,7 +334,7 @@
     'menu.discover': 'بگەڕێ بەناو',
     'menu.maison.caption': 'ماڵەکە، هونەری دەست و ئەو وردەکارییەی لە پشت هەموو بەرهەمێکەوەیە.',
     'menu.atelier.caption': 'پیتەکان بە دەست نەخش دەکرێن؛ بەرهەم بەپێی داواکاری تایبەت دروست دەکرێت.',
-    'menu.boutiques.caption': 'سەردانی ماڵەکەمان بکە لە هەولێر، سلێمانی و دهۆک.',
+    'menu.boutiques.caption': 'سەردانی ماڵەکەمان بکە لە سلێمانی.',
     'menu.writeUs': 'لە واتسئاپەوە پەیوەندیمان پێوە بکە',
 
     /* ---- Search --------------------------------------------------------------- */

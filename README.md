@@ -91,7 +91,7 @@ client's own film of their workshop: export it as a 10–20 s loop, no sound, 19
 720×1280 portrait cut (≤ 2.5 MB), keep the file names and replace the two poster stills with their first frames.
 - Lookbook: `assets/img/lookbook/look-1..8.jpg` — 1200×1600
 - Craft: `assets/img/craft/*.jpg` — 1600×2000 (`workshop.jpg` 2400×1350)
-- Boutiques: `assets/img/stores/{erbil,sulaymaniyah,duhok}.jpg` — 1600×1200 (`interior-wide.jpg` 2400×1350)
+- Boutique (Sulaymaniyah): `assets/img/stores/sulaymaniyah.jpg` — 1600×1200; `erbil.jpg`, `duhok.jpg` are only used as interior shots (shop band, Atelier), `interior-wide.jpg` 2400×1350
 
 ## Before launch — checklist
 

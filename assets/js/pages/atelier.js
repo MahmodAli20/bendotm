@@ -102,7 +102,7 @@
       'atelier.mto.note': 'Timings depend on the piece and the leather; we agree them with you at the first conversation.',
       'atelier.mto.cta': 'Book a consultation',
       'atelier.mto.1.title': 'Consultation',
-      'atelier.mto.1.text': 'We sit down together — in a boutique or on a call — and talk about what you want to wear, carry and keep.',
+      'atelier.mto.1.text': 'We sit down together — in the boutique or on a call — and talk about what you want to wear, carry and keep.',
       'atelier.mto.1.alt': 'A master craftsman at his workbench in a leather workshop',
       'atelier.mto.2.title': 'Measure',
       'atelier.mto.2.text': 'Feet are measured and traced; a bag is drawn around what it must hold. Nothing is left to guesswork.',
@@ -161,10 +161,10 @@
       'atelier.next.shop.title': 'Choose your <em>piece.</em>',
       'atelier.next.shop.text': 'Bags, belts and small leather goods, ready for your initials.',
       'atelier.next.shop.cta': 'Shop the collection',
-      'atelier.next.visit.eyebrow': 'The boutiques',
+      'atelier.next.visit.eyebrow': 'The boutique',
       'atelier.next.visit.title': 'Visit <em>the house.</em>',
       'atelier.next.visit.text': '{cities} — see and touch the leathers in person.',
-      'atelier.next.visit.cta': 'Find a boutique',
+      'atelier.next.visit.cta': 'Visit the boutique',
       'atelier.and': 'and'
     },
     ckb: {
@@ -303,10 +303,10 @@
       'atelier.next.shop.title': 'پارچەکەت <em>هەڵبژێرە.</em>',
       'atelier.next.shop.text': 'جانتا، قایش و پارچە چەرمییە بچووکەکان، ئامادە بۆ پیتەکانت.',
       'atelier.next.shop.cta': 'سەیری کۆلێکشنەکە بکە',
-      'atelier.next.visit.eyebrow': 'فرۆشگاکان',
+      'atelier.next.visit.eyebrow': 'فرۆشگا',
       'atelier.next.visit.title': 'سەردانی <em>ماڵەکەمان بکە.</em>',
       'atelier.next.visit.text': '{cities} — چەرمەکان بە چاوی خۆت ببینە و دەستیان لێ بدە.',
-      'atelier.next.visit.cta': 'فرۆشگایەک بدۆزەرەوە',
+      'atelier.next.visit.cta': 'سەردانی فرۆشگاکە بکە',
       'atelier.and': 'و'
     }
   });

@@ -17,24 +17,24 @@
   B.i18n.add({
     en: {
       'nf.meta.title': 'Page not found — Ben.M',
-      'nf.meta.description': 'The page you were looking for could not be found. Return home, explore the collection or visit a boutique.',
+      'nf.meta.description': 'The page you were looking for could not be found. Return home, explore the collection or visit the boutique.',
       'nf.eyebrow': 'Error 404 · Page not found',
       'nf.title': 'This pair seems to have <em>wandered off.</em>',
       'nf.links.label': 'Find your way',
       'nf.links.shop': 'Shop the collection',
-      'nf.links.boutiques': 'Visit a boutique',
+      'nf.links.boutiques': 'Visit the boutique',
       'nf.caption': 'Its partner is still looking for it.',
       'nf.picks.eyebrow': 'While you are here',
       'nf.picks.title': 'Right where <em>we left them.</em>'
     },
     ckb: {
       'nf.meta.title': 'پەڕەکە نەدۆزرایەوە — Ben.M',
-      'nf.meta.description': 'ئەو پەڕەیەی بە دوایدا دەگەڕایت نەدۆزرایەوە. بگەڕێوە بۆ پەڕەی سەرەکی، سەیری کۆلێکشنەکە بکە یان سەردانی فرۆشگایەک بکە.',
+      'nf.meta.description': 'ئەو پەڕەیەی بە دوایدا دەگەڕایت نەدۆزرایەوە. بگەڕێوە بۆ پەڕەی سەرەکی، سەیری کۆلێکشنەکە بکە یان سەردانی فرۆشگاکە بکە.',
       'nf.eyebrow': 'هەڵەی ٤٠٤، پەڕەکە نەدۆزرایەوە',          // «،» not «·»: beside ٤٠٤ a dot reads as another ٠
       'nf.title': 'وا دیارە ئەم جووتە <em>ڕێگای ون کردووە.</em>',
       'nf.links.label': 'ڕێگای خۆت بدۆزەرەوە',
       'nf.links.shop': 'سەیری کۆلێکشنەکە بکە',
-      'nf.links.boutiques': 'سەردانی فرۆشگایەک بکە',
+      'nf.links.boutiques': 'سەردانی فرۆشگاکە بکە',
       'nf.caption': 'جووتەکەی هێشتا بە دوایدا دەگەڕێت.',
       'nf.picks.eyebrow': 'ئێستا کە لێرەیت',
       'nf.picks.title': 'هەر لە <em>شوێنی خۆیانن.</em>'

@@ -157,7 +157,7 @@
       'maison.care.s5.text': 'Brush off the dust after every wear. To polish, apply a thin layer of cream or wax in a matching shade, let it rest, then buff to a soft shine.',
       'maison.care.s6.title': 'Store in the dust bag',
       'maison.care.s6.text': 'Keep each piece in a breathable dust bag, out of direct light. Fill bags lightly with tissue so they hold their shape, and never store leather in plastic.',
-      'maison.care.more': 'Something needs more than care? Our boutiques can advise on polishing and repairs.',
+      'maison.care.more': 'Something needs more than care? Our boutique in Sulaymaniyah can advise on polishing and repairs.',
       'maison.care.moreLink': 'Care & repair questions',
 
       'maison.doors.title': 'Where to next',
@@ -302,7 +302,7 @@
       'maison.care.s5.text': 'دوای هەموو لەبەرکردنێک تۆزەکەی بە فڵچە لابە. بۆ بریقەدان، چینێکی تەنک کرێم یان مۆمی هاوڕەنگی لێبدە، کەمێک بیهێڵەرەوە، پاشان بیسوو تا بریقەیەکی نەرم وەردەگرێت.',
       'maison.care.s6.title': 'لە کیسەی پاراستندا هەڵیبگرە',
       'maison.care.s6.text': 'هەر پارچەیەک لە کیسەیەکی پاراستنی هەناسەدەردا هەڵبگرە، دوور لە ڕووناکیی ڕاستەوخۆ. جانتاکان بە کاغەزی نەرم کەمێک پڕ بکە تا شێوەی خۆیان بپارێزن، و هەرگیز چەرم لە ناو نایلۆندا هەڵمەگرە.',
-      'maison.care.more': 'شتێک پێویستی بە زیاتر لە چاودێرییە؟ فرۆشگاکانمان دەتوانن لەبارەی بریقەدان و چاککردنەوە ئامۆژگاریت بکەن.',
+      'maison.care.more': 'شتێک پێویستی بە زیاتر لە چاودێرییە؟ فرۆشگاکەمان لە سلێمانی دەتوانێت لەبارەی بریقەدان و چاککردنەوە ئامۆژگاریت بکات.',
       'maison.care.moreLink': 'پرسیارەکانی چاودێری و چاککردنەوە',
 
       'maison.doors.title': 'دواتر بۆ کوێ',

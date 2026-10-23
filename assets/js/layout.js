@@ -207,7 +207,7 @@
   var MENU = catItems().concat([
     { key: 'nav.maison', href: 'maison.html', img: 'assets/img/craft/stitching.jpg', cap: 'menu.maison.caption' },
     { key: 'nav.atelier', href: 'atelier.html', img: 'assets/img/editorial/atelier.jpg', cap: 'menu.atelier.caption' },
-    { key: 'nav.boutiques', href: 'boutiques.html', img: 'assets/img/stores/erbil.jpg', cap: 'menu.boutiques.caption' }
+    { key: 'nav.boutiques', href: 'boutiques.html', img: 'assets/img/stores/sulaymaniyah.jpg', cap: 'menu.boutiques.caption' }
   ]);
   var NCATS = MENU.filter(function (m) { return m.cat; }).length;
   function menuLists() {

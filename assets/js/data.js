@@ -8,7 +8,7 @@
      BENM_CATEGORIES  Men and Women, each with sub-categories (Shoes, Bags, …)
      BENM_LEATHERS    the eight house leather colours (swatches + product colours)
      BENM_PRODUCTS    the 22 demo products
-     BENM_STORES      the three boutiques
+     BENM_STORES      the boutique (Sulaymaniyah)
 
    Every visible string is a { en, ckb } pair (ckb = Central Kurdish / Sorani,
    rendered right-to-left). Prices are in USD; BENM.price() converts to IQD.
@@ -1228,34 +1228,11 @@
   ];
 
   /* ---------------------------------------------------------------------------
-     5. Boutiques — addresses and phone numbers are PLACEHOLDERS;
-        lat/lng are the real city centres (used by the dotted map).
+     5. Boutique — Ben.M has one, in Sulaymaniyah. Address and phone number are
+        PLACEHOLDERS; lat/lng is the real city centre (used by the dotted map).
         mapsUrl: "Get directions" link · embedUrl: keyless Google Maps embed
      ------------------------------------------------------------------------ */
   w.BENM_STORES = [
-    {
-      id: 'erbil',
-      city: { en: 'Erbil', ckb: 'هەولێر' },
-      name: { en: 'Ben.M Erbil', ckb: 'Ben.M هەولێر' },
-      description: {
-        en: 'Our house in the capital — leather, brass and lamplight.',
-        ckb: 'ماڵی ئێمە لە پایتەخت؛ چەرم، مس و ڕووناکیی چرا.'
-      },
-      address: {                                      // PLACEHOLDER
-        en: 'Gulan Street, Building 12, Ground Floor, Erbil',
-        ckb: 'شەقامی گوڵان، باڵەخانەی ١٢، نهۆمی زەوی، هەولێر'
-      },
-      hours: {
-        en: 'Sat–Thu 10:00–22:00 · Fri 14:00–22:00',
-        ckb: 'شەممە تا پێنجشەممە ١٠:٠٠–٢٢:٠٠، هەینی ١٤:٠٠–٢٢:٠٠'
-      },
-      phone: '+964 750 000 0001',                     // PLACEHOLDER
-      lat: 36.1911,
-      lng: 44.0092,
-      image: 'assets/img/stores/erbil.jpg',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Erbil%2C%20Iraq',
-      embedUrl: 'https://maps.google.com/maps?q=Erbil%2C%20Iraq&z=13&output=embed'
-    },
     {
       id: 'sulaymaniyah',
       city: { en: 'Sulaymaniyah', ckb: 'سلێمانی' },
@@ -1278,29 +1255,6 @@
       image: 'assets/img/stores/sulaymaniyah.jpg',
       mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Sulaymaniyah%2C%20Iraq',
       embedUrl: 'https://maps.google.com/maps?q=Sulaymaniyah%2C%20Iraq&z=13&output=embed'
-    },
-    {
-      id: 'duhok',
-      city: { en: 'Duhok', ckb: 'دهۆک' },
-      name: { en: 'Ben.M Duhok', ckb: 'Ben.M دهۆک' },
-      description: {
-        en: 'At the foot of the mountains, a boutique for travellers.',
-        ckb: 'لە داوێنی چیاکاندا، فرۆشگایەک بۆ ئەوانەی ڕێگایان دوورە.'
-      },
-      address: {                                      // PLACEHOLDER
-        en: 'Kawa Street, No. 21, Duhok',
-        ckb: 'شەقامی کاوە، ژمارە ٢١، دهۆک'
-      },
-      hours: {
-        en: 'Sat–Thu 10:00–22:00 · Fri 14:00–22:00',
-        ckb: 'شەممە تا پێنجشەممە ١٠:٠٠–٢٢:٠٠، هەینی ١٤:٠٠–٢٢:٠٠'
-      },
-      phone: '+964 750 000 0003',                     // PLACEHOLDER
-      lat: 36.8669,
-      lng: 42.9503,
-      image: 'assets/img/stores/duhok.jpg',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Duhok%2C%20Iraq',
-      embedUrl: 'https://maps.google.com/maps?q=Duhok%2C%20Iraq&z=13&output=embed'
     }
   ];
 })(window);

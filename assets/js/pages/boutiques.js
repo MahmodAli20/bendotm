@@ -28,34 +28,32 @@
      ======================================================================== */
   B.i18n.add({
     en: {
-      'boutiques.meta.title': 'Boutiques & client services — Ben.M',
-      'boutiques.meta.description': 'Visit Ben.M in Erbil, Sulaymaniyah and Duhok, write to client services, or find answers about delivery, sizing and leather care.',
+      'boutiques.meta.title': 'Boutique & client services — Ben.M',
+      'boutiques.meta.description': 'Visit Ben.M in Sulaymaniyah, write to client services, or find answers about delivery, sizing and leather care.',
 
-      'boutiques.hero.eyebrow': 'Boutiques & client services',
+      'boutiques.hero.eyebrow': 'Boutique & client services',
       'boutiques.hero.title': 'Visit the <em>House</em>',
-      'boutiques.hero.lead': 'Three boutiques in Kurdistan, each a quiet room of leather and lamplight. Come to try, to choose slowly, or simply to talk about leather.',
-      'boutiques.hero.index': 'Our boutiques',
-      'boutiques.hero.find': 'Find a boutique',
+      'boutiques.hero.lead': 'Our boutique in Sulaymaniyah is a quiet room of leather and lamplight. Come to try, to choose slowly, or simply to talk about leather.',
+      'boutiques.hero.index': 'Our boutique',
+      'boutiques.hero.find': 'Visit the boutique',
       'boutiques.hero.caption': 'Inside the House',
       'boutiques.hero.contact': 'Client services',
 
       'boutiques.img.interior': 'A row of polished leather shoes on a boutique display',
-      'boutiques.img.erbil': 'Amber-lit glass cabinets displaying leather goods',
       'boutiques.img.sulaymaniyah': 'A tailored salon with shelves of shoes and folded shirts',
-      'boutiques.img.duhok': 'Lit wooden shelves displaying leather bags and shoes',
 
-      'boutiques.list.eyebrow': 'The boutiques',
-      'boutiques.list.title': 'Three houses, <em>one welcome.</em>',
-      'boutiques.list.text': 'In Erbil, Sulaymaniyah and Duhok, every boutique keeps the same pace: fittings that take their time, honest advice, and leather you can hold in your hands.',
-      'boutiques.map.label': 'Map of the Ben.M boutiques',
-      'boutiques.map.note': 'A stylised map — each boutique sits at its city’s true latitude and longitude.',
+      'boutiques.list.eyebrow': 'The boutique',
+      'boutiques.list.title': 'One house, <em>a warm welcome.</em>',
+      'boutiques.list.text': 'In Sulaymaniyah, our boutique keeps its own pace: fittings that take their time, honest advice, and leather you can hold in your hands.',
+      'boutiques.map.label': 'Map of the Ben.M boutique',
+      'boutiques.map.note': 'A stylised map — the boutique sits at Sulaymaniyah’s true latitude and longitude.',
       'boutiques.store.address': 'Address',
       'boutiques.store.hours': 'Opening hours',
       'boutiques.store.phone': 'Telephone',
       'boutiques.store.directions': 'Get directions',
       'boutiques.store.call': 'Call the boutique',
 
-      'boutiques.services.title': 'In every boutique',
+      'boutiques.services.title': 'In the boutique',
       'boutiques.services.fit': 'Fittings, unhurried',
       'boutiques.services.fit.text': 'Try every size and colour. We will help you find the pair that truly fits.',
       'boutiques.services.care': 'Care & repair',
@@ -81,7 +79,7 @@
       'boutiques.form.topic.sizing': 'Sizing & fit',
       'boutiques.form.topic.care': 'Care & repair',
       'boutiques.form.topic.perso': 'Personalisation',
-      'boutiques.form.topic.visit': 'Visiting a boutique',
+      'boutiques.form.topic.visit': 'Visiting the boutique',
       'boutiques.form.topic.other': 'Something else',
       'boutiques.form.reply': 'How should we reply?',
       'boutiques.form.reply.email': 'By email',
@@ -108,13 +106,13 @@
       'boutiques.faq.a2': 'Yes. If a piece is not quite right, write to us and we will arrange an exchange or a return together. Keep it unworn and in its original packaging, so that it can travel back just as it came.',
       'boutiques.faq.t3': 'Sizing',
       'boutiques.faq.q3': 'How do I find my size?',
-      'boutiques.faq.a3': 'Our shoes are made in EU sizes. Every product page has a size guide with conversions and a simple way to measure your foot. Between two sizes? Choose the larger one, or ask us — in a boutique we will fit you in person.',
+      'boutiques.faq.a3': 'Our shoes are made in EU sizes. Every product page has a size guide with conversions and a simple way to measure your foot. Between two sizes? Choose the larger one, or ask us — in the boutique we will fit you in person.',
       'boutiques.faq.t4': 'Payment',
       'boutiques.faq.q4': 'How can I pay?',
-      'boutiques.faq.a4': 'Payment is agreed with you personally when we confirm your order on WhatsApp, or at the counter in our boutiques. Prices can be shown in US dollars or Iraqi dinars; dinar prices are converted from dollars and rounded, as a guide.',
+      'boutiques.faq.a4': 'Payment is agreed with you personally when we confirm your order on WhatsApp, or at the counter in our boutique. Prices can be shown in US dollars or Iraqi dinars; dinar prices are converted from dollars and rounded, as a guide.',
       'boutiques.faq.t5': 'Care & repair',
       'boutiques.faq.q5': 'How should I care for my leather — and can you repair it?',
-      'boutiques.faq.a5': 'Let it rest for a day between wears, keep it away from direct heat, and give it a little cream or balm whenever it looks thirsty. The <a class="c-text-link" href="maison.html#care">leather care guide</a> in the Maison has the details. For polishing and small repairs, bring your piece to any of our boutiques and we will advise you.',
+      'boutiques.faq.a5': 'Let it rest for a day between wears, keep it away from direct heat, and give it a little cream or balm whenever it looks thirsty. The <a class="c-text-link" href="maison.html#care">leather care guide</a> in the Maison has the details. For polishing and small repairs, bring your piece to our boutique and we will advise you.',
       'boutiques.faq.t6': 'Personalisation',
       'boutiques.faq.q6': 'Can I have my initials added?',
       'boutiques.faq.a6': 'Yes — bags and small leather goods can carry up to three initials, pressed by hand in gold, silver or blind foil. Personalisation adds ' + priceTag(FEE) + '. Try it live in the <a class="c-text-link" href="atelier.html#configurator">Atelier</a>; because each piece is made for you, please check the letters carefully before you confirm.',
@@ -126,36 +124,34 @@
       'boutiques.faq.a8': 'Every piece can be wrapped by hand, ready to give. Simply mention it when we confirm your order, or ask in the boutique.'
     },
     ckb: {
-      'boutiques.meta.title': 'فرۆشگاکان و خزمەتگوزاریی کڕیاران — Ben.M',
-      'boutiques.meta.description': 'سەردانی Ben.M بکە لە هەولێر، سلێمانی و دهۆک، نامە بۆ خزمەتگوزاریی کڕیاران بنێرە، یان وەڵامی پرسیارەکانت دەربارەی گەیاندن، قەبارە و چاودێریی چەرم بدۆزەرەوە.',
+      'boutiques.meta.title': 'فرۆشگا و خزمەتگوزاریی کڕیاران — Ben.M',
+      'boutiques.meta.description': 'سەردانی Ben.M بکە لە سلێمانی، نامە بۆ خزمەتگوزاریی کڕیاران بنێرە، یان وەڵامی پرسیارەکانت دەربارەی گەیاندن، قەبارە و چاودێریی چەرم بدۆزەرەوە.',
 
-      'boutiques.hero.eyebrow': 'فرۆشگاکان و خزمەتگوزاریی کڕیاران',
+      'boutiques.hero.eyebrow': 'فرۆشگا و خزمەتگوزاریی کڕیاران',
       // «ماڵەکە بکە» never parts (nowrap survives the reveal's word split, a no-break space does not);
       // under 560 px «سەردانی» takes its own line — a fixed composition instead of a threshold wrap
       'boutiques.hero.title': '<span class="btq-hero__w1">سەردانی</span> <span class="btq-keep"><em>ماڵەکە</em> بکە</span>',
-      'boutiques.hero.lead': 'سێ فرۆشگا لە کوردستان، هەر یەکەیان ژوورێکی هێمنی چەرم و ڕووناکیی چرایە. وەرە بۆ تاقیکردنەوە، بۆ هەڵبژاردنێکی بێپەلە، یان تەنها بۆ ئەوەی پێکەوە باسی چەرم بکەین.',
-      'boutiques.hero.index': 'فرۆشگاکانمان',
-      'boutiques.hero.find': 'فرۆشگایەک بدۆزەرەوە',
+      'boutiques.hero.lead': 'فرۆشگاکەمان لە سلێمانی ژوورێکی هێمنی چەرم و ڕووناکیی چرایە. وەرە بۆ تاقیکردنەوە، بۆ هەڵبژاردنێکی بێپەلە، یان تەنها بۆ ئەوەی پێکەوە باسی چەرم بکەین.',
+      'boutiques.hero.index': 'فرۆشگاکەمان',
+      'boutiques.hero.find': 'سەردانی فرۆشگاکە بکە',
       'boutiques.hero.caption': 'لە ناو ماڵەکەدا',
       'boutiques.hero.contact': 'خزمەتگوزاریی کڕیاران',
 
       'boutiques.img.interior': 'ڕیزێک پێڵاوی چەرمی بریقەدار لەسەر ڕەفەی فرۆشگا',
-      'boutiques.img.erbil': 'دۆڵابی شووشەیی لە ژێر ڕووناکییەکی زەردی گەرمدا، پڕ لە بەرهەمی چەرم',
       'boutiques.img.sulaymaniyah': 'هۆڵێکی جلوبەرگی ڕێکوپێک، لەگەڵ ڕەفەی پێڵاو و کراسی پێچراوە',
-      'boutiques.img.duhok': 'ڕەفەی دارینی ڕووناک کە جانتا و پێڵاوی چەرمی لەسەر نمایش کراوە',
 
-      'boutiques.list.eyebrow': 'فرۆشگاکان',
-      'boutiques.list.title': 'سێ ماڵ، <em>یەک پێشوازی.</em>',
-      'boutiques.list.text': 'لە هەولێر، سلێمانی و دهۆک، هەموو فرۆشگاکانمان هەمان ڕیتمیان هەیە: تاقیکردنەوەیەک کە کاتی خۆی دەبات، ئامۆژگاریی ڕاستگۆیانە، و چەرمێک کە دەتوانیت بە دەستی خۆت هەستی پێ بکەیت.',
-      'boutiques.map.label': 'نەخشەی فرۆشگاکانی Ben.M',
-      'boutiques.map.note': 'نەخشەیەکی هونەری — هەر فرۆشگایەک لەسەر هێڵی پانی و درێژیی ڕاستەقینەی شارەکەی خۆی دانراوە.',
+      'boutiques.list.eyebrow': 'فرۆشگا',
+      'boutiques.list.title': 'یەک ماڵ، <em>پێشوازییەکی گەرم.</em>',
+      'boutiques.list.text': 'لە سلێمانی، فرۆشگاکەمان ڕیتمی خۆی هەیە: تاقیکردنەوەیەک کە کاتی خۆی دەبات، ئامۆژگاریی ڕاستگۆیانە، و چەرمێک کە دەتوانیت بە دەستی خۆت هەستی پێ بکەیت.',
+      'boutiques.map.label': 'نەخشەی فرۆشگای Ben.M',
+      'boutiques.map.note': 'نەخشەیەکی هونەری — فرۆشگاکە لەسەر هێڵی پانی و درێژیی ڕاستەقینەی سلێمانی دانراوە.',
       'boutiques.store.address': 'ناونیشان',
       'boutiques.store.hours': 'کاتەکانی کارکردن',
       'boutiques.store.phone': 'تەلەفۆن',
       'boutiques.store.directions': 'ڕێنمایی ڕێگا',
       'boutiques.store.call': 'پەیوەندی بە فرۆشگاکەوە بکە',
 
-      'boutiques.services.title': 'لە هەموو فرۆشگاکاندا',
+      'boutiques.services.title': 'لە فرۆشگاکەدا',
       'boutiques.services.fit': 'تاقیکردنەوەی بێپەلە',
       'boutiques.services.fit.text': 'هەموو قەبارە و ڕەنگێک تاقی بکەرەوە. یارمەتیت دەدەین ئەو جووتە بدۆزیتەوە کە بە ڕاستی لە پێتدا دەگونجێت.',
       'boutiques.services.care': 'چاودێری و چاککردنەوە',
@@ -181,7 +177,7 @@
       'boutiques.form.topic.sizing': 'قەبارە و گونجان',
       'boutiques.form.topic.care': 'چاودێری و چاککردنەوە',
       'boutiques.form.topic.perso': 'تایبەتکردن',
-      'boutiques.form.topic.visit': 'سەردانی فرۆشگایەک',
+      'boutiques.form.topic.visit': 'سەردانی فرۆشگاکە',
       'boutiques.form.topic.other': 'شتێکی تر',
       'boutiques.form.reply': 'چۆن وەڵامت بدەینەوە؟',
       'boutiques.form.reply.email': 'بە ئیمەیڵ',
@@ -208,13 +204,13 @@
       'boutiques.faq.a2': 'بەڵێ. ئەگەر پارچەیەک وەک پێویست نەبوو، بۆمان بنووسە و پێکەوە گۆڕینەوە یان گەڕاندنەوەکەی ڕێک دەخەین. تکایە بە لەبەرنەکراوی و لە ناو پاکەتە سەرەکییەکەیدا بیهێڵەرەوە، تا وەک چۆن هاتووە ئاواش بگەڕێتەوە.',
       'boutiques.faq.t3': 'قەبارە',
       'boutiques.faq.q3': 'چۆن قەبارەی خۆم بدۆزمەوە؟',
-      'boutiques.faq.a3': 'پێڵاوەکانمان بە قەبارەی ئەوروپی دروست دەکرێن. لە پەڕەی هەر بەرهەمێکدا ڕێبەری قەبارە هەیە، لەگەڵ خشتەی گۆڕین و ڕێگایەکی سادە بۆ پێوانی پێت. لە نێوان دوو قەبارەدایت؟ گەورەترەکەیان هەڵبژێرە، یان لێمان بپرسە — لە فرۆشگاکاندا خۆمان ڕاستەوخۆ یارمەتیت دەدەین.',
+      'boutiques.faq.a3': 'پێڵاوەکانمان بە قەبارەی ئەوروپی دروست دەکرێن. لە پەڕەی هەر بەرهەمێکدا ڕێبەری قەبارە هەیە، لەگەڵ خشتەی گۆڕین و ڕێگایەکی سادە بۆ پێوانی پێت. لە نێوان دوو قەبارەدایت؟ گەورەترەکەیان هەڵبژێرە، یان لێمان بپرسە — لە فرۆشگاکەدا خۆمان ڕاستەوخۆ یارمەتیت دەدەین.',
       'boutiques.faq.t4': 'پارەدان',
       'boutiques.faq.q4': 'چۆن پارە بدەم؟',
-      'boutiques.faq.a4': 'پارەدان بە شێوەیەکی کەسی لەگەڵت ڕێک دەخرێت، کاتێک داواکارییەکەت لە واتسئاپ پشتڕاست دەکەینەوە، یان لە فرۆشگاکانماندا. نرخەکان دەتوانرێت بە دۆلاری ئەمریکی یان دیناری عێراقی پیشان بدرێن؛ نرخی دینار لە دۆلارەوە دەگۆڕدرێت و بە نزیکەیی خڕ دەکرێتەوە، تەنها وەک ڕێنمایی.',
+      'boutiques.faq.a4': 'پارەدان بە شێوەیەکی کەسی لەگەڵت ڕێک دەخرێت، کاتێک داواکارییەکەت لە واتسئاپ پشتڕاست دەکەینەوە، یان لە فرۆشگاکەماندا. نرخەکان دەتوانرێت بە دۆلاری ئەمریکی یان دیناری عێراقی پیشان بدرێن؛ نرخی دینار لە دۆلارەوە دەگۆڕدرێت و بە نزیکەیی خڕ دەکرێتەوە، تەنها وەک ڕێنمایی.',
       'boutiques.faq.t5': 'چاودێری و چاککردنەوە',
       'boutiques.faq.q5': 'چۆن چاودێریی چەرمەکەم بکەم — و دەتوانن چاکی بکەنەوە؟',
-      'boutiques.faq.a5': 'ڕۆژێک لە نێوان هەر دوو جار لەبەرکردندا پشووی پێ بدە، لە گەرمای ڕاستەوخۆ دووری بخەرەوە، و هەر کاتێک تینوو دیار بوو کەمێک کرێم یان مەڵهەمی لێ بدە. <a class="c-text-link" href="maison.html#care">ڕێبەری چاودێریی چەرم</a> لە ماڵی Ben.M هەموو وردەکارییەکانی تێدایە. بۆ بریقەدارکردن و چاککردنەوەی بچووک، پارچەکەت بهێنە بۆ هەر یەکێک لە فرۆشگاکانمان و ئامۆژگاریت دەکەین.',
+      'boutiques.faq.a5': 'ڕۆژێک لە نێوان هەر دوو جار لەبەرکردندا پشووی پێ بدە، لە گەرمای ڕاستەوخۆ دووری بخەرەوە، و هەر کاتێک تینوو دیار بوو کەمێک کرێم یان مەڵهەمی لێ بدە. <a class="c-text-link" href="maison.html#care">ڕێبەری چاودێریی چەرم</a> لە ماڵی Ben.M هەموو وردەکارییەکانی تێدایە. بۆ بریقەدارکردن و چاککردنەوەی بچووک، پارچەکەت بهێنە بۆ فرۆشگاکەمان و ئامۆژگاریت دەکەین.',
       'boutiques.faq.t6': 'تایبەتکردن',
       'boutiques.faq.q6': 'دەتوانم پیتە سەرەتاییەکانی ناوم لەسەری دابنێم؟',
       'boutiques.faq.a6': 'بەڵێ — جانتا و بەرهەمە بچووکەکانی چەرم دەتوانن تا سێ پیتی سەرەتایی هەڵبگرن، کە بە دەست بە فۆیلی زێڕین، زیوین یان مۆری بێڕەنگ لەسەریان دەچەسپێنرێن. تایبەتکردن ' + priceTag(FEE) + ' زیاد دەکات. لە <a class="c-text-link" href="atelier.html#configurator">ئاتێلیە</a> بە شێوەی ڕاستەوخۆ تاقیی بکەرەوە؛ چونکە هەر پارچەیەک تەنها بۆ تۆ دروست دەکرێت، تکایە پێش پشتڕاستکردنەوە پیتەکان بە وردی بپشکنە.',
@@ -315,7 +311,7 @@
   /* ===========================================================================
      4. Boutique cards
      ======================================================================== */
-  var ALT = { erbil: 'boutiques.img.erbil', sulaymaniyah: 'boutiques.img.sulaymaniyah', duhok: 'boutiques.img.duhok' };
+  var ALT = { sulaymaniyah: 'boutiques.img.sulaymaniyah' };     // other boutiques use their name as alt text
 
   function storeCard(s, i) {
     var id = 'store-' + s.id, sid = esc(s.id), alt = ALT[s.id], o = otherLang();
@@ -387,13 +383,14 @@
   var KX = Math.cos(36.2 * Math.PI / 180);           // equirectangular, corrected at the region's latitude
   var map = { el: null, svg: null, top: null, veil: null, w: 0, h: 0, fit: null, revealed: false, rings: null };
 
-  // projection fitted so the three cities sit comfortably inside the frame, whatever its aspect
+  // projection fitted so the boutiques sit comfortably inside the frame, whatever its aspect
   function fitMap(W, H) {
     var xs = STORES.map(function (s) { return s.lng * KX; }), ys = STORES.map(function (s) { return -s.lat; });
     var minX = Math.min.apply(null, xs), maxX = Math.max.apply(null, xs);
     var minY = Math.min.apply(null, ys), maxY = Math.max.apply(null, ys);
     var narrow = W < 560;
     var padX = narrow ? .6 : .74, padY = narrow ? .62 : .66;   // breathing room, in degrees
+    if (STORES.length < 2) { padX *= 2.2; padY *= 2.2; }       // a single boutique: show the region around it
     var k = Math.min(W / (maxX - minX + 2 * padX), H / (maxY - minY + 2 * padY));
     var cx = (minX + maxX) / 2, cy = (minY + maxY) / 2 + .05;
     return {
@@ -536,7 +533,7 @@
     map.top.appendChild(top);
     map.rings = rings;
 
-    // the veil's iris opens from Erbil, the capital (first boutique)
+    // the veil's iris opens from the first boutique
     var origin = pts[0] || { x: W / 2, y: H / 2 };
     if (map.veil) { map.veil.style.setProperty('--vx', origin.x.toFixed(1) + 'px'); map.veil.style.setProperty('--vy', origin.y.toFixed(1) + 'px'); }
     placeMarkers();

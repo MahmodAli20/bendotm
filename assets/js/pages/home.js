@@ -140,10 +140,10 @@
       'home.services.gift': 'Gift wrapping',
       'home.services.gift.text': 'Wrapped by hand, ready to give.',
 
-      'home.boutiques.eyebrow': 'Boutiques',
+      'home.boutiques.eyebrow': 'Boutique',
       'home.boutiques.title': 'Visit <em>the House.</em>',
-      'home.boutiques.text': 'Three boutiques in Kurdistan, for slow choosing and fittings that take their time.',
-      'home.boutiques.cta': 'Find a boutique',
+      'home.boutiques.text': 'Our boutique in Sulaymaniyah, for slow choosing and fittings that take their time.',
+      'home.boutiques.cta': 'Visit the boutique',
 
       'home.join.eyebrow': 'Letters from the House',
       'home.join.title': 'Join <em>the House.</em>',
@@ -269,10 +269,10 @@
       'home.services.gift': 'پێچانەوەی دیاری',
       'home.services.gift.text': 'بە دەست دەپێچرێتەوە، ئامادە بۆ پێشکەشکردن.',
 
-      'home.boutiques.eyebrow': 'فرۆشگاکان',
+      'home.boutiques.eyebrow': 'فرۆشگا',
       'home.boutiques.title': 'سەردانی <em>ماڵەکە</em> بکە.',
-      'home.boutiques.text': 'سێ فرۆشگا لە کوردستان، بۆ هەڵبژاردنی بێپەلە و تاقیکردنەوەیەک کە کاتی خۆی دەبات.',
-      'home.boutiques.cta': 'فرۆشگایەک بدۆزەرەوە',
+      'home.boutiques.text': 'فرۆشگاکەمان لە سلێمانی، بۆ هەڵبژاردنی بێپەلە و تاقیکردنەوەیەک کە کاتی خۆی دەبات.',
+      'home.boutiques.cta': 'سەردانی فرۆشگاکە بکە',
 
       'home.join.eyebrow': 'نامەکانی ماڵەکە',
       'home.join.title': 'ببە بە ئەندامی <em>ماڵەکە.</em>',
